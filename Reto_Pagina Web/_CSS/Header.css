@@ -1,0 +1,74 @@
+header{
+    background-image: url(_IMG/BackgroundBanner);
+    width: auto;
+    height: 300px;
+}
+
+#MarcoNav{
+
+    background-color: white;
+    height: 50px;
+    border-radius: 20px;
+    border: 8px;
+    border-color: rgb(223, 86, 86);
+}
+
+#MarcoNav.ul{
+
+    display: flex;
+    align-items: center;
+
+}
+
+#imgLogo{
+
+    width: 150px;
+
+}
+
+#TituloHome{
+
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+span.Rojo{
+
+    color: rgb(201, 56, 56);
+    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-color: white;
+
+}
+
+span.Verde{
+
+    color:rgb(41, 99, 41);
+    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-color: white;
+
+}
+
+span.Blanco{
+
+    color: rgb(226, 226, 226);
+    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-color: rgb(41, 99, 41);
+
+}
+
+#imagen1BannerIzq{
+
+    width: 50px;
+    height: 50px;
+    float: left;
+
+}
+
+#imagen2BannerDer{
+
+    width: 50px;
+    height: 50px;
+    float: right;
+}
+
