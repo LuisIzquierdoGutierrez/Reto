@@ -6,7 +6,7 @@
 -Diego Rodríguez Rubio  
 -Saúl García Girón
 [Planner](https://tasks.office.com/educantabria.es/es-es/home/planner/#/plantaskboard?groupid=3fbb2604-a253-49a6-9c33-c0a1afe976e4&planid=0ww7mkzmjkot0iieuxxuqpyah7gg)
-![](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+![Icono GitHub](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
  
 
 Miguel Gutiérrez Caso 
@@ -45,10 +45,21 @@ se mantiene actualizado para un seguimiento transparente del proceso.
 La inclusión de la posibilidad de añadir comentarios sobre la realización de las actividades y la gestión de fotografías permite una
 documentación exhaustiva de cada evento, contribuyendo así a una evaluación y mejora continua de las actividades ofrecidas por el centro.
 ##### 1.2  Imagen E/R  
-![Descripción de la imagen](D:\Usuarios\dam106\Desktop\Diagrama E-R.png)
+![Diagrama Entidad-Relación](https://github.com/LuisIzquierdoGutierrez/Reto/blob/1ee44ecac49f90356dc7215e917dd6382569d8ec/Diagrama%20E-R.png)
 
 
-![GNU](/Usuarios/dam106/Documents/diagrama entidad relacion.png)
+
+
+
+
+
+
+
+
+
+
+
+
 ##### 1.3  Diagrama Relacional      
 ##### 1.4  Importación SQL 
 #### 2. Pagina web:         
