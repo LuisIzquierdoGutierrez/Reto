@@ -1,15 +1,15 @@
 # ***Reto: DamEquipo4***  
 
--Adrián de Diego Fernández  
--Luis Izquierdo Gutierrez 
--Naiara Martínez Odriozola 
--Diego Rodríguez Rubio  
--Saúl García Girón
-[Planner](https://tasks.office.com/educantabria.es/es-es/home/planner/#/plantaskboard?groupid=3fbb2604-a253-49a6-9c33-c0a1afe976e4&planid=0ww7mkzmjkot0iieuxxuqpyah7gg)
-![Icono GitHub](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
- 
 
-Miguel Gutiérrez Caso 
+[](https://tasks.office.com/educantabria.es/es-es/home/planner/#/plantaskboard?groupid=3fbb2604-a253-49a6-9c33-c0a1afe976e4&planid=0ww7mkzmjkot0iieuxxuqpyah7gg)
+![Icono GitHub](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+#### Integrantes:
+-Adrián de Diego Fernández      
+-Luis Izquierdo Gutierrez     
+-Naiara Martínez Odriozola   
+-Diego Rodríguez Rubio     
+-Saúl García Girón    
+-Miguel Gutiérrez Caso 
 
 
 ## ***Índice***
@@ -27,7 +27,7 @@ Miguel Gutiérrez Caso
     3.2  Clases usadas en JavaDoc  
     3.3  Explicación del código  
 #### 4. Implementación y Despliegue:  
-    4.1  Tecnologías usadas para la implementación  
+    4.1  Tecnologías usadas para la implementación (Tecnologías y caracteríticas principales usadas en tabla)
 
 #### 1. Base de Datos:
 ##### 1.1  Descripción 
@@ -47,19 +47,6 @@ documentación exhaustiva de cada evento, contribuyendo así a una evaluación y
 ##### 1.2  Imagen E/R  
 ![Diagrama Entidad-Relación](https://github.com/LuisIzquierdoGutierrez/Reto/blob/1ee44ecac49f90356dc7215e917dd6382569d8ec/Diagrama%20E-R.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ##### 1.3  Diagrama Relacional      
 ##### 1.4  Importación SQL 
 #### 2. Pagina web:         
@@ -71,4 +58,13 @@ documentación exhaustiva de cada evento, contribuyendo así a una evaluación y
 ##### 3.2  Clases usadas en JavaDoc  
 ##### 3.3  Explicación del código 
 #### 4. Implementación y Despliegue:  
-##### 4.1  Tecnologías usadas para la implementación  
+##### 4.1  Tecnologías usadas para la implementación (Tecnologías y caracteríticas principales usadas en tabla)
+| Modulos  | Descripción |
+| ---------- | ---------- |
+|Programación | Desarrollo entorno servidor  |
+| Entornos de desarrollo| Desarrollo entorno cliente |
+|Programación | Desarrollo entorno servidor  |
+|Programación | Desarrollo entorno servidor  |
+|Programación | Desarrollo entorno servidor  |
+|Programación | Desarrollo entorno servidor  |
+
