@@ -1,22 +1,40 @@
 header{
-    background-image: url(_IMG/BackgroundBanner);
-    width: auto;
-    height: 300px;
+
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    background-image: url(../_IMG/BackgroundBanner.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+
+    width:100%;
+    overflow:hidden;
+
+    z-index: 1;
+    position: relative;
 }
 
 #MarcoNav{
 
     background-color: white;
-    height: 50px;
+    height: 190px;
     border-radius: 20px;
-    border: 8px;
+    border: 5px;
+    border-style: solid;
     border-color: rgb(223, 86, 86);
+    padding-right: 35px;
+
 }
 
-#MarcoNav.ul{
-
+ul{
+    
     display: flex;
     align-items: center;
+    list-style-type: none;
 
 }
 
@@ -26,49 +44,132 @@ header{
 
 }
 
+#InicioBanner{
+
+    margin: 10px;
+    background-color: #df6262;
+    background-size: 30px;
+    color: white;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: bolder;
+
+}
+
+.menúVerde{
+
+    background-color: #5c955c;
+    padding: 12px;
+    color: white;
+    font-size: 20px;
+    padding-left: 20px;
+    font-weight: bolder;
+
+
+}
+
+#imgSeparadorNav{
+
+    width: 105px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.menuInicioRegistro{
+
+    background-color: #b9b9b9;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 #TituloHome{
 
     text-align: center;
     margin-top: 20px;
-
+    justify-content: center;
+    justify-items: center;
 }
 
-span.Rojo{
+Span.Rojo{
 
     color: rgb(201, 56, 56);
-    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
+    font-size: 75px;
+    font-weight: bold;
 
 }
 
-span.Verde{
+Span.Verde{
 
     color:rgb(41, 99, 41);
-    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
+    font-size: 75px;
+    font-weight: bold;
 
 }
 
-span.Blanco{
+Span.Blanco{
 
     color: rgb(226, 226, 226);
-    -webkit-text-stroke-width: 8px;
-    -webkit-text-stroke-color: rgb(41, 99, 41);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(24, 24, 24);
+    font-size: 60px;
+    font-weight: bold;
 
 }
 
-#imagen1BannerIzq{
+Span.Rojo2{
 
-    width: 50px;
-    height: 50px;
-    float: left;
+    color: rgb(201, 56, 56);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(24, 24, 24);
+    font-size: 60px;
+    font-weight: bold;
 
 }
 
-#imagen2BannerDer{
+Span.Verde2{
 
-    width: 50px;
-    height: 50px;
-    float: right;
+    color:rgb(65, 131, 65);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(24, 24, 24);
+    font-size: 60px;
+    font-weight: bold;
+
+}
+
+#InicioBanner,.menúVerde,.menuInicioRegistro:hover{
+
+    cursor: pointer;
+
+}
+
+#imgIzqBanner, #imgDerBanner, #imgBannerTransporte{
+    position: absolute;
+    width: 500px;
+    z-index: 2;
+    top: 165px;
+}
+
+#imgBannerTransporte{
+
+    width: 115px;
+    left: 400px;
+    top: 172px;
+}
+#imgDerBanner{
+
+    right: 5px;
+    top: 24px;
 }
 
