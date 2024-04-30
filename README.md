@@ -1,6 +1,36 @@
-# ***Reto: DamEquipo4***
+# ***Reto: DamEquipo4***  
 
-Resumen de la Base de Datos:
+-Adrián de Diego Fernández  
+-Luis Izquierdo Gutierrez 
+-Naiara Martínez Odriozola 
+-Diego Rodríguez Rubio  
+-Saúl García Girón
+[Planner](https://tasks.office.com/educantabria.es/es-es/home/planner/#/plantaskboard?groupid=3fbb2604-a253-49a6-9c33-c0a1afe976e4&planid=0ww7mkzmjkot0iieuxxuqpyah7gg)
+![](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+ 
+
+Miguel Gutiérrez Caso 
+
+
+## ***Índice***
+#### 1. Base de Datos:
+    1.1  Descripción
+    1.2  Imagen E/R          
+    1.3  Diagrama Relacional      
+    1.4  Importación SQL        
+#### 2. Pagina web:         
+    2.1  Estructura de la página web   
+    2.2  Tipos de estilos  
+    2.3  Contenidos de la web  
+#### 3. Java:  
+    3.1  Diagrama de clases  
+    3.2  Clases usadas en JavaDoc  
+    3.3  Explicación del código  
+#### 4. Implementación y Despliegue:  
+    4.1  Tecnologías usadas para la implementación  
+
+#### 1. Base de Datos:
+##### 1.1  Descripción 
 El diseño de la base de datos para la gestión de actividades complementarias y extraescolares en el IES Miguel Herrero
 es fundamental para asegurar una administración eficiente y organizada.
 
@@ -14,7 +44,20 @@ se mantiene actualizado para un seguimiento transparente del proceso.
 
 La inclusión de la posibilidad de añadir comentarios sobre la realización de las actividades y la gestión de fotografías permite una
 documentación exhaustiva de cada evento, contribuyendo así a una evaluación y mejora continua de las actividades ofrecidas por el centro.
+##### 1.2  Imagen E/R  
+![Descripción de la imagen](D:\Usuarios\dam106\Desktop\Diagrama E-R.png)
 
-En resumen, el diseño de esta base de datos proporciona una estructura sólida y completa para la gestión eficiente de las actividades
-complementarias y extraescolares, facilitando tanto la organización interna del centro como la comunicación con los profesores y la
-comunidad educativa en general.
+
+![GNU](/Usuarios/dam106/Documents/diagrama entidad relacion.png)
+##### 1.3  Diagrama Relacional      
+##### 1.4  Importación SQL 
+#### 2. Pagina web:         
+##### 2.1  Estructura de la página web   
+##### 2.2  Tipos de estilos  
+##### 2.3  Contenidos de la web  
+#### 3. Java:  
+##### 3.1  Diagrama de clases  
+##### 3.2  Clases usadas en JavaDoc  
+##### 3.3  Explicación del código 
+#### 4. Implementación y Despliegue:  
+##### 4.1  Tecnologías usadas para la implementación  
