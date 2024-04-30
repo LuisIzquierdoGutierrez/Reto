@@ -55,6 +55,9 @@ documentación exhaustiva de cada evento, contribuyendo así a una evaluación y
 ##### 2.3  Contenidos de la web  
 #### 3. Java:  
 ##### 3.1  Diagrama de clases  
+
+![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/152623929/cf0a5c4f-eaa8-41bf-a6a0-ff66f32c8e15)
+
 ##### 3.2  Clases usadas en JavaDoc  
 ##### 3.3  Explicación del código 
 #### 4. Implementación y Despliegue:  
