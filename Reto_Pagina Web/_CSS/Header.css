@@ -173,3 +173,21 @@ Span.Verde2{
     top: 24px;
 }
 
+#InicioBanner:hover{
+
+    background-color: #dd9191;
+    
+    transform:scale(1.1);
+}
+
+.menúVerde:hover{
+
+    background-color: #8cb48c;
+    transform:scale(1.1);
+}
+
+.menuInicioRegistro:hover{
+
+    background-color: #dddddd;
+    transform:scale(1.1);
+}
