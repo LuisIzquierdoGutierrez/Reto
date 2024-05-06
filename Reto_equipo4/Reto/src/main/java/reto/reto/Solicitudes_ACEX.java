@@ -6,6 +6,7 @@ package reto.reto;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  *
@@ -13,37 +14,49 @@ import java.time.LocalDateTime;
  */
 public class Solicitudes_ACEX {
     private int idSolicitudes;
+    private int idSolicitante;
     private TipoActividad tipo;
     private boolean prevision;
     private boolean alojamiento;
     private String titulo;
-    private LocalDateTime horaInicio;
-    private LocalDateTime horaFin;
+    private LocalTime horaInicio;
+    private LocalTime horaFin;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private boolean transporte;
     private String comentario_estado;
-    private String comentario_alojamiento;
+    // private String comentario_alojamiento; implementar mas adelante
     private String comentario_adi;
+    private Estado estado;
 
-    public Solicitudes_ACEX(int idSolicitudes,TipoActividad tipo, boolean prevision, boolean alojamiento, String titulo, LocalDateTime horaInicio, LocalDateTime horaFin, LocalDate fechaInicio, LocalDate fechaFin, boolean transporte, String comentario_estado, String comentario_alojamiento, String comentario_adi) {
+    
+    // añadir  String comentario_alojamiento, mas adelante si es necesario
+    public Solicitudes_ACEX(int idSolicitudes,int idSolicitante,TipoActividad tipo, boolean prevision, boolean alojamiento, String titulo, LocalTime horaInicio, LocalTime horaFin,LocalDate fechaInicio,LocalDate fechaFin, boolean transporte, String comentario_estado, String comentario_adi,Estado estado) {
         this.idSolicitudes=idSolicitudes;
+        this.idSolicitante = idSolicitante;
         this.tipo = tipo;
         this.prevision = prevision;
         this.alojamiento = alojamiento;
         this.titulo = titulo;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
         this.transporte = transporte;
         this.comentario_estado = comentario_estado;
-        this.comentario_alojamiento = comentario_alojamiento;
+       // this.comentario_alojamiento = comentario_alojamiento;
         this.comentario_adi = comentario_adi;
+        this.estado = estado;
     }
 
     public int getIdSolicitudes() {
         return idSolicitudes;
+    }
+
+    public int getIdSolicitante() {
+        return idSolicitante;
+    }
+
+    public void setIdSolicitante(int idSolicitante) {
+        this.idSolicitante = idSolicitante;
     }
 
     public void setIdSolicitudes(int idSolicitudes) {
@@ -83,19 +96,19 @@ public class Solicitudes_ACEX {
         this.titulo = titulo;
     }
 
-    public LocalDateTime getHoraInicio() {
+    public LocalTime getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalDateTime horaInicio) {
+    public void setHoraInicio(LocalTime horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalDateTime getHoraFin() {
+    public LocalTime getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(LocalDateTime horaFin) {
+    public void setHoraFin(LocalTime horaFin) {
         this.horaFin = horaFin;
     }
 
@@ -115,6 +128,7 @@ public class Solicitudes_ACEX {
         this.fechaFin = fechaFin;
     }
 
+    
     public boolean isTransporte() {
         return transporte;
     }
@@ -130,14 +144,14 @@ public class Solicitudes_ACEX {
     public void setComentario_estado(String comentario_estado) {
         this.comentario_estado = comentario_estado;
     }
-
-    public String getComentario_alojamiento() {
-        return comentario_alojamiento;
-    }
-
-    public void setComentario_alojamiento(String comentario_alojamiento) {
-        this.comentario_alojamiento = comentario_alojamiento;
-    }
+//
+//    public String getComentario_alojamiento() {
+//        return comentario_alojamiento;
+//    }
+//
+//    public void setComentario_alojamiento(String comentario_alojamiento) {
+//        this.comentario_alojamiento = comentario_alojamiento;
+//    }
 
     public String getComentario_adi() {
         return comentario_adi;
@@ -145,6 +159,14 @@ public class Solicitudes_ACEX {
 
     public void setComentario_adi(String comentario_adi) {
         this.comentario_adi = comentario_adi;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
     
 }
