@@ -27,7 +27,7 @@
     3.2  Clases usadas en JavaDoc  
     3.3  Explicación del código  
 #### 4. Implementación y Despliegue:  
-    4.1  Tecnologías usadas para la implementación (Tecnologías y caracteríticas principales usadas en tabla)
+    4.1  Tecnologías usadas para la implementación (Tecnologías y características principales usadas en tabla)
 
 #### 1. Base de Datos:
 ##### 1.1  Descripción 
@@ -35,7 +35,7 @@ El diseño de la base de datos para la gestión de actividades complementarias y
 es fundamental para asegurar una administración eficiente y organizada.
 
 Se establece un esquema que abarca tanto la información sobre los profesores del centro como los detalles de las actividades
-solicitadas y programadas. La estructura contempla aspectos como la identificación única de cada profesor a través de su correo
+solicitadas y aprobadas. La estructura contempla aspectos como la identificación única de cada profesor a través de su correo
 institucional, así como su asociación con un departamento específico y un perfil de acceso determinado.
 
 Además, se registra con detalle cada solicitud de actividad, incluyendo información relevante como el título, tipo, fechas, horarios,
@@ -44,10 +44,13 @@ se mantiene actualizado para un seguimiento transparente del proceso.
 
 La inclusión de la posibilidad de añadir comentarios sobre la realización de las actividades y la gestión de fotografías permite una
 documentación exhaustiva de cada evento, contribuyendo así a una evaluación y mejora continua de las actividades ofrecidas por el centro.
-##### 1.2  Imagen E/R  
-![Diagrama Entidad-Relación](https://github.com/LuisIzquierdoGutierrez/Reto/blob/1ee44ecac49f90356dc7215e917dd6382569d8ec/Diagrama%20E-R.png)
 
-##### 1.3  Diagrama Relacional      
+##### 1.2  Imagen E/R  
+![Diagrama Entidad-Relacion](https://github.com/LuisIzquierdoGutierrez/Reto/assets/152623929/56b60a16-4003-44d3-8243-540ea2550623)
+
+En este diagrama se representan las relaciones de todas aquellas entidades que son necesarias para el funcionamiento y organización de la aplicación de ACEX.
+##### 1.3  Diagrama Relacional 
+
 ##### 1.4  Importación SQL 
 #### 2. Pagina web:         
 ##### 2.1  Estructura de la página web   
@@ -56,13 +59,13 @@ documentación exhaustiva de cada evento, contribuyendo así a una evaluación y
 #### 3. Java:  
 ##### 3.1  Diagrama de clases  
 
-![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/152623929/cf0a5c4f-eaa8-41bf-a6a0-ff66f32c8e15)
+![Diagrama de Clases](https://github.com/LuisIzquierdoGutierrez/Reto/assets/152623929/cf0a5c4f-eaa8-41bf-a6a0-ff66f32c8e15)
 
 ##### 3.2  Clases usadas en JavaDoc  
 ##### 3.3  Explicación del código 
 #### 4. Implementación y Despliegue:  
 ##### 4.1  Tecnologías usadas para la implementación (Tecnologías y caracteríticas principales usadas en tabla)
-| Modulos  | Descripción |
+| Módulos  | Descripción |
 | ---------- | ---------- |
 |Programación | Desarrollo entorno servidor  |
 | Entornos de desarrollo| Desarrollo entorno cliente |
