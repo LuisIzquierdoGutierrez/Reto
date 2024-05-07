@@ -1,0 +1,146 @@
+#Section1{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#TamañoIconoDecorado{
+
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+    top: 450px;
+    left:730px;
+
+    filter: drop-shadow(5px 1px 6px black);
+}
+
+tr{
+
+    text-align: center;
+    width: 200px;
+}
+#InfoGeneral_LadoIzquierdo{
+
+    display: flex;
+
+    width: 50%;
+    height: 855px;
+    
+    border-right-color: black;
+    border-right: 2px;
+    border-right-style:double;
+
+    margin-right: 100px;
+}
+
+#titulo1Verde{
+
+    background-color:rgb(41, 99, 41);
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    margin-left: 100px;
+
+}
+
+
+table{
+
+    width: 500px;   
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-right: 500px;
+}
+
+.celdaIMG{
+
+    width: 50px;
+}
+
+.tamañoImagen{
+
+    width: 250px;
+    padding-right: 40px;
+    padding-left: 40px;
+    transition: all 500ms ease-out;
+}
+
+.tamañoImagen.td{
+
+    width: 20px;
+    
+}
+
+.textoPrimeraParte{
+
+    font-size: 20px;
+    text-align: center;
+}
+
+.tamañoImagen:hover{
+
+    transform:scale(1.1);
+    filter: drop-shadow(5px 1px 6px black);
+    transition: all 500ms ease-out;
+}
+
+#InfoGeneral_LadoDerecho{
+
+    display: flex;
+
+
+    width: 50%;
+    height: 890px;
+    flex-grow: 1;
+    margin-left: 100px;
+
+
+}
+
+.tamañoImagen2{
+
+    width: 250px;
+    padding-right: 40px;
+    padding-left: 40px;
+    transition: all 500ms ease-out;
+}
+
+.tamañoImagen2:hover{
+
+    transform:scale(1.1);
+    transition: all 500ms ease-out;
+}
+
+#TamañoIconoDecorado2{
+
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+    top: 1230px;
+    right: 150px;
+
+    filter: drop-shadow(5px 1px 6px black);
+}
+
+#titulo2Rojo{
+
+    background-color: #df6262;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+    
+    margin-left: 1040px;
+}
