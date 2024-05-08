@@ -1,0 +1,48 @@
+footer{
+
+    background-color: rgb(206, 183, 154);
+}
+
+
+#imgGobierno{
+
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.imgFooter{
+
+    width: 20px;
+}
+
+#ContenedorFlexFooter{
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#NavegaciónFooter{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+
+#NavegaciónFooter,
+#ImagenesContactoFooter,
+#ContactoFooter{
+
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+

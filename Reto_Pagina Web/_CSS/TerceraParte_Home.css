@@ -1,4 +1,69 @@
 #Section3{
 
     margin-top: 29px;
+
+}
+
+.DecoracionParte3{
+
+    position: absolute;
+    width: 150px;
+    z-index: 3;
+
+    filter: drop-shadow(5px 1px 6px black);
+    transition: all 500ms ease-out;
+
+}
+
+.DecoracionParte3:hover{
+
+    transform:scale(1.1);
+    transition: all 500ms ease-out;
+}
+
+#DecoracionParte3_1{
+
+    left: 275px;
+    top: 2628px;
+    width: 110px;
+
+
+}
+
+#DecoracionParte3_2{
+
+    left: 275px;
+    top: 2840px;
+    width: 130px;
+
+}
+
+#DecoracionParte3_3{
+
+    left: 275px;
+    top: 3070px;
+    width: 110px;
+
+}
+
+#tituloSection3{
+
+    background-color:rgb(73, 73, 73);
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+
+    
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    padding-top:30px;
+
+    margin-left: 500px;
+    
+    
 }

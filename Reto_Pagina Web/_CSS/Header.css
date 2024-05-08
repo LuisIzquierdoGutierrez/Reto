@@ -1,3 +1,9 @@
+html{
+
+    width: 100%;
+    zoom:100%;
+}
+
 header{
 
     height: 450px;
@@ -28,6 +34,7 @@ header{
     border-color: rgb(223, 86, 86);
     padding-right: 35px;
 
+    box-shadow: 10px 5px 15px black;
 }
 
 ul{
@@ -56,7 +63,7 @@ ul{
     padding-left: 30px;
     padding-right: 30px;
     font-weight: bolder;
-
+    transition: all 500ms ease-out;
 }
 
 .menúVerde{
@@ -67,7 +74,7 @@ ul{
     font-size: 20px;
     padding-left: 20px;
     font-weight: bolder;
-
+    transition: all 500ms ease-out;
 
 }
 
@@ -88,6 +95,7 @@ ul{
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
+    transition: all 500ms ease-out;
 }
 
 #TituloHome{
@@ -106,6 +114,8 @@ Span.Rojo{
     font-size: 75px;
     font-weight: bold;
 
+    text-shadow: 7px 1px 6px black;
+
 }
 
 Span.Verde{
@@ -116,6 +126,7 @@ Span.Verde{
     font-size: 75px;
     font-weight: bold;
 
+    text-shadow: 7px 1px 6px black;
 }
 
 Span.Blanco{
@@ -126,6 +137,7 @@ Span.Blanco{
     font-size: 60px;
     font-weight: bold;
 
+    text-shadow: 5px 1px 8px black;
 }
 
 Span.Rojo2{
@@ -136,6 +148,7 @@ Span.Rojo2{
     font-size: 60px;
     font-weight: bold;
 
+    text-shadow: 5px 1px 8px black;
 }
 
 Span.Verde2{
@@ -146,12 +159,14 @@ Span.Verde2{
     font-size: 60px;
     font-weight: bold;
 
+    text-shadow: 5px 1px 8px black;
+
 }
 
 #InicioBanner,.menúVerde,.menuInicioRegistro:hover{
 
     cursor: pointer;
-
+    transition: all 500ms ease-out;
 }
 
 #imgIzqBanner, #imgDerBanner, #imgBannerTransporte{
@@ -159,6 +174,9 @@ Span.Verde2{
     width: 500px;
     z-index: 2;
     top: 165px;
+
+    filter: drop-shadow(5px 1px 6px black);
+
 }
 
 #imgBannerTransporte{
@@ -190,4 +208,5 @@ Span.Verde2{
 
     background-color: #dddddd;
     transform:scale(1.1);
+    
 }
