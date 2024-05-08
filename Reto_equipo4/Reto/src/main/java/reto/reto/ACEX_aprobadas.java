@@ -13,69 +13,27 @@ import java.time.LocalTime;
  * @author DAM103
  */
 public class ACEX_aprobadas {
-    private int idActividad;
-    private TipoActividad tipo;
-    private boolean prevision;
-    private boolean alojamiento;
+
+    private int id_aprobada;
     private String titulo;
-    private String empresa_transporte;
-    private double precio;
-    private LocalTime horaInicio;
-    private LocalTime horaFin;
-    private LocalDate fechaInicio;
-    private LocalDate fechaFin;
+    private String comentario_actividad;
+    private TipoActividad tipo;
+    private boolean programada;
+    private TipoEstado estado;
     private String comentario_estado;
-    private String comentario_alojamiento;
-    private String comentario_adi;
+    private boolean transporte;
+    private boolean alojamiento;
+    private LocalTime hora_inicio;
+    private LocalTime hora_fin;
+    private LocalDate fecha_inicio;
+    private LocalDate fecha_fin;
 
-    public ACEX_aprobadas(int idActividad,TipoActividad tipo, boolean prevision, boolean alojamiento, String titulo, String empresa_transporte, double precio, LocalTime horaInicio, LocalTime horaFin, LocalDate fechaInicio, LocalDate fechaFin, String comentario_estado, String comentario_alojamiento, String comentario_adi) {
-        this.idActividad=idActividad;
-        this.tipo = tipo;
-        this.prevision = prevision;
-        this.alojamiento = alojamiento;
-        this.titulo = titulo;
-        this.empresa_transporte = empresa_transporte;
-        this.precio = precio;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.comentario_estado = comentario_estado;
-        this.comentario_alojamiento = comentario_alojamiento;
-        this.comentario_adi = comentario_adi;
+    public int getId_aprobada() {
+        return id_aprobada;
     }
 
-    public int getIdActividad() {
-        return idActividad;
-    }
-
-    public void setIdActividad(int idActividad) {
-        this.idActividad = idActividad;
-    }
-    
-
-    public TipoActividad getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoActividad tipo) {
-        this.tipo = tipo;
-    }
-
-    public boolean isPrevision() {
-        return prevision;
-    }
-
-    public void setPrevision(boolean prevision) {
-        this.prevision = prevision;
-    }
-
-    public boolean isAlojamiento() {
-        return alojamiento;
-    }
-
-    public void setAlojamiento(boolean alojamiento) {
-        this.alojamiento = alojamiento;
+    public void setId_aprobada(int id_aprobada) {
+        this.id_aprobada = id_aprobada;
     }
 
     public String getTitulo() {
@@ -86,52 +44,36 @@ public class ACEX_aprobadas {
         this.titulo = titulo;
     }
 
-    public String getEmpresa_transporte() {
-        return empresa_transporte;
+    public String getComentario_actividad() {
+        return comentario_actividad;
     }
 
-    public void setEmpresa_transporte(String empresa_transporte) {
-        this.empresa_transporte = empresa_transporte;
+    public void setComentario_actividad(String comentario_actividad) {
+        this.comentario_actividad = comentario_actividad;
     }
 
-    public double getPrecio() {
-        return precio;
+    public TipoActividad getTipo() {
+        return tipo;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setTipo(TipoActividad tipo) {
+        this.tipo = tipo;
     }
 
-    public LocalTime getHoraInicio() {
-        return horaInicio;
+    public boolean isProgramada() {
+        return programada;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
-        this.horaInicio = horaInicio;
+    public void setProgramada(boolean programada) {
+        this.programada = programada;
     }
 
-    public LocalTime getHoraFin() {
-        return horaFin;
+    public TipoEstado getEstado() {
+        return estado;
     }
 
-    public void setHoraFin(LocalTime horaFin) {
-        this.horaFin = horaFin;
-    }
-
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public LocalDate getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setEstado(TipoEstado estado) {
+        this.estado = estado;
     }
 
     public String getComentario_estado() {
@@ -142,26 +84,68 @@ public class ACEX_aprobadas {
         this.comentario_estado = comentario_estado;
     }
 
-    public String getComentario_alojamiento() {
-        return comentario_alojamiento;
+    public boolean isTransporte() {
+        return transporte;
     }
 
-    public void setComentario_alojamiento(String comentario_alojamiento) {
-        this.comentario_alojamiento = comentario_alojamiento;
+    public void setTransporte(boolean transporte) {
+        this.transporte = transporte;
     }
 
-    public String getComentario_adi() {
-        return comentario_adi;
+    public boolean isAlojamiento() {
+        return alojamiento;
     }
 
-    public void setComentario_adi(String comentario_adi) {
-        this.comentario_adi = comentario_adi;
+    public void setAlojamiento(boolean alojamiento) {
+        this.alojamiento = alojamiento;
     }
 
-    @Override
-    public String toString() {
-        return "ACEX_aprobadas{" + "tipo=" + tipo + ", prevision=" + prevision + ", alojamiento=" + alojamiento + ", titulo=" + titulo + ", empresa_transporte=" + empresa_transporte + ", precio=" + precio + ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", comentario_estado=" + comentario_estado + ", comentario_alojamiento=" + comentario_alojamiento + ", comentario_adi=" + comentario_adi + '}';
+    public LocalTime getHora_inicio() {
+        return hora_inicio;
     }
-    
-    
+
+    public void setHora_inicio(LocalTime hora_inicio) {
+        this.hora_inicio = hora_inicio;
+    }
+
+    public LocalTime getHora_fin() {
+        return hora_fin;
+    }
+
+    public void setHora_fin(LocalTime hora_fin) {
+        this.hora_fin = hora_fin;
+    }
+
+    public LocalDate getFecha_inicio() {
+        return fecha_inicio;
+    }
+
+    public void setFecha_inicio(LocalDate fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
+    }
+
+    public LocalDate getFecha_fin() {
+        return fecha_fin;
+    }
+
+    public void setFecha_fin(LocalDate fecha_fin) {
+        this.fecha_fin = fecha_fin;
+    }
+
+    public ACEX_aprobadas(int id_aprobada, String titulo, String comentario_actividad, TipoActividad tipo, boolean programada, TipoEstado estado, String comentario_estado, boolean transporte, boolean alojamiento, LocalTime hora_inicio, LocalTime hora_fin, LocalDate fecha_inicio, LocalDate fecha_fin) {
+        this.id_aprobada = id_aprobada;
+        this.titulo = titulo;
+        this.comentario_actividad = comentario_actividad;
+        this.tipo = tipo;
+        this.programada = programada;
+        this.estado = estado;
+        this.comentario_estado = comentario_estado;
+        this.transporte = transporte;
+        this.alojamiento = alojamiento;
+        this.hora_inicio = hora_inicio;
+        this.hora_fin = hora_fin;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
+    }
+
 }

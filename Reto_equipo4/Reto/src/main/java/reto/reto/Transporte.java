@@ -4,25 +4,35 @@
  */
 package reto.reto;
 
+import java.util.List;
+
 /**
  *
  * @author DAM103
  */
 public class Transporte {
    private int idTransporte;
-   private String tipoTransporte;
+   private List<Tipo_transporte> tipo;
 
-    public Transporte(int idTransporte,String tipoTransporte) {
-        this.idTransporte=idTransporte;
-        this.tipoTransporte = tipoTransporte;
+    public Transporte(int idTransporte, List<Tipo_transporte> tipo) {
+        this.idTransporte = idTransporte;
+        this.tipo = tipo;
     }
 
-    public String getTipoTransporte() {
-        return tipoTransporte;
+    public int getIdTransporte() {
+        return idTransporte;
     }
 
-    public void setTipoTransporte(String tipoTransporte) {
-        this.tipoTransporte = tipoTransporte;
+    public void setIdTransporte(int idTransporte) {
+        this.idTransporte = idTransporte;
+    }
+
+    public List<Tipo_transporte> getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(List<Tipo_transporte> tipo) {
+        this.tipo = tipo;
     }
 
    

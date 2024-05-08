@@ -9,33 +9,35 @@ package reto.reto;
  * @author DAM103
  */
 public class Grupo extends Cursos {
-    private int idGrupo;
-    private String curso;
+    private int id_grupo;
+    private String cod_grupo;
     private int numAlumnos;
     private boolean activo;
+    private String descripcion_grupo;
 
-    public Grupo( int idGrupo,String curso, int numAlumnos,int idCursos, boolean activo, boolean cursoActivo, String codigo, String descripcion, int num_alumnos, TipoEtapa etapa) {
-        super(idCursos,cursoActivo, codigo, descripcion, num_alumnos, etapa);
-        this.idGrupo=idGrupo;
-        this.curso = curso;
+    public Grupo(int id_grupo, String cod_grupo, int numAlumnos, boolean activo, String descripcion_grupo, int id_curso, String codigo, TipoEtapa etapa, int num_alumnos, boolean cursoActivo, String descripcion) {
+        super(id_curso, codigo, etapa, num_alumnos, cursoActivo, descripcion);
+        this.id_grupo = id_grupo;
+        this.cod_grupo = cod_grupo;
         this.numAlumnos = numAlumnos;
         this.activo = activo;
+        this.descripcion_grupo = descripcion_grupo;
     }
 
-    public int getIdGrupo() {
-        return idGrupo;
+    public int getId_grupo() {
+        return id_grupo;
     }
 
-    public void setIdGrupo(int idGrupo) {
-        this.idGrupo = idGrupo;
+    public void setId_grupo(int id_grupo) {
+        this.id_grupo = id_grupo;
     }
 
-    public String getCurso() {
-        return curso;
+    public String getCod_grupo() {
+        return cod_grupo;
     }
 
-    public void setCurso(String curso) {
-        this.curso = curso;
+    public void setCod_grupo(String cod_grupo) {
+        this.cod_grupo = cod_grupo;
     }
 
     public int getNumAlumnos() {
@@ -54,6 +56,18 @@ public class Grupo extends Cursos {
         this.activo = activo;
     }
 
+    public String getDescripcion_grupo() {
+        return descripcion_grupo;
+    }
+
+    public void setDescripcion_grupo(String descripcion_grupo) {
+        this.descripcion_grupo = descripcion_grupo;
+    }
+
+   
+    
+
+   
    
 
  

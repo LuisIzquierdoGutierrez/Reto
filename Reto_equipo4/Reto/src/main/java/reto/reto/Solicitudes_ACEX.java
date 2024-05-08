@@ -13,79 +13,43 @@ import java.time.LocalTime;
  * @author DAM103
  */
 public class Solicitudes_ACEX {
-    private int idSolicitudes;
-    private int idSolicitante;
-    private TipoActividad tipo;
-    private boolean prevision;
-    private boolean alojamiento;
+  
+    private int id_solicitada;
     private String titulo;
-    private LocalTime horaInicio;
-    private LocalTime horaFin;
-    private LocalDate fechaInicio;
-    private LocalDate fechaFin;
-    private boolean transporte;
+    private String comentario_actividad;
+    private TipoActividad tipo;
+    private boolean programada;
+    private TipoEstado estado;
     private String comentario_estado;
-    // private String comentario_alojamiento; implementar mas adelante
-    private String comentario_adi;
-    private Estado estado;
+    private boolean transporte;
+    private boolean alojamiento;
+    private LocalTime hora_inicio;
+    private LocalTime hora_fin;
+    private LocalDate fecha_inicio;
+    private LocalDate fecha_fin;
 
-    
-    // añadir  String comentario_alojamiento, mas adelante si es necesario
-    public Solicitudes_ACEX(int idSolicitudes,int idSolicitante,TipoActividad tipo, boolean prevision, boolean alojamiento, String titulo, LocalTime horaInicio, LocalTime horaFin,LocalDate fechaInicio,LocalDate fechaFin, boolean transporte, String comentario_estado, String comentario_adi,Estado estado) {
-        this.idSolicitudes=idSolicitudes;
-        this.idSolicitante = idSolicitante;
-        this.tipo = tipo;
-        this.prevision = prevision;
-        this.alojamiento = alojamiento;
+    public Solicitudes_ACEX(int id_actividad, String titulo, String comentario_actividad, TipoActividad tipo, boolean programada, TipoEstado estado, String comentario_estado, boolean transporte, boolean alojamiento, LocalTime hora_inicio, LocalTime hora_fin, LocalDate fecha_inicio, LocalDate fecha_fin) {
+        this.id_solicitada = id_actividad;
         this.titulo = titulo;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
-        this.transporte = transporte;
-        this.comentario_estado = comentario_estado;
-       // this.comentario_alojamiento = comentario_alojamiento;
-        this.comentario_adi = comentario_adi;
-        this.estado = estado;
-    }
-
-    public int getIdSolicitudes() {
-        return idSolicitudes;
-    }
-
-    public int getIdSolicitante() {
-        return idSolicitante;
-    }
-
-    public void setIdSolicitante(int idSolicitante) {
-        this.idSolicitante = idSolicitante;
-    }
-
-    public void setIdSolicitudes(int idSolicitudes) {
-        this.idSolicitudes = idSolicitudes;
-    }
-    
-
-    public TipoActividad getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoActividad tipo) {
+        this.comentario_actividad = comentario_actividad;
         this.tipo = tipo;
-    }
-
-    public boolean isPrevision() {
-        return prevision;
-    }
-
-    public void setPrevision(boolean prevision) {
-        this.prevision = prevision;
-    }
-
-    public boolean isAlojamiento() {
-        return alojamiento;
-    }
-
-    public void setAlojamiento(boolean alojamiento) {
+        this.programada = programada;
+        this.estado = estado;
+        this.comentario_estado = comentario_estado;
+        this.transporte = transporte;
         this.alojamiento = alojamiento;
+        this.hora_inicio = hora_inicio;
+        this.hora_fin = hora_fin;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
+    }
+
+    public int getId_actividad() {
+        return id_solicitada;
+    }
+
+    public void setId_actividad(int id_actividad) {
+        this.id_solicitada = id_actividad;
     }
 
     public String getTitulo() {
@@ -96,45 +60,36 @@ public class Solicitudes_ACEX {
         this.titulo = titulo;
     }
 
-    public LocalTime getHoraInicio() {
-        return horaInicio;
+    public String getComentario_actividad() {
+        return comentario_actividad;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
-        this.horaInicio = horaInicio;
+    public void setComentario_actividad(String comentario_actividad) {
+        this.comentario_actividad = comentario_actividad;
     }
 
-    public LocalTime getHoraFin() {
-        return horaFin;
+    public TipoActividad getTipo() {
+        return tipo;
     }
 
-    public void setHoraFin(LocalTime horaFin) {
-        this.horaFin = horaFin;
+    public void setTipo(TipoActividad tipo) {
+        this.tipo = tipo;
     }
 
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
+    public boolean isProgramada() {
+        return programada;
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setProgramada(boolean programada) {
+        this.programada = programada;
     }
 
-    public LocalDate getFechaFin() {
-        return fechaFin;
+    public TipoEstado getEstado() {
+        return estado;
     }
 
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
-    }
-
-    
-    public boolean isTransporte() {
-        return transporte;
-    }
-
-    public void setTransporte(boolean transporte) {
-        this.transporte = transporte;
+    public void setEstado(TipoEstado estado) {
+        this.estado = estado;
     }
 
     public String getComentario_estado() {
@@ -144,29 +99,62 @@ public class Solicitudes_ACEX {
     public void setComentario_estado(String comentario_estado) {
         this.comentario_estado = comentario_estado;
     }
-//
-//    public String getComentario_alojamiento() {
-//        return comentario_alojamiento;
-//    }
-//
-//    public void setComentario_alojamiento(String comentario_alojamiento) {
-//        this.comentario_alojamiento = comentario_alojamiento;
-//    }
 
-    public String getComentario_adi() {
-        return comentario_adi;
+    public boolean isTransporte() {
+        return transporte;
     }
 
-    public void setComentario_adi(String comentario_adi) {
-        this.comentario_adi = comentario_adi;
+    public void setTransporte(boolean transporte) {
+        this.transporte = transporte;
     }
 
-    public Estado getEstado() {
-        return estado;
+    public boolean isAlojamiento() {
+        return alojamiento;
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
+    public void setAlojamiento(boolean alojamiento) {
+        this.alojamiento = alojamiento;
+    }
+
+    public LocalTime getHora_inicio() {
+        return hora_inicio;
+    }
+
+    public void setHora_inicio(LocalTime hora_inicio) {
+        this.hora_inicio = hora_inicio;
+    }
+
+    public LocalTime getHora_fin() {
+        return hora_fin;
+    }
+
+    public void setHora_fin(LocalTime hora_fin) {
+        this.hora_fin = hora_fin;
+    }
+
+    public LocalDate getFecha_inicio() {
+        return fecha_inicio;
+    }
+
+    public void setFecha_inicio(LocalDate fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
+    }
+
+    public LocalDate getFecha_fin() {
+        return fecha_fin;
+    }
+
+    public void setFecha_fin(LocalDate fecha_fin) {
+        this.fecha_fin = fecha_fin;
     }
     
+   
+   
+
+    
+   
+
+   
+
+   
 }

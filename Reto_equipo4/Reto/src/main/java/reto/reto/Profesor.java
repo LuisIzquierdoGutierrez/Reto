@@ -9,42 +9,41 @@ package reto.reto;
  * @author DAM103
  */
 public class Profesor extends Departamento {
-    private int idProfesor;
-    private String correo;
+    private int id_profesor;
+    private String DNI;
     private String nombreProfesor;
     private String apellidos;
-    private String DNI;
-    private boolean profesorActivo;
+    private String correo;
     private String password;
-    private TipoProfesor tipo;
+    private Perfil tipo;
+    private boolean profesorActivo;
 
-    public Profesor(int idProfesor,String correo, String nombreProfesor, String apellidos, String DNI, boolean profesorActivo, String password, TipoProfesor tipo,int idDepartamento, String nombre, String codigo) {
-        super(idDepartamento,nombre, codigo);
-        this.idProfesor=idProfesor;
-        this.correo = correo;
+    public Profesor(int id_profesor, String DNI, String nombreProfesor, String apellidos, String correo, String password, Perfil tipo, boolean profesorActivo, int idDepartamento, String nombre, String codigo) {
+        super(idDepartamento, nombre, codigo);
+        this.id_profesor = id_profesor;
+        this.DNI = DNI;
         this.nombreProfesor = nombreProfesor;
         this.apellidos = apellidos;
-        this.DNI = DNI;
-        this.profesorActivo = profesorActivo;
+        this.correo = correo;
         this.password = password;
         this.tipo = tipo;
+        this.profesorActivo = profesorActivo;
     }
 
-    public int getIdProfesor() {
-        return idProfesor;
+    public int getId_profesor() {
+        return id_profesor;
     }
 
-    public void setIdProfesor(int idProfesor) {
-        this.idProfesor = idProfesor;
-    }
-    
-
-    public String getCorreo() {
-        return correo;
+    public void setId_profesor(int id_profesor) {
+        this.id_profesor = id_profesor;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public String getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
     }
 
     public String getNombreProfesor() {
@@ -63,20 +62,12 @@ public class Profesor extends Departamento {
         this.apellidos = apellidos;
     }
 
-    public String getDNI() {
-        return DNI;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
-    }
-
-    public boolean isProfesorActivo() {
-        return profesorActivo;
-    }
-
-    public void setProfesorActivo(boolean profesorActivo) {
-        this.profesorActivo = profesorActivo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getPassword() {
@@ -87,14 +78,24 @@ public class Profesor extends Departamento {
         this.password = password;
     }
 
-    public TipoProfesor getTipo() {
+    public Perfil getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoProfesor tipo) {
+    public void setTipo(Perfil tipo) {
         this.tipo = tipo;
     }
 
+    public boolean isProfesorActivo() {
+        return profesorActivo;
+    }
+
+    public void setProfesorActivo(boolean profesorActivo) {
+        this.profesorActivo = profesorActivo;
+    }
+    
+
+   
     
 
    

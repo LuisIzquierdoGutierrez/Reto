@@ -10,13 +10,13 @@ package reto.reto;
  */
 public class Departamento {
     private int idDepartamento;
-    private String nombre;
     private String codigo;
+    private String nombre;
 
-    public Departamento(int idDepartamento,String nombre, String codigo) {
-        this.idDepartamento=idDepartamento;
-        this.nombre = nombre;
+    public Departamento(int idDepartamento, String codigo, String nombre) {
+        this.idDepartamento = idDepartamento;
         this.codigo = codigo;
+        this.nombre = nombre;
     }
 
     public int getIdDepartamento() {
@@ -27,6 +27,14 @@ public class Departamento {
         this.idDepartamento = idDepartamento;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -35,12 +43,6 @@ public class Departamento {
         this.nombre = nombre;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
+  
     
 }
