@@ -127,6 +127,6 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
     }
 
     private Solicitudes_ACEX crearSolicitud(ResultSet rs) throws SQLException {
-        return new Solicitudes_ACEX(rs.getInt("id"), rs.getInt("id_solicitante"), TipoActividad.valueOf(rs.getString("tipo")), rs.getBoolean("prevista"), rs.getBoolean("alojamiento"), rs.getString("titulo"), rs.getTime("hora_inicio").toLocalTime(), rs.getTime("hora_fin").toLocalTime(), rs.getDate("fecha_inicio").toLocalDate(), rs.getDate("fecha_fin").toLocalDate(), rs.getBoolean("transporte"), rs.getString("comentario_estado"), rs.getString("comentario_actividad"), Estado.valueOf(rs.getString("estado")));
+        return new Solicitudes_ACEX(rs.getInt("id"), rs.getInt("id_solicitante"), TipoActividad.valueOf(rs.getString("tipo")), rs.getBoolean("prevista"), rs.getBoolean("alojamiento"), rs.getString("titulo"), rs.getTime("hora_inicio").toLocalTime(), rs.getTime("hora_fin").toLocalTime(), rs.getDate("fecha_inicio").toLocalDate(), rs.getDate("fecha_fin").toLocalDate(), rs.getBoolean("transporte"), rs.getString("comentario_estado"), rs.getString("comentario_actividad"), TipoEstado.valueOf(rs.getString("estado")));
     }
 }
