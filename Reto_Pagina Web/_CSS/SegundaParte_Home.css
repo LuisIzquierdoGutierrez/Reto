@@ -1,0 +1,200 @@
+#Section2{
+
+    margin-top: 48px;
+    
+}
+
+#tituloSection2{
+
+    background-color:rgb(73, 73, 73);
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    padding-top:30px;
+
+    margin-left: 500px;
+    
+    
+}
+#ContenidoActividadesPendientes{
+
+	
+
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-top: 50px;
+
+    background-color: bisque;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 10px;
+    
+    border-image: linear-gradient(45deg, rgb(255, 90, 90), rgb(255, 231, 164),rgb(255, 148, 49)) 1;
+
+    padding-bottom: 50px;
+    
+}
+
+#ContenedorViajes{
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.ViajePendiente{
+
+    width: 200px;
+    height: 200px;
+
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+    transition: all 500ms ease-out;
+}
+
+#imagenes{
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#InfoViaje{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20px;
+   
+}
+
+.TituloViaje{
+
+    color: rgb(99, 172, 57);
+    font-size: 40px;
+    font-weight: bold;
+
+    
+}
+
+.DescripcionViaje{
+
+    font-size: 20px;
+    
+}
+
+#ListaMasViajes{
+
+    background-color:rgb(248, 114, 80);
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+
+    border-radius: 20px;
+
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    padding-top:30px;
+
+    margin-left: 500px;
+    transition: all 500ms ease-out;
+}
+
+#ListaMasViajes:hover{
+
+    background-color: rgb(255, 155, 130);
+    transform:scale(1.1);
+    cursor: pointer;
+    transition: all 500ms ease-out;
+}
+
+.ViajePendiente:hover{
+
+    filter: drop-shadow(5px 1px 6px black);
+    transform:scale(1.1);
+    transition: all 500ms ease-out;
+}
+
+.MasInformacionViaje{
+
+    font-weight: bold;
+    color: rgb(192, 83, 56);;
+}
+
+.MasInformacionViaje:hover{
+
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.DecoracionParte2{
+
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+
+    filter: drop-shadow(5px 1px 6px black);
+    transition: all 500ms ease-out;
+}
+
+#DecoracionParte2_1{
+
+    left: 275px;
+    top: 1620px;
+
+}
+
+#DecoracionParte2_2{
+
+    left: 275px;
+    top: 1873px;
+    width: 120px;
+
+}
+
+#DecoracionParte2_3{
+
+    left: 275px;
+    top: 2110px;
+}
+
+.DecoracionParte2:hover{
+
+    transform:scale(1.1);
+    transition: all 500ms ease-out;
+}
+
+#DecoracionSegundaParteGif_1{
+
+    left: 700px;
+    top: 1580px;
+    width: 90px;
+}
+
+#DecoracionSegundaParteGif_2{
+
+    left: 670px;
+    top: 1790px;
+}
+
+#DecoracionSegundaParteGif_3{
+
+    left: 740px;
+    top: 2015px;
+    width: 110px;
+}
