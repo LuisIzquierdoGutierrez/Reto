@@ -8,6 +8,6 @@ package reto.reto;
  *
  * @author DAM103
  */
-public enum TipoEtapa {
-  ESO,Bachillerato,FPGS,FPGM,FPB,FPCE  
+public enum TipoActividad {
+    EXTRAESCOLARES,COMPLEMENTARIAS
 }
