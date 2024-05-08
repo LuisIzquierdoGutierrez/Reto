@@ -53,8 +53,39 @@ En este diagrama se representan las relaciones de todas aquellas entidades que s
 
 ##### 1.4  Importación SQL 
 #### 2. Pagina web:         
-##### 2.1  Estructura de la página web   
+##### 2.1  Estructura de la página web
+
+El HTML es importante para dar la estructura a la página web, siendo lo principal para hacer antes de realizar el diseño en CSS. Es fundamental para
+establecer las cajas (Header,section,nav,div...etc) con sus atributos identificatorios (Class,id) para poder llamarlos posteriormente en CSS. Así,
+incluir en las cajas los elementos (Imagenes,textos...etc) que se quieran incluir en la página para su visualización sin diseño establecido. En
+el head se establece diferentes links a archivos css para tenerlo más organizado y fácil de encontrar el código en cuanto se deba modificar
+algún código.
+
+El header será un elemento único para cada HTML que se realice, es decir, aparecerá en cada página que se cree vinculada al home de las
+actividades complementarias y extraescolares del IES Miguel Herrero. Con su misma estructura y diseño. En esta contendrá el menú
+de navegación, donde se podrá ir a diferentes secciones como: actividades (Una pagina donde hablará con mas profundidad sobre las mismas),
+Inscripciones (Un formulario para que los alumnos y profesores se inscriban para participar en la actividad), Contacto (con el correo y telefono
+del centro), Inicio de Sesión y el registro (Ambas llevarán a un formulario distinto dependiendo del botón escogido)
+
+En el main será dividido por tres sections, que contendran diferentes elementos. Siendo que en el primero habrán imagenes sobre excursiones
+ya realizadas por el centro educativo, y textos que explican sobre la importancia de las actividades extraescolares.
+
+En el segundo section contiene diversas cajas que contienen de forma breve información sobre las actividades
+que se están por realizar y están abiertas para su inscripción. Cada caja de la información tiene un hipervinculo hacia la página
+concreta que explica en mas profundidad la actividad seleccionada (Su cronograma, los lugares a visitar, el transporte...)
+
 ##### 2.2  Tipos de estilos  
+
+Se ha utilizado la paleta de colores del logo de IES Miguel Herrero Pereda, para dar sensación que pertenece al centro. Los colores
+son de tono pastel para la salud visual, pues son colores que no duelen al verlos en una pantalla. Varian en la coloración de los elementos para dar un
+sentido mas armonioso de los 3 colores establecidos, de igual forma, se varian los tonos de los tres colores. 
+
+Las imagenes, tanto informativas de las excursiones como decoraciones, contienen sombras para darle sensación de profundidad y animación de escalado,
+aumentando su tamaño de forma suave, y volviendo a su estado original de la misma forma. Los bordes de algunas cajas contienen colores gradiantes de forma
+lineal, utilizando un mismo color pero a distintos tonos. 
+
+En las secciones de las actividades se utiliza un diseño de como si estuvieran colgados en un tablon de anuncios de un instituto. (Tablon de corcho)
+
 ##### 2.3  Contenidos de la web  
 #### 3. Java:  
 ##### 3.1  Diagrama de clases  
