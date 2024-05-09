@@ -2,6 +2,7 @@ html{
 
     width: 100%;
     zoom:100%;
+
 }
 
 header{
@@ -123,6 +124,16 @@ Span.Verde{
     color:rgb(41, 99, 41);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
+    font-size: 75px;
+    font-weight: bold;
+
+    text-shadow: 7px 1px 6px black;
+}
+
+Span.blancoGrande{
+    color:rgb(255, 255, 255);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(41, 99, 41);
     font-size: 75px;
     font-weight: bold;
 
