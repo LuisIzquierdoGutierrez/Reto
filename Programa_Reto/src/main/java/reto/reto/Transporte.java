@@ -12,11 +12,12 @@ import java.util.List;
  */
 public class Transporte {
    private int idTransporte;
-   private List<Tipo_transporte> tipo;
+   private Tipo_transporte transporte;
+   private Solicitudes_ACEX actividad;
 
-    public Transporte(int idTransporte, List<Tipo_transporte> tipo) {
+    public Transporte(int idTransporte, Tipo_transporte transporte) {
         this.idTransporte = idTransporte;
-        this.tipo = tipo;
+        this.transporte = transporte;
     }
 
     public int getIdTransporte() {
@@ -27,12 +28,12 @@ public class Transporte {
         this.idTransporte = idTransporte;
     }
 
-    public List<Tipo_transporte> getTipo() {
-        return tipo;
+    public Tipo_transporte getTipo() {
+        return transporte;
     }
 
-    public void setTipo(List<Tipo_transporte> tipo) {
-        this.tipo = tipo;
+    public void setTipo(Tipo_transporte transporte) {
+        this.transporte = transporte;
     }
 
    

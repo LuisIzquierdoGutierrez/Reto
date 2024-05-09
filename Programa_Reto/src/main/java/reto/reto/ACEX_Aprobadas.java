@@ -5,14 +5,16 @@
 package reto.reto;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
  *
  * @author DAM103
  */
-public class Solicitudes_ACEX {
-    private int idSolicitudes;
+public class ACEX_Aprobadas {
+
+    private int idAprobadas;
     private Profesor solicitante;
     private String titulo;
     private String comentario_actividad;
@@ -22,13 +24,13 @@ public class Solicitudes_ACEX {
     private String comentario_estado;
     private boolean transporte;
     private boolean alojamiento;
-    private LocalTime horaInicio;
-    private LocalTime horaFin;
-    private LocalDate fechaInicio;
-    private LocalDate fechaFin;
+    private LocalTime hora_inicio;
+    private LocalTime hora_fin;
+    private LocalDate fecha_inicio;
+    private LocalDate fecha_fin;
 
-    public Solicitudes_ACEX(int idSolicitudes, int idSolicitante, String titulo, String comentario_actividad, TipoActividad tipo, boolean programada, TipoEstado estado, String comentario_estado, boolean transporte, boolean alojamiento, LocalTime horaInicio, LocalTime horaFin, LocalDate fechaInicio, LocalDate fechaFin) {
-        this.idSolicitudes = idSolicitudes;
+    public ACEX_Aprobadas(int id_aprobada, int idSolicitante, String titulo, String comentario_actividad, TipoActividad tipo, boolean programada, TipoEstado estado, String comentario_estado, boolean transporte, boolean alojamiento, LocalTime hora_inicio, LocalTime hora_fin, LocalDate fecha_inicio, LocalDate fecha_fin) {
+        this.idAprobadas = id_aprobada;
         this.solicitante = new ProfesorDAO().porId(idSolicitante);
         this.titulo = titulo;
         this.comentario_actividad = comentario_actividad;
@@ -38,18 +40,19 @@ public class Solicitudes_ACEX {
         this.comentario_estado = comentario_estado;
         this.transporte = transporte;
         this.alojamiento = alojamiento;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
+        this.hora_inicio = hora_inicio;
+        this.hora_fin = hora_fin;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
     }
 
-    public int getIdSolicitudes() {
-        return idSolicitudes;
+
+    public int getIdAprobadas() {
+        return idAprobadas;
     }
 
-    public void setIdSolicitudes(int idSolicitudes) {
-        this.idSolicitudes = idSolicitudes;
+    public void setIdAprobadas(int idAprobadas) {
+        this.idAprobadas = idAprobadas;
     }
 
     public Profesor getSolicitante() {
@@ -59,6 +62,7 @@ public class Solicitudes_ACEX {
     public void setSolicitante(Profesor solicitante) {
         this.solicitante = solicitante;
     }
+
 
     public String getTitulo() {
         return titulo;
@@ -124,38 +128,38 @@ public class Solicitudes_ACEX {
         this.alojamiento = alojamiento;
     }
 
-    public LocalTime getHoraInicio() {
-        return horaInicio;
+    public LocalTime getHora_inicio() {
+        return hora_inicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
-        this.horaInicio = horaInicio;
+    public void setHora_inicio(LocalTime hora_inicio) {
+        this.hora_inicio = hora_inicio;
     }
 
-    public LocalTime getHoraFin() {
-        return horaFin;
+    public LocalTime getHora_fin() {
+        return hora_fin;
     }
 
-    public void setHoraFin(LocalTime horaFin) {
-        this.horaFin = horaFin;
+    public void setHora_fin(LocalTime hora_fin) {
+        this.hora_fin = hora_fin;
     }
 
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
+    public LocalDate getFecha_inicio() {
+        return fecha_inicio;
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setFecha_inicio(LocalDate fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
     }
 
-    public LocalDate getFechaFin() {
-        return fechaFin;
+    public LocalDate getFecha_fin() {
+        return fecha_fin;
     }
 
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setFecha_fin(LocalDate fecha_fin) {
+        this.fecha_fin = fecha_fin;
     }
-    
-    
- 
+
+   
+
 }

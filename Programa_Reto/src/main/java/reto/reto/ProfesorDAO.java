@@ -44,7 +44,7 @@ public class ProfesorDAO implements Repositorio<Profesor> {
     @Override
     public boolean guardar(Profesor profesor) {
         String sql = null;
-        boolean resultado = false;
+        boolean resultado = true;
         if (profesor.getId_profesor() > 0) {
             sql = "UPDATE profesor SET id_departamento=?,dni=?,nombre=?,apellidos=?,email=?,password=?,perfil=?,activo=?WHERE id=?";
         } // son 12 ?
@@ -66,6 +66,7 @@ public class ProfesorDAO implements Repositorio<Profesor> {
 
             int salida = stmt.executeUpdate();
             if (salida != 1) {
+                resultado = false;
                 throw new Exception(" No se ha insertado/modificado un solo registro");
             }
 
@@ -99,13 +100,14 @@ public class ProfesorDAO implements Repositorio<Profesor> {
 
     @Override
     public boolean eliminar(int id) {
-        boolean resultado = false;
+        boolean resultado = true;
         String sql = "DELETE FROM profesor WHERE id=?";
         try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id);
             int salida = stmt.executeUpdate();
             if (salida != 1) {
-                throw new Exception(" No se ha borrado un solo registro");
+                resultado = false;
+                throw new Exception(" No se ha insertado/modificado un solo registro");
             }
         } catch (SQLException ex) {
             // errores

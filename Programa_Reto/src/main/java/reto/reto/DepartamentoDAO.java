@@ -44,7 +44,7 @@ public class DepartamentoDAO implements Repositorio<Departamento> {
     @Override
     public boolean guardar(Departamento departamento) {
         String sql = null;
-        boolean resultado = false;
+        boolean resultado = true;
         if (departamento.getIdDepartamento() > 0) {
             sql = "UPDATE departamento SET id_jefe=?, codigo=?, nombre=? WHERE id=?";
         } else {
@@ -53,20 +53,22 @@ public class DepartamentoDAO implements Repositorio<Departamento> {
                 if (departamento.getIdDepartamento() > 0) {
                     stmt.setInt(4, departamento.getIdDepartamento());
                 }
-
-                stmt.setInt(1, departamento.getId_jefe());
+                stmt.setInt(1, departamento.getJefe().getId_profesor());
                 stmt.setString(2, departamento.getCodigo());
                 stmt.setString(3, departamento.getNombre());
 
-                stmt.executeUpdate();
-                return true;
+                int salida = stmt.executeUpdate();
+                if (salida != 1) {
+                    resultado = false;
+                    throw new Exception(" No se ha insertado/modificado un solo registro");
+                }
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.getMessage());
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
-        return false;
+        return resultado;
     }
 
     @Override
@@ -88,12 +90,13 @@ public class DepartamentoDAO implements Repositorio<Departamento> {
 
     @Override
     public boolean eliminar(int id) {
-        boolean resultado = false;
+        boolean resultado = true;
         String sql = "DELETE FROM departamento WHERE id=?";
         try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
             stmt.setInt(1, id);
             int salida = stmt.executeUpdate();
             if (salida != 1) {
+                resultado = false;
                 throw new Exception(" No se ha borrado un solo registro");
             }
         } catch (SQLException e) {

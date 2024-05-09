@@ -14,7 +14,7 @@ public class Grupo {
     private int numAlumnos;
     private boolean activo;
     private String descripcion_grupo;
-    private int id_curso;
+    private Cursos curso;
 
     public Grupo(int id_grupo, String cod_grupo, int numAlumnos, boolean activo, String descripcion_grupo, int id_curso) {
         this.id_grupo = id_grupo;
@@ -22,7 +22,7 @@ public class Grupo {
         this.numAlumnos = numAlumnos;
         this.activo = activo;
         this.descripcion_grupo = descripcion_grupo;
-        this.id_curso = id_curso;
+        this.curso = new CursosDAO().porId(id_curso);
     }
 
     public int getId_grupo() {
@@ -65,13 +65,15 @@ public class Grupo {
         this.descripcion_grupo = descripcion_grupo;
     }
 
-    public int getId_curso() {
-        return id_curso;
+    public Cursos getCurso() {
+        return curso;
     }
 
-    public void setId_curso(int id_curso) {
-        this.id_curso = id_curso;
+    public void setCurso(Cursos curso) {
+        this.curso = curso;
     }
+
+
 
 
 }
