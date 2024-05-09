@@ -19,7 +19,7 @@ footer{
 #ContenedorFlexFooter{
 
     display: flex;
-    justify-content: space-between;
+
 
     margin-left: 20px;
     margin-right: 20px;
@@ -29,10 +29,15 @@ footer{
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+
     
 }
 
+#Información{
+
+    display: flex;
+    flex-direction: column;
+}
 
 #NavegaciónFooter,
 #ImagenesContactoFooter,
