@@ -1,5 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+/* Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package reto.reto;
@@ -51,7 +50,7 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
         boolean resultado = false;
         if (solicitud.getIdSolicitudes() > 0) {
             sql = "UPDATE actividad_solicitada SET id_solicitante=?,tipo=?,prevista=?,alojamiento=?,titulo=?,hora_inicio=?,hora_fin=?,fecha_inicio=?,fecha_fin=?,transporte=?,comentario_estado=?,comentario_actividad=? WHERE id=?";
-        } // son 12 ?
+        } // 
         else {
             sql = "INSERT INTO actividad_solicitada(id_solicitante,tipo,prevista,alojamiento,titulo,hora_inicio,hora_fin,fecha_inicio,fecha_fin,transporte,comentario_estado,comentario_actividad FROM actividad_solicitada) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         }
@@ -62,7 +61,7 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
             }
             stmt.setInt(1, solicitud.getIdSolicitante());
             stmt.setString(2, String.valueOf(solicitud.getTipo()));
-            stmt.setBoolean(3, solicitud.isPrevision());
+            stmt.setBoolean(3, solicitud.isProgramada());
             stmt.setBoolean(4, solicitud.isAlojamiento());
             stmt.setString(5, solicitud.getTitulo());
             stmt.setTime(6, Time.valueOf(solicitud.getHoraInicio()));
@@ -71,7 +70,7 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
             stmt.setDate(9, Date.valueOf(solicitud.getFechaFin()));
             stmt.setBoolean(10, solicitud.isTransporte());
             stmt.setString(11, solicitud.getComentario_estado());
-            stmt.setString(12, solicitud.getComentario_adi());
+            stmt.setString(12, solicitud.getComentario_actividad());
             stmt.setString(13, String.valueOf(solicitud.getEstado()));
             int salida = stmt.executeUpdate();
             if (salida != 1) {
@@ -127,6 +126,8 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
     }
 
     private Solicitudes_ACEX crearSolicitud(ResultSet rs) throws SQLException {
-        return new Solicitudes_ACEX(rs.getInt("id"), rs.getInt("id_solicitante"), TipoActividad.valueOf(rs.getString("tipo")), rs.getBoolean("prevista"), rs.getBoolean("alojamiento"), rs.getString("titulo"), rs.getTime("hora_inicio").toLocalTime(), rs.getTime("hora_fin").toLocalTime(), rs.getDate("fecha_inicio").toLocalDate(), rs.getDate("fecha_fin").toLocalDate(), rs.getBoolean("transporte"), rs.getString("comentario_estado"), rs.getString("comentario_actividad"), TipoEstado.valueOf(rs.getString("estado")));
+
+        return new Solicitudes_ACEX(rs.getInt("id"), rs.getInt("id_solicitante"), rs.getString("titulo"), rs.getString("comenatario_actividad"), TipoActividad.valueOf(rs.getString("tipo")), rs.getBoolean("prevista"), TipoEstado.valueOf(rs.getString("estado")), rs.getString("comentario_estado"), rs.getBoolean("transporte"), rs.getBoolean("alojamiento"), rs.getTime("hora_inicio").toLocalTime(), rs.getTime("hora_fin").toLocalTime(), rs.getDate("fecha_inicio").toLocalDate(), rs.getDate("fecha_fin").toLocalDate());
+
     }
 }
