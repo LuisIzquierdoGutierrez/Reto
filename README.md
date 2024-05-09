@@ -90,7 +90,8 @@ En las secciones de las actividades se utiliza un diseño de como si estuvieran 
 #### 3. Java:  
 ##### 3.1  Diagrama de clases  
 
-![Diagrama de Clases](https://github.com/LuisIzquierdoGutierrez/Reto/assets/152623929/cf0a5c4f-eaa8-41bf-a6a0-ff66f32c8e15)
+![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/152623929/715316b3-9d7e-4a79-82dd-0a8544cc67ef)
+
 
 ##### 3.2  Clases usadas en JavaDoc  
 ##### 3.3  Explicación del código 
