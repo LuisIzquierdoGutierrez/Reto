@@ -15,40 +15,42 @@ import java.time.LocalTime;
 public class Solicitudes_ACEX {
     private int idSolicitudes;
     private int idSolicitante;
-    private TipoActividad tipo;
-    private boolean prevision;
-    private boolean alojamiento;
     private String titulo;
+    private String comentario_actividad;
+    private TipoActividad tipo;
+    private boolean programada;
+    private TipoEstado estado;
+    private String comentario_estado;
+    private boolean transporte;
+    private boolean alojamiento;
     private LocalTime horaInicio;
     private LocalTime horaFin;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
-    private boolean transporte;
-    private String comentario_estado;
-    // private String comentario_alojamiento; implementar mas adelante
-    private String comentario_adi;
-    private TipoEstado estado;
 
-    
-    // añadir  String comentario_alojamiento, mas adelante si es necesario
-    public Solicitudes_ACEX(int idSolicitudes,int idSolicitante,TipoActividad tipo, boolean prevision, boolean alojamiento, String titulo, LocalTime horaInicio, LocalTime horaFin,LocalDate fechaInicio,LocalDate fechaFin, boolean transporte, String comentario_estado, String comentario_adi,TipoEstado estado) {
-        this.idSolicitudes=idSolicitudes;
+    public Solicitudes_ACEX(int idSolicitudes, int idSolicitante, String titulo, String comentario_actividad, TipoActividad tipo, boolean programada, TipoEstado estado, String comentario_estado, boolean transporte, boolean alojamiento, LocalTime horaInicio, LocalTime horaFin, LocalDate fechaInicio, LocalDate fechaFin) {
+        this.idSolicitudes = idSolicitudes;
         this.idSolicitante = idSolicitante;
-        this.tipo = tipo;
-        this.prevision = prevision;
-        this.alojamiento = alojamiento;
         this.titulo = titulo;
+        this.comentario_actividad = comentario_actividad;
+        this.tipo = tipo;
+        this.programada = programada;
+        this.estado = estado;
+        this.comentario_estado = comentario_estado;
+        this.transporte = transporte;
+        this.alojamiento = alojamiento;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
-        this.transporte = transporte;
-        this.comentario_estado = comentario_estado;
-       // this.comentario_alojamiento = comentario_alojamiento;
-        this.comentario_adi = comentario_adi;
-        this.estado = estado;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
     }
 
     public int getIdSolicitudes() {
         return idSolicitudes;
+    }
+
+    public void setIdSolicitudes(int idSolicitudes) {
+        this.idSolicitudes = idSolicitudes;
     }
 
     public int getIdSolicitante() {
@@ -59,10 +61,21 @@ public class Solicitudes_ACEX {
         this.idSolicitante = idSolicitante;
     }
 
-    public void setIdSolicitudes(int idSolicitudes) {
-        this.idSolicitudes = idSolicitudes;
+    public String getTitulo() {
+        return titulo;
     }
-    
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getComentario_actividad() {
+        return comentario_actividad;
+    }
+
+    public void setComentario_actividad(String comentario_actividad) {
+        this.comentario_actividad = comentario_actividad;
+    }
 
     public TipoActividad getTipo() {
         return tipo;
@@ -72,12 +85,36 @@ public class Solicitudes_ACEX {
         this.tipo = tipo;
     }
 
-    public boolean isPrevision() {
-        return prevision;
+    public boolean isProgramada() {
+        return programada;
     }
 
-    public void setPrevision(boolean prevision) {
-        this.prevision = prevision;
+    public void setProgramada(boolean programada) {
+        this.programada = programada;
+    }
+
+    public TipoEstado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(TipoEstado estado) {
+        this.estado = estado;
+    }
+
+    public String getComentario_estado() {
+        return comentario_estado;
+    }
+
+    public void setComentario_estado(String comentario_estado) {
+        this.comentario_estado = comentario_estado;
+    }
+
+    public boolean isTransporte() {
+        return transporte;
+    }
+
+    public void setTransporte(boolean transporte) {
+        this.transporte = transporte;
     }
 
     public boolean isAlojamiento() {
@@ -86,14 +123,6 @@ public class Solicitudes_ACEX {
 
     public void setAlojamiento(boolean alojamiento) {
         this.alojamiento = alojamiento;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public LocalTime getHoraInicio() {
@@ -127,46 +156,7 @@ public class Solicitudes_ACEX {
     public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
     }
-
     
-    public boolean isTransporte() {
-        return transporte;
-    }
-
-    public void setTransporte(boolean transporte) {
-        this.transporte = transporte;
-    }
-
-    public String getComentario_estado() {
-        return comentario_estado;
-    }
-
-    public void setComentario_estado(String comentario_estado) {
-        this.comentario_estado = comentario_estado;
-    }
-//
-//    public String getComentario_alojamiento() {
-//        return comentario_alojamiento;
-//    }
-//
-//    public void setComentario_alojamiento(String comentario_alojamiento) {
-//        this.comentario_alojamiento = comentario_alojamiento;
-//    }
-
-    public String getComentario_adi() {
-        return comentario_adi;
-    }
-
-    public void setComentario_adi(String comentario_adi) {
-        this.comentario_adi = comentario_adi;
-    }
-
-    public TipoEstado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(TipoEstado estado) {
-        this.estado = estado;
-    }
     
+ 
 }

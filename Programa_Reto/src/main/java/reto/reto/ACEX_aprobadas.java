@@ -12,9 +12,10 @@ import java.time.LocalTime;
  *
  * @author DAM103
  */
-public class ACEX_aprobadas {
+public class ACEX_Aprobadas {
 
-    private int id_aprobada;
+    private int idAprobadas;
+    private int idSolicitante;
     private String titulo;
     private String comentario_actividad;
     private TipoActividad tipo;
@@ -28,12 +29,37 @@ public class ACEX_aprobadas {
     private LocalDate fecha_inicio;
     private LocalDate fecha_fin;
 
+    public ACEX_Aprobadas(int id_aprobada, int idSolicitante, String titulo, String comentario_actividad, TipoActividad tipo, boolean programada, TipoEstado estado, String comentario_estado, boolean transporte, boolean alojamiento, LocalTime hora_inicio, LocalTime hora_fin, LocalDate fecha_inicio, LocalDate fecha_fin) {
+        this.idAprobadas = id_aprobada;
+        this.idSolicitante = idSolicitante;
+        this.titulo = titulo;
+        this.comentario_actividad = comentario_actividad;
+        this.tipo = tipo;
+        this.programada = programada;
+        this.estado = estado;
+        this.comentario_estado = comentario_estado;
+        this.transporte = transporte;
+        this.alojamiento = alojamiento;
+        this.hora_inicio = hora_inicio;
+        this.hora_fin = hora_fin;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
+    }
+
     public int getId_aprobada() {
-        return id_aprobada;
+        return idAprobadas;
     }
 
     public void setId_aprobada(int id_aprobada) {
-        this.id_aprobada = id_aprobada;
+        this.idAprobadas = id_aprobada;
+    }
+
+    public int getIdSolicitante() {
+        return idSolicitante;
+    }
+
+    public void setIdSolicitante(int idSolicitante) {
+        this.idSolicitante = idSolicitante;
     }
 
     public String getTitulo() {
@@ -132,20 +158,6 @@ public class ACEX_aprobadas {
         this.fecha_fin = fecha_fin;
     }
 
-    public ACEX_aprobadas(int id_aprobada, String titulo, String comentario_actividad, TipoActividad tipo, boolean programada, TipoEstado estado, String comentario_estado, boolean transporte, boolean alojamiento, LocalTime hora_inicio, LocalTime hora_fin, LocalDate fecha_inicio, LocalDate fecha_fin) {
-        this.id_aprobada = id_aprobada;
-        this.titulo = titulo;
-        this.comentario_actividad = comentario_actividad;
-        this.tipo = tipo;
-        this.programada = programada;
-        this.estado = estado;
-        this.comentario_estado = comentario_estado;
-        this.transporte = transporte;
-        this.alojamiento = alojamiento;
-        this.hora_inicio = hora_inicio;
-        this.hora_fin = hora_fin;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_fin = fecha_fin;
-    }
+   
 
 }
