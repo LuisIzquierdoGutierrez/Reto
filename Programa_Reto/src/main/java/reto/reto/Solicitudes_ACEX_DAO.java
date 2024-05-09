@@ -4,14 +4,12 @@
 package reto.reto;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,10 +45,10 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
     @Override
     public boolean guardar(Solicitudes_ACEX solicitud) {
         String sql = null;
-        boolean resultado = false;
+        boolean resultado = true;
         if (solicitud.getIdSolicitudes() > 0) {
             sql = "UPDATE actividad_solicitada SET id_solicitante=?,tipo=?,prevista=?,alojamiento=?,titulo=?,hora_inicio=?,hora_fin=?,fecha_inicio=?,fecha_fin=?,transporte=?,comentario_estado=?,comentario_actividad=? WHERE id=?";
-        } // 
+        } 
         else {
             sql = "INSERT INTO actividad_solicitada(id_solicitante,tipo,prevista,alojamiento,titulo,hora_inicio,hora_fin,fecha_inicio,fecha_fin,transporte,comentario_estado,comentario_actividad FROM actividad_solicitada) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         }
@@ -59,8 +57,8 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
             if (solicitud.getIdSolicitudes() > 0) {
                 stmt.setInt(14, solicitud.getIdSolicitudes());
             }
-            stmt.setInt(1, solicitud.getIdSolicitante());
-            stmt.setString(2, String.valueOf(solicitud.getTipo()));
+            stmt.setInt(1, solicitud.getSolicitante().getId_profesor());
+            stmt.setString(2,String.valueOf(solicitud.getTipo()));
             stmt.setBoolean(3, solicitud.isProgramada());
             stmt.setBoolean(4, solicitud.isAlojamiento());
             stmt.setString(5, solicitud.getTitulo());
@@ -74,6 +72,7 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
             stmt.setString(13, String.valueOf(solicitud.getEstado()));
             int salida = stmt.executeUpdate();
             if (salida != 1) {
+                resultado = false;
                 throw new Exception(" No se ha insertado/modificado un solo registro");
             }
 
@@ -108,12 +107,14 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
     //falta conseguir el boolean
     @Override
     public boolean eliminar(int id) {
-        boolean resultado = false;
+        boolean resultado = true;
         String sql = "DELETE FROM actividad_solicitada WHERE id=?";
         try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id);
             int salida = stmt.executeUpdate();
+          
             if (salida != 1) {
+                resultado = false;
                 throw new Exception(" No se ha borrado un solo registro");
             }
         } catch (SQLException ex) {

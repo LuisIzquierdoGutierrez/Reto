@@ -104,6 +104,11 @@ public class Profesor {
     public void setProfesorActivo(boolean profesorActivo) {
         this.profesorActivo = profesorActivo;
     }
+
+    @Override
+    public String toString() {
+        return "test";
+    }
     
 
    
