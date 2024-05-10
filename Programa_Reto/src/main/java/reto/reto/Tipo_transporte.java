@@ -11,13 +11,11 @@ package reto.reto;
 public class Tipo_transporte {
     private int id_tipo_transporte;
     private String tipo;
-    private double importe;
     private String comentario;
 
-    public Tipo_transporte(int id_tipo_transporte, String tipo, double importe, String comentario) {
+    public Tipo_transporte(int id_tipo_transporte, String tipo, String comentario) {
         this.id_tipo_transporte = id_tipo_transporte;
         this.tipo = tipo;
-        this.importe = importe;
         this.comentario = comentario;
     }
 
@@ -35,14 +33,6 @@ public class Tipo_transporte {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public double getImporte() {
-        return importe;
-    }
-
-    public void setImporte(double importe) {
-        this.importe = importe;
     }
 
     public String getComentario() {

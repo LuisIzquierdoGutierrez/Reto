@@ -11,13 +11,11 @@ package reto.reto;
 public class Alojamiento {
     private int id_alojamiento;
     private String nombre;
-    private double importe;
     private String comentario;
 
-    public Alojamiento(int id_alojamiento, String nombre, double importe, String comentario) {
+    public Alojamiento(int id_alojamiento, String nombre, String comentario) {
         this.id_alojamiento = id_alojamiento;
         this.nombre = nombre;
-        this.importe = importe;
         this.comentario = comentario;
     }
 
@@ -35,14 +33,6 @@ public class Alojamiento {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public double getImporte() {
-        return importe;
-    }
-
-    public void setImporte(double importe) {
-        this.importe = importe;
     }
 
     public String getComentario() {
