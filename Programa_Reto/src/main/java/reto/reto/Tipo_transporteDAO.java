@@ -13,14 +13,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author DAM106
+ * Esta clase implementa la interfaz Repositorio y se encarga de realizar operaciones en la tabla "transporte" de la base de datos.
+ * @author Saul
+ * @param <Tipo_transporte> El tipo de objeto que se va a almacenar en la base de datos.
+ * @see Repositorio
  */
 public class Tipo_transporteDAO implements Repositorio<Tipo_transporte> {
+    
+      /**
+     * Obtiene la conexión a la base de datos.
+     * @return La conexión a la base de datos.
+     */
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
+   
+    
+     /**
+     * Consulta todos los registros de la tabla "transporte" y los devuelve como una lista de objetos Tipo_transporte.
+     * @return Una lista de objetos Tipo_transporte.
+     */
 
     @Override
     public List<Tipo_transporte> consultar() {
@@ -39,6 +52,12 @@ public class Tipo_transporteDAO implements Repositorio<Tipo_transporte> {
         }
         return Transportes;
     }
+    /**
+     * Guarda un objeto Tipo_transporte en la base de datos.
+     * @param transporte El objeto Tipo_transporte que se va a guardar.
+     * @return true si el objeto se guarda correctamente, false en caso contrario.
+     * @throws Exception Si ocurre un error al guardar el objeto.
+     */
 
     @Override
     public boolean guardar(Tipo_transporte transporte) {
@@ -67,6 +86,11 @@ public class Tipo_transporteDAO implements Repositorio<Tipo_transporte> {
         }
         return resultado;
     }
+    /**
+     * Obtiene un objeto Tipo_transporte de la base de datos por su ID.
+     * @param id El ID del objeto Tipo_transporte.
+     * @return El objeto Tipo_transporte correspondiente al ID especificado, o null si no se encuentra.
+     */
 
     @Override
     public Tipo_transporte porId(int id) {
@@ -84,6 +108,12 @@ public class Tipo_transporteDAO implements Repositorio<Tipo_transporte> {
         }
         return transporte;
     }
+     /**
+     * Elimina un objeto Tipo_transporte de la base de datos por su ID.
+     * @param id El ID del objeto Tipo_transporte que se va a eliminar.
+     * @return true si el objeto se elimina correctamente, false en caso contrario.
+     * @throws Exception Si ocurre un error al eliminar el objeto.
+     */
 
     @Override
     public boolean eliminar(int id) {
@@ -103,6 +133,12 @@ public class Tipo_transporteDAO implements Repositorio<Tipo_transporte> {
         }
         return resultado;
     }
+    /**
+     * Crea un objeto Tipo_transporte a partir de un ResultSet.
+     * @param rs El ResultSet que contiene los datos del objeto Tipo_transporte.
+     * @return El objeto Tipo_transporte creado.
+     * @throws SQLException Si ocurre un error al acceder a los datos del ResultSet.
+     */
 
     private Tipo_transporte crearTipo_transporte(ResultSet rs) throws SQLException {
         return new Tipo_transporte(rs.getInt("id_Transporte"), rs.getString("nombre"), rs.getString("comentario"));

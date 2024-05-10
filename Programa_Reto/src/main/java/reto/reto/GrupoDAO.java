@@ -13,14 +13,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author DAM126
+ * Esta clase implementa la interfaz Repositorio y proporciona métodos para acceder a la base de datos y realizar operaciones en la tabla "grupo".
+ * @author Luis, Adrian
+ * @see Repositorio
  */
 public class GrupoDAO implements Repositorio<Grupo> {
+    /**
+     * Obtiene la conexión a la base de datos.
+     * @return La conexión a la base de datos.
+     */
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
+    /**
+     * Consulta todos los grupos en la tabla "grupo".
+     * @return Una lista de objetos Grupo que representan los grupos consultados.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public List<Grupo> consultar() {
@@ -40,6 +50,12 @@ public class GrupoDAO implements Repositorio<Grupo> {
         }
         return grupos;
     }
+    /**
+     * Guarda un grupo en la tabla "grupo".
+     * @param grupo El grupo a guardar.
+     * @return true si el grupo se guarda correctamente, false de lo contrario.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public boolean guardar(Grupo grupo) {
@@ -74,6 +90,12 @@ public class GrupoDAO implements Repositorio<Grupo> {
         }
         return resultado;
     }
+     /**
+     * Consulta un grupo por su ID en la tabla "grupo".
+     * @param id El ID del grupo a consultar.
+     * @return El objeto Grupo que representa el grupo consultado, o null si no se encuentra.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public Grupo porId(int id) {
@@ -93,6 +115,12 @@ public class GrupoDAO implements Repositorio<Grupo> {
         }
         return grupo;
     }
+     /**
+     * Elimina un grupo de la tabla "grupo" por su ID.
+     * @param id El ID del grupo a eliminar.
+     * @return true si el grupo se elimina correctamente, false de lo contrario.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public boolean eliminar(int id) {
@@ -112,6 +140,12 @@ public class GrupoDAO implements Repositorio<Grupo> {
         }
         return resultado;
     }
+    /**
+     * Crea un objeto Grupo a partir de un ResultSet.
+     * @param rs El ResultSet que contiene los datos del grupo.
+     * @return El objeto Grupo creado.
+     * @throws SQLException Si ocurre un error al acceder a los datos del ResultSet.
+     */
 
     private Grupo crearGrupo(ResultSet rs) throws SQLException {
         return new Grupo(rs.getInt("id"),rs.getString("codigo"),rs.getInt("num_alumnos"),rs.getBoolean("activo"),rs.getString("descripcion"),rs.getInt("id_curso"));

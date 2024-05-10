@@ -13,14 +13,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author DAM126
+ * Esta clase implementa la interfaz Repositorio y proporciona métodos para acceder a la tabla "profesor" en la base de datos.
+ * @author Luis
+ * @param <Profesor> el tipo de objeto Profesor que se va a manejar en la base de datos.
+ * @see Repositorio
  */
 public class ProfesorDAO implements Repositorio<Profesor> {
+     /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return la conexión a la base de datos.
+     */
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
+     /**
+     * Consulta todos los registros de la tabla "profesor" en la base de datos.
+     * 
+     * @return una lista de objetos Profesor que representan los registros de la tabla "profesor".
+     * @throws SQLException si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception si ocurre un error al insertar el objeto en la colección.
+     */
 
     @Override
     public List<Profesor> consultar() {
@@ -40,6 +54,14 @@ public class ProfesorDAO implements Repositorio<Profesor> {
         }
         return solicitudes;
     }
+    /**
+     * Guarda un objeto Profesor en la base de datos.
+     * 
+     * @param profesor el objeto Profesor que se va a guardar.
+     * @return true si el objeto se guarda correctamente, false de lo contrario.
+     * @throws SQLException si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception si ocurre un error al insertar/modificar el registro en la base de datos.
+     */
 
     @Override
     public boolean guardar(Profesor profesor) {
@@ -78,6 +100,13 @@ public class ProfesorDAO implements Repositorio<Profesor> {
         }
         return resultado;
     }
+     /**
+     * Obtiene un objeto Profesor de la base de datos por su ID.
+     * 
+     * @param id el ID del profesor.
+     * @return el objeto Profesor correspondiente al ID especificado, o null si no se encuentra ningún registro.
+     * @throws SQLException si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public Profesor porId(int id) {
@@ -97,6 +126,14 @@ public class ProfesorDAO implements Repositorio<Profesor> {
         }
         return profesor;
     }
+     /**
+     * Elimina un registro de la base de datos por su ID.
+     * 
+     * @param id el ID del profesor que se va a eliminar.
+     * @return true si el registro se elimina correctamente, false de lo contrario.
+     * @throws SQLException si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception si ocurre un error al eliminar el registro de la base de datos.
+     */
 
     @Override
     public boolean eliminar(int id) {
@@ -117,6 +154,13 @@ public class ProfesorDAO implements Repositorio<Profesor> {
         }
         return resultado;
     }
+    /**
+     * Crea un objeto Profesor a partir de un ResultSet.
+     * 
+     * @param rs el ResultSet que contiene los datos del profesor.
+     * @return el objeto Profesor creado.
+     * @throws SQLException si ocurre un error al acceder a los datos del ResultSet.
+     */
 
     private Profesor crearProfesor(ResultSet rs) throws SQLException {
         return new Profesor(rs.getInt("id"), rs.getInt("id_departamento"), rs.getString("dni"), rs.getString("nombre"), rs.getString("apellidos"), rs.getString("email"), rs.getString("password"), Perfil.valueOf(rs.getString("perfil")), rs.getBoolean("activo"));

@@ -14,14 +14,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author DAM126
+ * Esta clase implementa la interfaz Repositorio y se encarga de manejar las operaciones de acceso a la base de datos para la entidad Solicitudes_ACEX.
+ * @author Luis
+ * @param <Solicitudes_ACEX> El tipo de entidad que se va a manejar en el repositorio.
+ * @see Repositorio
  */
 public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
+    
+    /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return La conexión a la base de datos.
+     */
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
+    
+    /**
+     * Consulta todas las solicitudes de actividad almacenadas en la base de datos.
+     * 
+     * @return Una lista de objetos Solicitudes_ACEX que representan las solicitudes de actividad almacenadas en la base de datos.
+     * 
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception Si ocurre un error al insertar el objeto en la colección.
+     */
 
     @Override
     public List<Solicitudes_ACEX> consultar() {
@@ -41,6 +58,16 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
         }
         return solicitudes;
     }
+    
+     /**
+     * Guarda una solicitud de actividad en la base de datos.
+     * 
+     * @param solicitud La solicitud de actividad a guardar.
+     * @return true si la solicitud se guarda correctamente, false de lo contrario.
+     * 
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception Si ocurre un error al insertar/modificar el registro en la base de datos.
+     */
 
     @Override
     public boolean guardar(Solicitudes_ACEX solicitud) {
@@ -84,6 +111,15 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
         }
         return resultado;
     }
+    
+    /**
+     * Obtiene una solicitud de actividad por su ID.
+     * 
+     * @param id El ID de la solicitud de actividad.
+     * @return La solicitud de actividad correspondiente al ID especificado, o null si no se encuentra ninguna solicitud con ese ID.
+     * 
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public Solicitudes_ACEX porId(int id) {
@@ -104,7 +140,15 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
         return producto;
     }
 
-    //falta conseguir el boolean
+   /**
+     * Elimina una solicitud de actividad de la base de datos.
+     * 
+     * @param id El ID de la solicitud de actividad a eliminar.
+     * @return true si la solicitud se elimina correctamente, false de lo contrario.
+     * 
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception Si ocurre un error al borrar el registro de la base de datos.
+     */
     @Override
     public boolean eliminar(int id) {
         boolean resultado = true;
@@ -125,6 +169,14 @@ public class Solicitudes_ACEX_DAO implements Repositorio<Solicitudes_ACEX> {
         }
         return resultado;
     }
+    /**
+     * Crea un objeto Solicitudes_ACEX a partir de un ResultSet.
+     * 
+     * @param rs El ResultSet que contiene los datos de la solicitud de actividad.
+     * @return Un objeto Solicitudes_ACEX creado a partir de los datos del ResultSet.
+     * 
+     * @throws SQLException Si ocurre un error al obtener los datos del ResultSet.
+     */
 
     private Solicitudes_ACEX crearSolicitud(ResultSet rs) throws SQLException {
 
