@@ -13,14 +13,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author DAM126
+ * Esta clase implementa la interfaz Repositorio y proporciona métodos para acceder a la base de datos y realizar operaciones CRUD en la tabla "transporte_utilizado".
+ * @author Luis
+ * @see Repositorio
  */
 public class TransporteDAO implements Repositorio<Transporte> {
+    
+     /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return La conexión a la base de datos.
+     */
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
+    
+     /**
+     * Consulta todos los registros de la tabla "transporte_utilizado".
+     * 
+     * @return Una lista de objetos Transporte que representan los registros de la tabla.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
+    
+    
 
     @Override
     public List<Transporte> consultar() {
@@ -39,6 +55,16 @@ public class TransporteDAO implements Repositorio<Transporte> {
         }
         return Transportes;
     }
+    /**
+     * Guarda un objeto Transporte en la tabla "transporte_utilizado".
+     * Si el objeto ya tiene un ID asignado, se realiza una actualización en la base de datos.
+     * Si el objeto no tiene un ID asignado, se realiza una inserción en la base de datos.
+     * 
+     * @param transporte El objeto Transporte a guardar.
+     * @return true si la operación de guardado fue exitosa, false de lo contrario.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception Si ocurre un error al insertar o actualizar el objeto en la base de datos.
+     */
 
     @Override
     public boolean guardar(Transporte transporte) {
@@ -68,6 +94,13 @@ public class TransporteDAO implements Repositorio<Transporte> {
         }
         return resultado;
     }
+    /**
+     * Obtiene un objeto Transporte de la tabla "transporte_utilizado" por su ID.
+     * 
+     * @param id El ID del objeto Transporte a obtener.
+     * @return El objeto Transporte correspondiente al ID especificado, o null si no se encuentra.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public Transporte porId(int id) {
@@ -85,6 +118,14 @@ public class TransporteDAO implements Repositorio<Transporte> {
         }
         return transporte;
     }
+     /**
+     * Elimina un objeto Transporte de la tabla "transporte_utilizado" por su ID.
+     * 
+     * @param id El ID del objeto Transporte a eliminar.
+     * @return true si la operación de eliminación fue exitosa, false de lo contrario.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception Si ocurre un error al eliminar el objeto de la base de datos.
+     */
 
     @Override
     public boolean eliminar(int id) {
@@ -104,6 +145,13 @@ public class TransporteDAO implements Repositorio<Transporte> {
         }
         return resultado;
     }
+    /**
+     * Crea un objeto Transporte a partir de un ResultSet.
+     * 
+     * @param rs El ResultSet que contiene los datos del objeto Transporte.
+     * @return El objeto Transporte creado.
+     * @throws SQLException Si ocurre un error al acceder a los datos del ResultSet.
+     */
 
     private Transporte crearTransporte(ResultSet rs) throws SQLException {
         return new Transporte(rs.getInt("id"), rs.getInt("id_actividad"), rs.getInt("id_transporte"), rs.getDouble("importe"));

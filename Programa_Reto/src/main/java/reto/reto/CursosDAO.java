@@ -13,14 +13,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author DAM124
+ * Esta clase implementa la interfaz Repositorio y se encarga de realizar operaciones CRUD en la tabla "Cursos" de la base de datos.
+ * @author Naiara
+ * @param <Cursos> El tipo de objeto que se va a manejar en la base de datos.
+ * @see Repositorio
  */
 public class CursosDAO implements Repositorio<Cursos>{
+    
+     /**
+     * Obtiene la conexión a la base de datos.
+     * @return La conexión a la base de datos.
+     */
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
+    /**
+     * Consulta todos los cursos en la base de datos.
+     * @return Una lista de objetos Cursos que representan los cursos en la base de datos.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
     
     @Override
     public List<Cursos> consultar() {
@@ -41,6 +53,12 @@ public class CursosDAO implements Repositorio<Cursos>{
         }
         return cursos;
     }
+    /**
+     * Guarda un curso en la base de datos.
+     * @param curso El objeto Cursos que se va a guardar.
+     * @return true si el curso se guarda correctamente, false de lo contrario.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public boolean guardar(Cursos curso) {
@@ -79,6 +97,12 @@ public class CursosDAO implements Repositorio<Cursos>{
         }
         return resultado;
     }
+    /**
+     * Obtiene un curso por su ID.
+     * @param id El ID del curso.
+     * @return El objeto Cursos que representa el curso con el ID especificado, o null si no se encuentra.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public Cursos porId(int id) {
@@ -98,6 +122,12 @@ public class CursosDAO implements Repositorio<Cursos>{
         }
         return curso;
     }
+     /**
+     * Elimina un curso de la base de datos.
+     * @param id El ID del curso que se va a eliminar.
+     * @return true si el curso se elimina correctamente, false de lo contrario.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public boolean eliminar(int id) {
@@ -118,6 +148,12 @@ public class CursosDAO implements Repositorio<Cursos>{
         }
         return resultado;
     }
+     /**
+     * Crea un objeto Cursos a partir de un ResultSet.
+     * @param rs El ResultSet que contiene los datos del curso.
+     * @return El objeto Cursos creado.
+     * @throws SQLException Si ocurre un error al acceder a los datos del ResultSet.
+     */
      
     private Cursos crearCurso(ResultSet rs) throws SQLException{
         return new Cursos(rs.getInt("id_curso"), rs.getString("codigo"), TipoEtapa.valueOf(rs.getString("etapa")), rs.getInt ("num_alumnos"), rs.getBoolean("cursoActivo"), rs.getString("descripcion"));

@@ -13,14 +13,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author adry1
+ * Esta clase implementa la interfaz Repositorio y proporciona métodos para acceder a la tabla "departamento" en la base de datos.
+ * @author Adrian, Luis
+ * @see Repositorio
  */
 public class DepartamentoDAO implements Repositorio<Departamento> {
+     /**
+     * Obtiene la conexión a la base de datos.
+     * @return La conexión a la base de datos.
+     */
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConnection();
     }
+    /**
+     * Consulta todos los departamentos en la base de datos.
+     * @return Una lista de objetos Departamento.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public List<Departamento> consultar() {
@@ -40,6 +50,13 @@ public class DepartamentoDAO implements Repositorio<Departamento> {
         }
         return departamentos;
     }
+    /**
+     * Guarda un departamento en la base de datos.
+     * @param departamento El departamento a guardar.
+     * @return true si el departamento se guarda correctamente, false de lo contrario.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception Si no se inserta/modifica un solo registro.
+     */
 
     @Override
     public boolean guardar(Departamento departamento) {
@@ -70,6 +87,12 @@ public class DepartamentoDAO implements Repositorio<Departamento> {
         }
         return resultado;
     }
+     /**
+     * Obtiene un departamento por su ID.
+     * @param id El ID del departamento.
+     * @return El departamento correspondiente al ID especificado, o null si no se encuentra.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     */
 
     @Override
     public Departamento porId(int id) {
@@ -87,6 +110,13 @@ public class DepartamentoDAO implements Repositorio<Departamento> {
         }
         return departamento;
     }
+    /**
+     * Elimina un departamento de la base de datos.
+     * @param id El ID del departamento a eliminar.
+     * @return true si el departamento se elimina correctamente, false de lo contrario.
+     * @throws SQLException Si ocurre un error al ejecutar la consulta SQL.
+     * @throws Exception Si no se borra un solo registro.
+     */
 
     @Override
     public boolean eliminar(int id) {
@@ -107,6 +137,12 @@ public class DepartamentoDAO implements Repositorio<Departamento> {
         }
         return resultado;
     }
+     /**
+     * Crea un objeto Departamento a partir de un ResultSet.
+     * @param rs El ResultSet que contiene los datos del departamento.
+     * @return Un objeto Departamento.
+     * @throws SQLException Si ocurre un error al acceder a los datos del ResultSet.
+     */
 
     private Departamento crearDepartamento(ResultSet rs) throws SQLException {
 

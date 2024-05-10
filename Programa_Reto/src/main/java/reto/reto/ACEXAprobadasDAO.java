@@ -14,14 +14,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author DAM103
+ *Esta clase implementa la interfaz Repositorio y se encarga de realizar operaciones CRUD en la tabla actividad_aprobada de la base de datos.
+ * @author Adrian
+ * @param <ACEX_Aprobadas> El tipo de objeto ACEX_Aprobadas que se va a manejar en el repositorio.
+ * @see Repositorio
  */
 public class ACEXAprobadasDAO implements Repositorio<ACEX_Aprobadas> {
 
+    
+     /**
+     * Obtiene la conexión a la base de datos.
+     * @return La conexión a la base de datos.
+     */
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConnection();
     }
+    
+    /**
+     * Consulta todas las actividades aprobadas.
+     * @return Una lista de objetos ACEX_Aprobadas que representan las actividades aprobadas.
+     * @throws SQLException Si ocurre un error al consultar las actividades.
+     */
 
     @Override
     public List<ACEX_Aprobadas> consultar() {
@@ -36,6 +49,13 @@ public class ACEXAprobadasDAO implements Repositorio<ACEX_Aprobadas> {
         }
         return aprobadas;
     }
+    /**
+     * Guarda una actividad aprobada en la base de datos.
+     * @param aprobada La actividad aprobada que se va a guardar.
+     * @return true si la operación de guardado fue exitosa, false de lo contrario.
+     * @throws SQLException Si ocurre un error al guardar la actividad.
+     * @throws Exception Si no se ha insertado/modificado un solo registro.
+     */
 
     @Override
     public boolean guardar(ACEX_Aprobadas aprobada) {
@@ -78,6 +98,13 @@ public class ACEXAprobadasDAO implements Repositorio<ACEX_Aprobadas> {
         }
         return resultado;
     }
+    
+     /**
+     * Obtiene una actividad aprobada por su ID.
+     * @param id El ID de la actividad aprobada.
+     * @return La actividad aprobada correspondiente al ID especificado, o null si no se encuentra.
+     * @throws SQLException Si ocurre un error al obtener la actividad.
+     */
 
     @Override
     public ACEX_Aprobadas porId(int id
@@ -96,6 +123,13 @@ public class ACEXAprobadasDAO implements Repositorio<ACEX_Aprobadas> {
         }
         return aprobada;
     }
+    /**
+     * Elimina una actividad aprobada por su ID.
+     * @param id El ID de la actividad aprobada que se va a eliminar.
+     * @return true si la operación de eliminación fue exitosa, false de lo contrario.
+     * @throws SQLException Si ocurre un error al eliminar la actividad.
+     * @throws Exception Si no se ha borrado un solo registro.
+     */
 
     @Override
     public boolean eliminar(int id
