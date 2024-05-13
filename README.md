@@ -52,7 +52,7 @@ En este diagrama se representan las relaciones de todas aquellas entidades que s
 ##### 1.3  Diagrama Relacional 
 
 ##### 1.4  Importación SQL 
-#### 2. Pagina web:         
+#### 2. [Pagina web:](web.md)      
 ##### 2.1  Estructura de la página web
 
 Antes de empezar con la realización del HTML y el CSS, se empezó con una maquetación en canva para tener una plantilla base con los elementos que se querían incluir en la página. Esta decisión fue tomada debido a que tomaría mas tiempo realizar una página desde cero sin tener previamente un diseño base, y es mejor tener organizadas las ideas para poder saber que elementos se pondrán.
