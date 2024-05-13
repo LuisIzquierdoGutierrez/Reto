@@ -66,7 +66,7 @@ Cuando el equipo aprobó el diseño de la página, se procedió a su implementac
 ______________________________________________________________________________________________________________________________________________________________________________
 
 "HTML"
-
+```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +78,7 @@ ________________________________________________________________________________
     <link rel="icon" href="_IMG/Logo_Reto.png" type="image/x-icon"> //Esto añadirá un logo a la pestaña de la página
     <link rel="stylesheet" type="text/css" src="_CSS/PaginaWeb.css" href="_CSS/PaginaWeb.css"> //Esto vinculará el HTML con el CSS
 </head>
-
+```
 ______________________________________________________________________________________________________________________________________________________________________________
 
 Se  procedió a escribir el código HTML en el body, el CSS se fue realizando a la par que se escribía el código estructural. Empezando por el header, pues sería uno de los bloques se emplearían para todas las páginas adicionales a la principal. El header sería el banner de nuestra página, siendo lo primero que el usuario viera, entonces el diseño debía dejar claro de que se trataba su contenido: sobre Actividades extraescolares del IES Miguel Herrero Pereda. 
@@ -94,7 +94,7 @@ Como se ve visualmente:
 HTML:
 
 ______________________________________________________________________________________________________________________________________________________________________________
-
+```
 <header>
         <div id="MarcoNav">
             <nav>
@@ -356,7 +356,7 @@ Span.Verde2{
     transform:scale(1.1);
     
 }
-
+```
 ______________________________________________________________________________________________________________________________________________________________________________
 
 Los elementos que tendran el mismo estilo de diseño se empleó el atributo class, y para los elementos que tendrán un diseño unico, se empleó el atributo ID. La diferencia entre ambos, es que en el css se refleja con un .NombreDelAtributo en un atributo class, y #NombreDelAtributo en un atributo ID. Los nombres de los atributos se intentó realizar de la manera mas intuitiva para quien venga despues a modificar o ampliar el código, tanto del mismo home o de las páginas adicionales.
@@ -376,7 +376,7 @@ Con animacion:
 HTML:
 
 ______________________________________________________________________________________________________________________________________________________________________________
-
+```
 <main>
 
         <img src="_IMG/iconoDecoradoPrimeraParte.png" id="TamañoIconoDecorado">
@@ -584,7 +584,7 @@ table{
     
     margin-left: 1040px;
 }
-
+```
 ______________________________________________________________________________________________________________________________________________________________________________
 
 
@@ -597,7 +597,7 @@ Como se ve visualmente:
 HTML:
 
 ______________________________________________________________________________________________________________________________________________________________________________
-
+```
 <section id="Section2">
 
             <span id="tituloSection2">Actividades extraescolares por realizarse</span>
@@ -657,13 +657,13 @@ ________________________________________________________________________________
             </div>
 
         </section>
-        
+  ```      
 ______________________________________________________________________________________________________________________________________________________________________________
 
 CSS:
 
 ______________________________________________________________________________________________________________________________________________________________________________
-
+```
 #Section2{
 
     margin-top: 48px;
@@ -864,6 +864,7 @@ ________________________________________________________________________________
     top: 2015px;
     width: 110px;
 }
+```
 ______________________________________________________________________________________________________________________________________________________________________________
 
 El tercer section a diferencia del segundo, contiene información sobre tres actividades ya realizadas del centro educativo. Contiene el mismo diseño como en el anterior section comentado. Las imagenes son fotos realizadas durante la actividad extraescolares que el instituto ha tomado. Se podrá ver la información mas completa y mas fotos de la actividad al clickear en el enlace "Click aquí para más información". 
@@ -875,7 +876,7 @@ Como se ve visualmente:
 HTML:
 
 ______________________________________________________________________________________________________________________________________________________________________________
-
+```
 <section id="Section3">
 
             <span id="tituloSection3">Actividades extraescolares realizadas</span>
@@ -938,13 +939,13 @@ ________________________________________________________________________________
             </div>
         </section>
     </main>
-
+```
 ______________________________________________________________________________________________________________________________________________________________________________
 
 CSS (Comparte CSS con la segunda section):
 
 ______________________________________________________________________________________________________________________________________________________________________________
-
+```
 #Section3{
 
     margin-top: 29px;
@@ -1014,6 +1015,7 @@ ________________________________________________________________________________
     
     
 }
+```
 ______________________________________________________________________________________________________________________________________________________________________________
 
 Terminado con el main, se procede con el footer de la página. Junto con el header, el footer también aparecerá en todas las páginas conectadas a la página principal. En este tiene un background con fotos de algunas actividades extraescolares realizadas en IES Miguel Herrero. Está organizado en tres columnas con flex. La primera columna contiene el logotipo del Gobierno de Cantabria y la consejería de educación. La segunda columna un menú de navegación hacia páginas adicionales como: aviso legal, política de cookies, protección de datos... etc. La tercera columna contiene la información de contacto del centro educativo. Finalmente, en el final del footer, contiene una caja con los nombres de los miembros del equipo 4 que realizaron el reto.
@@ -1025,7 +1027,7 @@ Como se ve visualmente:
 HTML:
 
 ______________________________________________________________________________________________________________________________________________________________________________
-
+```
 <footer>
 
         <div id="ContenedorFlexFooter">
@@ -1063,12 +1065,13 @@ ________________________________________________________________________________
     </footer>
 </body>
 </html>
+```
 ______________________________________________________________________________________________________________________________________________________________________________
 
 CSS:
 
 ______________________________________________________________________________________________________________________________________________________________________________
-
+```
 footer{
 
     background-image: url(../_IMG/Background_Footer.png);
@@ -1200,10 +1203,12 @@ a{
     color:black;
     text-decoration: none;
 }
+```
 ______________________________________________________________________________________________________________________________________________________________________________
 
 ##### 2.2  Breve explicación de los tipos de estilos utilizados
 
+```
     height: 450px; //Establece una altura a la caja
  
     display: flex; //Activa el modelo de cajas flexible y sus correspondientes codigos. Sin este, no se podría utilizar los códigos asociados al flex.
@@ -1290,6 +1295,7 @@ ________________________________________________________________________________
     text-decoration: underline; //Provoca que el texto tenga una sublinea.
 
     text-decoration: none; //Provoca que el texto no tenga ninguna decoración.
+```
     
 ##### 2.3  Explicación de los contenidos incluidos en la web  
 
