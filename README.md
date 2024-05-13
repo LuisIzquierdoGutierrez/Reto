@@ -28,8 +28,9 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
     2.3  Contenidos de la web  
 #### 3. [Java:](Java.md)  
     3.1  Diagrama de clases  
-    3.2  Clases usadas en JavaDoc  
-    3.3  Explicación del código  
+    3.2  Diagramas de caso de uso
+    3.3  Clases usadas en JavaDoc  
+    3.4  Explicación del código  
 #### 4. [Implementación y Despliegue:](Sistemas.md)  
     4.1  Tecnologías usadas para la implementación (Tecnologías y características principales usadas en tabla)
 #### 5.[Diario de trabajo](Diario.md)    
