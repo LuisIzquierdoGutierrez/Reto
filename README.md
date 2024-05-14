@@ -20,21 +20,29 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
 
 ## ***Índice***
 #### 1. [Base de Datos:](Bases.md)
+```
     1.1  Descripción
     1.2  Imagen E/R          
     1.3  Diagrama Relacional      
-    1.4  Importación SQL        
-#### 2. [Pagina web:](web.md)        
+    1.4  Importación SQL
+``` 
+#### 2. [Pagina web:](web.md) 
+``` 
     2.1  Estructura de la página web   
     2.2  Tipos de estilos  
-    2.3  Contenidos de la web  
+    2.3  Contenidos de la web
+``` 
 #### 3. [Java:](Java.md)  
+``` 
     3.1  Diagrama de clases  
     3.2  Diagramas de caso de uso
     3.3  Clases usadas en JavaDoc  
-    3.4  Explicación del código  
+    3.4  Explicación del código
+``` 
 #### 4. [Implementación y Despliegue:](Sistemas.md)  
+``` 
     4.1  Tecnologías usadas para la implementación (Tecnologías y características principales usadas en tabla)
+``` 
 #### 5.[Diario de trabajo](Diario.md)    
 #### 6 [Resultados obtenidos y valoracion de lo realizado]
 #### 7 [Mejoras propuestas]
