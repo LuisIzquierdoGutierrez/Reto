@@ -15,7 +15,6 @@ public class Cursos {
     private int id_curso;
     private String codigo;
     private Tipo_Etapa etapa;
-    private int num_alumnos;
     private boolean cursoActivo;
     private String descripcion;
     
@@ -30,11 +29,10 @@ public class Cursos {
      * @param descripcion La descripción del curso.
      */
 
-    public Cursos(int id_curso, String codigo, Tipo_Etapa etapa, int num_alumnos, boolean cursoActivo, String descripcion) {
+    public Cursos(int id_curso, String codigo, Tipo_Etapa etapa, boolean cursoActivo, String descripcion) {
         this.id_curso = id_curso;
         this.codigo = codigo;
         this.etapa = etapa;
-        this.num_alumnos = num_alumnos;
         this.cursoActivo = cursoActivo;
         this.descripcion = descripcion;
     }
@@ -92,24 +90,7 @@ public class Cursos {
     public void setEtapa(Tipo_Etapa etapa) {
         this.etapa = etapa;
     }
-     /**
-     * Obtiene el número de alumnos inscritos en el curso.
-     * 
-     * @return El número de alumnos inscritos en el curso.
-     */
 
-    public int getNum_alumnos() {
-        return num_alumnos;
-    }
-     /**
-     * Establece el número de alumnos inscritos en el curso.
-     * 
-     * @param num_alumnos El número de alumnos inscritos en el curso.
-     */
-
-    public void setNum_alumnos(int num_alumnos) {
-        this.num_alumnos = num_alumnos;
-    }
      /**
      * Verifica si el curso está activo.
      * 
