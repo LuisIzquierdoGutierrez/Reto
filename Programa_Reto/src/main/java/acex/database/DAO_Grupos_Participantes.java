@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author DAM126
  */
-public class DAO_Grupos_Participantes implements DAO_Patron<Grupo_Participante> {
+public class DAO_Grupos_Participantes implements Patron_DAO<Grupo_Participante> {
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();

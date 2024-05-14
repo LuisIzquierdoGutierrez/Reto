@@ -4,6 +4,7 @@
  */
 package acex.objects;
 
+import acex.database.DAO_Departamento;
 import acex.enums.Tipo_Perfil;
 
 /**
@@ -22,7 +23,7 @@ public class Profesor {
     private String password;
     private Tipo_Perfil tipo_perfil;
     private boolean profesorActivo;
-    private int id_departamento;
+    private Departamento idDepartamento;
     
      /**
      * Crea una instancia de la clase Profesor.
@@ -38,41 +39,43 @@ public class Profesor {
      * @param profesorActivo Indica si el profesor está activo o no.
      */
 
-    public Profesor(int id_profesor, int id_departamento, String DNI, String nombreProfesor, String apellidos, String correo, String password, Tipo_Perfil tipo, boolean profesorActivo) {
+    public Profesor(int id_profesor, String DNI, String nombreProfesor, String apellidos, String correo, String password, Tipo_Perfil tipo_perfil, boolean profesorActivo,int idDepartamento) {
         this.id_profesor = id_profesor;
         this.DNI = DNI;
         this.nombreProfesor = nombreProfesor;
         this.apellidos = apellidos;
         this.correo = correo;
         this.password = password;
-        this.tipo_perfil = tipo;
+        this.tipo_perfil = tipo_perfil;
         this.profesorActivo = profesorActivo;
-        this.id_departamento = id_departamento;
+        this.idDepartamento = new DAO_Departamento().porId(idDepartamento);
     }
+
     /**
      * Obtiene el ID del departamento al que pertenece el profesor.
      * 
      * @return El ID del departamento.
      */
-
-    public int getId_departamento() {
-        return id_departamento;
+  
+    public Departamento getIdDepartamento() {
+        return idDepartamento;
     }
+
     /**
      * Establece el ID del departamento al que pertenece el profesor.
      * 
-     * @param id_departamento El ID del departamento.
+     * @param idDepartamento El ID del departamento.
      */
-
-    public void setId_departamento(int id_departamento) {
-        this.id_departamento = id_departamento;
+   
+    public void setIdDepartamento(Departamento idDepartamento) {
+        this.idDepartamento = idDepartamento;
     }
+
     /**
      * Obtiene el ID del profesor.
      * 
      * @return El ID del profesor.
      */
-
     public int getId_profesor() {
         return id_profesor;
     }
