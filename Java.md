@@ -1,7 +1,8 @@
 #### 3. Java:  
 ##### 3.1  Diagrama de clases  
 
-![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/119076009/4c39d256-2d25-4e1c-97f8-aafceca5d98b)
+![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/119076009/de8cef99-a57d-47e2-9a73-7fef534c281e)
+
 
 
 En la representacion de este diagrama de clases representamos las clases de una aplicacion java de Actividades extraescolares y las relaciones entre ellas mismas.
