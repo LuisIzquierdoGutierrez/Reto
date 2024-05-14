@@ -12,15 +12,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import acex.enums.Tipo_Transporte;
+import acex.objects.Tipo_Transporte;
 
 /**
- * Esta clase implementa la interfaz Patron_DAO y se encarga de realizar operaciones en la tabla "transporte" de la base de datos.
+ * Esta clase implementa la interfaz DAO_Patron y se encarga de realizar operaciones en la tabla "transporte" de la base de datos.
  * @author Saul
  * @param <Tipo_transporte> El tipo de objeto que se va a almacenar en la base de datos.
- * @see Patron_DAO
+ * @see DAO_Patron
  */
-public class DAO_Tipo_transporte implements Patron_DAO<Tipo_Transporte> {
+public class DAO_Tipo_transporte implements DAO_Patron<Tipo_Transporte> {
     
       /**
      * Obtiene la conexión a la base de datos.
@@ -40,7 +40,7 @@ public class DAO_Tipo_transporte implements Patron_DAO<Tipo_Transporte> {
     @Override
     public List<Tipo_Transporte> consultar() {
         List<Tipo_Transporte> Transportes = new ArrayList<>();
-        try (Statement stmt = getConnection().createStatement(); ResultSet rs = stmt.executeQuery("SELECT id,tipo,importe,comentario FROM transporte");) {
+        try (Statement stmt = getConnection().createStatement(); ResultSet rs = stmt.executeQuery("SELECT id,tipo,comentario FROM transporte");) {
             while (rs.next()) {
                 Tipo_Transporte transporte = crearTipo_transporte(rs);
                 if (!Transportes.add(transporte)) {

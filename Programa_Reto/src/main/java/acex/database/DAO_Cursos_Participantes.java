@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author DAM126
  */
-public class DAO_Cursos_Participantes implements Patron_DAO<Curso_Participante> {
+public class DAO_Cursos_Participantes implements DAO_Patron<Curso_Participante> {
 
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();

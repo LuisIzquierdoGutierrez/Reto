@@ -15,11 +15,11 @@ import java.util.List;
 import acex.objects.Departamento;
 
 /**
- * Esta clase implementa la interfaz Patron_DAO y proporciona métodos para acceder a la tabla "departamento" en la base de datos.
+ * Esta clase implementa la interfaz DAO_Patron y proporciona métodos para acceder a la tabla "departamento" en la base de datos.
  * @author Adrian, Luis
- * @see Patron_DAO
+ * @see DAO_Patron
  */
-public class DAO_Departamento implements Patron_DAO<Departamento> {
+public class DAO_Departamento implements DAO_Patron<Departamento> {
      /**
      * Obtiene la conexión a la base de datos.
      * @return La conexión a la base de datos.

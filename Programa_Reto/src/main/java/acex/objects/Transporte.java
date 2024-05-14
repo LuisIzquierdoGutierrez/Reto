@@ -4,7 +4,6 @@
  */
 package acex.objects;
 
-import acex.enums.Tipo_Transporte;
 import acex.database.DAO_Tipo_transporte;
 import acex.database.DAO_Solicitudes_ACEX;
 import java.util.List;

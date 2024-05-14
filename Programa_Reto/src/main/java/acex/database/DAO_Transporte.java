@@ -15,11 +15,11 @@ import java.util.List;
 import acex.objects.Transporte;
 
 /**
- * Esta clase implementa la interfaz Patron_DAO y proporciona métodos para acceder a la base de datos y realizar operaciones CRUD en la tabla "transporte_utilizado".
+ * Esta clase implementa la interfaz DAO_Patron y proporciona métodos para acceder a la base de datos y realizar operaciones CRUD en la tabla "transporte_utilizado".
  * @author Luis
- * @see Patron_DAO
+ * @see DAO_Patron
  */
-public class DAO_Transporte implements Patron_DAO<Transporte> {
+public class DAO_Transporte implements DAO_Patron<Transporte> {
     
      /**
      * Obtiene la conexión a la base de datos.
