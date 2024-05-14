@@ -14,7 +14,6 @@ import acex.database.DAO_Cursos;
 public class Grupo {
     private int id_grupo;
     private String cod_grupo;
-    private int numAlumnos;
     private boolean activo;
     private String descripcion_grupo;
     private Cursos curso;
@@ -34,10 +33,9 @@ public class Grupo {
      * @see DAO_Cursos#porId(int)
      */
 
-    public Grupo(int id_grupo, String cod_grupo, int numAlumnos, boolean activo, String descripcion_grupo, int id_curso) {
+    public Grupo(int id_grupo, String cod_grupo, boolean activo, String descripcion_grupo, int id_curso) {
         this.id_grupo = id_grupo;
         this.cod_grupo = cod_grupo;
-        this.numAlumnos = numAlumnos;
         this.activo = activo;
         this.descripcion_grupo = descripcion_grupo;
         this.curso = new DAO_Cursos().porId(id_curso);
@@ -78,24 +76,8 @@ public class Grupo {
     public void setCod_grupo(String cod_grupo) {
         this.cod_grupo = cod_grupo;
     }
-     /**
-     * Obtiene el número de alumnos en el grupo.
-     * 
-     * @return El número de alumnos en el grupo.
-     */
 
-    public int getNumAlumnos() {
-        return numAlumnos;
-    }
-     /**
-     * Establece el número de alumnos en el grupo.
-     * 
-     * @param numAlumnos El número de alumnos en el grupo.
-     */
 
-    public void setNumAlumnos(int numAlumnos) {
-        this.numAlumnos = numAlumnos;
-    }
     /**
      * Verifica si el grupo está activo.
      * 
