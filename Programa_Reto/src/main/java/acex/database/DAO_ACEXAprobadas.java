@@ -18,12 +18,12 @@ import acex.enums.Tipo_Actividad;
 import acex.enums.Tipo_Estado;
 
 /**
- *Esta clase implementa la interfaz DAO_Patron y se encarga de realizar operaciones CRUD en la tabla actividad_aprobada de la base de datos.
+ *Esta clase implementa la interfaz Patron_DAO y se encarga de realizar operaciones CRUD en la tabla actividad_aprobada de la base de datos.
  * @author Adrian
  * @param <ACEX_Aprobadas> El tipo de objeto ACEX_Aprobadas que se va a manejar en el repositorio.
- * @see DAO_Patron
+ * @see Patron_DAO
  */
-public class DAO_ACEXAprobadas implements DAO_Patron<ACEX_Aprobadas> {
+public class DAO_ACEXAprobadas implements Patron_DAO<ACEX_Aprobadas> {
 
     
      /**

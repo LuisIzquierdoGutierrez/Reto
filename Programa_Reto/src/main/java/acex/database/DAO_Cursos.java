@@ -16,14 +16,14 @@ import acex.objects.Cursos;
 import acex.enums.Tipo_Etapa;
 
 /**
- * Esta clase implementa la interfaz DAO_Patron y se encarga de realizar
- operaciones CRUD en la tabla "Cursos" de la base de datos.
+ * Esta clase implementa la interfaz Patron_DAO y se encarga de realizar
+ * operaciones CRUD en la tabla "Cursos" de la base de datos.
  *
  * @author Naiara
  * @param <Cursos> El tipo de objeto que se va a manejar en la base de datos.
- * @see DAO_Patron
+ * @see Patron_DAO
  */
-public class DAO_Cursos implements DAO_Patron<Cursos> {
+public class DAO_Cursos implements Patron_DAO<Cursos> {
 
     /**
      * Obtiene la conexión a la base de datos.
