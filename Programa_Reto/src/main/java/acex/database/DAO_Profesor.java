@@ -15,12 +15,12 @@ import acex.enums.Tipo_Perfil;
 import acex.objects.Profesor;
 
 /**
- * Esta clase implementa la interfaz Patron_DAO y proporciona métodos para acceder a la tabla "profesor" en la base de datos.
+ * Esta clase implementa la interfaz DAO_Patron y proporciona métodos para acceder a la tabla "profesor" en la base de datos.
  * @author Luis
  * @param <Profesor> el tipo de objeto Profesor que se va a manejar en la base de datos.
- * @see Patron_DAO
+ * @see DAO_Patron
  */
-public class DAO_Profesor implements Patron_DAO<Profesor> {
+public class DAO_Profesor implements DAO_Patron<Profesor> {
      /**
      * Obtiene la conexión a la base de datos.
      * 

@@ -18,12 +18,12 @@ import acex.enums.Tipo_Actividad;
 import acex.enums.Tipo_Estado;
 
 /**
- * Esta clase implementa la interfaz Patron_DAO y se encarga de manejar las operaciones de acceso a la base de datos para la entidad Solicitudes_ACEX.
+ * Esta clase implementa la interfaz DAO_Patron y se encarga de manejar las operaciones de acceso a la base de datos para la entidad Solicitudes_ACEX.
  * @author Luis
  * @param <Solicitudes_ACEX> El tipo de entidad que se va a manejar en el repositorio.
- * @see Patron_DAO
+ * @see DAO_Patron
  */
-public class DAO_Solicitudes_ACEX implements Patron_DAO<Solicitudes_ACEX> {
+public class DAO_Solicitudes_ACEX implements DAO_Patron<Solicitudes_ACEX> {
     
     /**
      * Obtiene la conexión a la base de datos.

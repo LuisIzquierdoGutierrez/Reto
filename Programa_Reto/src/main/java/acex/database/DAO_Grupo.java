@@ -15,13 +15,13 @@ import java.util.List;
 import acex.objects.Grupo;
 
 /**
- * Esta clase implementa la interfaz Patron_DAO y proporciona métodos para
- * acceder a la base de datos y realizar operaciones en la tabla "grupo".
+ * Esta clase implementa la interfaz DAO_Patron y proporciona métodos para
+ acceder a la base de datos y realizar operaciones en la tabla "grupo".
  *
  * @author Luis, Adrian
- * @see Patron_DAO
+ * @see DAO_Patron
  */
-public class DAO_Grupo implements Patron_DAO<Grupo> {
+public class DAO_Grupo implements DAO_Patron<Grupo> {
 
     /**
      * Obtiene la conexión a la base de datos.
