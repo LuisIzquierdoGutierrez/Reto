@@ -40,7 +40,7 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
 #### 7 [Mejoras propuestas]
 #### 8 [Cuaderno de trabajo]
 #### 8 [Evolucion del trabajo en equipo]
-#### 9.[Bibliografía y webgrafía.](Bibliografia.md)
+#### 9.[Bibliografía y webgrafía.](bibiografia.md)
 
 
 
