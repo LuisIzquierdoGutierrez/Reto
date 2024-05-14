@@ -1,8 +1,10 @@
-# ***Reto: DamEquipo4***  
+# ***Actividades Conecta***  
 
 
 [](https://tasks.office.com/educantabria.es/es-es/home/planner/#/plantaskboard?groupid=3fbb2604-a253-49a6-9c33-c0a1afe976e4&planid=0ww7mkzmjkot0iieuxxuqpyah7gg)
-![Icono GitHub](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+
+![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/119076009/229c41aa-5e7e-4ad4-94b0-a1f7a4f72049)
+
 #### Integrantes:
 -Adrián de Diego Fernández      
 -Luis Izquierdo Gutierrez     
@@ -34,7 +36,12 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
 #### 4. [Implementación y Despliegue:](Sistemas.md)  
     4.1  Tecnologías usadas para la implementación (Tecnologías y características principales usadas en tabla)
 #### 5.[Diario de trabajo](Diario.md)    
-#### 6.[Bibliografía y webgrafía.](Bibliografia.md)
+#### 6 [Resultados obtenidos y valoracion de lo realizado]
+#### 7 [Mejoras propuestas]
+#### 8 [Cuaderno de trabajo]
+#### 8 [Evolucion del trabajo en equipo]
+#### 9.[Bibliografía y webgrafía.](Bibliografia.md)
+
 
 
 
