@@ -121,5 +121,285 @@ Si los datos de email y contraseña no son correctos, muestra mensaje de error y
 
 
 
-##### 3.3  Clases usadas en JavaDoc  
+##### 3.3  JavaDoc  
 ##### 3.4  Explicación del código 
+Hemos creado un proyecto en NetBeans llamado ACEX2, en el hemos creado una serie de objetos basándonos en el diagrama de clases que hemos creado para la creación de la aplicación. En el hemos creado una serie de objetos(Tipo_transporte, ACEX_Aprobadas, Alojamiento, Curso_Participante, Cursos, Departamento, Grupo, Grupo_Participante, Profesor, Profesor_participante, Profesor_Responsable, Solicitudes_ACEX, Transporte) todos ellos con sus atributos y sus métodos get y set.
+Ejemplo de una de las clases:
+
+```
+public class Profesor {
+    private int id_profesor;
+    private String DNI;
+    private String nombreProfesor;
+    private String apellidos;
+    private String correo;
+    private String password;
+    private Tipo_Perfil tipo_perfil;
+    private boolean profesorActivo;
+    private Departamento idDepartamento;
+    
+
+    public Profesor(int id_profesor, String DNI, String nombreProfesor, String apellidos, String correo, String password, Tipo_Perfil tipo_perfil, boolean profesorActivo,int idDepartamento) {
+        this.id_profesor = id_profesor;
+        this.DNI = DNI;
+        this.nombreProfesor = nombreProfesor;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.password = password;
+        this.tipo_perfil = tipo_perfil;
+        this.profesorActivo = profesorActivo;
+        this.idDepartamento = new DAO_Departamento().porId(idDepartamento);
+    }
+  
+    public Departamento getIdDepartamento() {
+        return idDepartamento;
+    }
+   
+    public void setIdDepartamento(Departamento idDepartamento) {
+        this.idDepartamento = idDepartamento;
+    }
+
+    public int getId_profesor() {
+        return id_profesor;
+    }
+
+    public void setId_profesor(int id_profesor) {
+        this.id_profesor = id_profesor;
+    }
+
+    public String getDNI() {
+        return DNI;
+    } 
+   
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+    
+    public String getNombreProfesor() {
+        return nombreProfesor;
+    }
+    
+    public void setNombreProfesor(String nombreProfesor) {
+        this.nombreProfesor = nombreProfesor;
+    }
+   
+    public String getApellidos() {
+        return apellidos;
+    }
+   
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+   
+    public String getCorreo() {
+        return correo;
+    }
+   
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+   
+    public String getPassword() {
+        return password;
+    }
+   
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    public Tipo_Perfil getTipo_perfil() {
+        return tipo_perfil;
+    }
+   
+    public void setTipo_perfil(Tipo_Perfil tipo_perfil) {
+        this.tipo_perfil = tipo_perfil;
+    }
+   
+    public boolean isProfesorActivo() {
+        return profesorActivo;
+    }
+   
+    public void setProfesorActivo(boolean profesorActivo) {
+        this.profesorActivo = profesorActivo;
+    }
+   
+    
+    
+}
+
+```
+A parte de esto hemos creado una interface llamada Patron_DAO con un método que consultar una lista de objetos, un método que nos devuelve un true si guardamos un objeto, un método que obtiene un objeto del repositorio por su identificador y otro método boolean que nos devuelve un true, si elimina un objeto del repositorio por su identificador.
+
+Ejemplo:
+
+```
+public interface Patron_DAO<T> {
+     
+    public List<T> consultar();
+  
+    public boolean save(T t);
+    
+    public T porId( int id);
+   
+    public boolean eliminar( int id);
+    
+}
+```
+
+Una clase AccesoBaseDatos que como el mismo nombre dice nos conecta con la base de datos creada.
+
+Ejemplo:
+
+```
+public class AccesoBaseDatos {
+    private Connection conn = null;
+    private static final String USER = "developer";
+    private static final String PASSWORD = "";
+    private static final String DATABASE_URL = "jdbc:mysql://10.0.16.35:3306/acex?useSSL=false&autoReconnect=true";
+    
+
+    public AccesoBaseDatos() {
+        try {
+            conn = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
+        } catch (SQLException ex) {
+            handleSQLException(ex);
+        }
+    }
+    
+    public Connection getConn() {
+        return conn;
+    }
+    
+    public void closeConnection() {
+        try {
+            conn.close();
+            System.out.println("Conexión cerrada.");
+        } catch (SQLException ex) {
+            handleSQLException(ex);
+        } catch (NullPointerException ex) {}
+    }
+        
+    private void handleSQLException(SQLException ex) {
+        System.out.println("[ERROR] Código: " + ex.getErrorCode());
+        System.out.println("[ERROR] Mensaje: " + ex.getMessage());
+        System.out.println("[ERROR] Estado SQL: " + ex.getSQLState());
+    }
+    
+    public static AccesoBaseDatos getInstance() {
+        return InstanceHolder.INSTANCE;
+    }
+    
+    private static class InstanceHolder {
+        private static final AccesoBaseDatos INSTANCE = new AccesoBaseDatos();
+    }
+}
+```
+
+También se han realizado la creacion de una serie de clases… llamadas DAO_ACEXArpobadas, DAO_cursos, DAO_Cursos_Participantes….  las cuales implementan la interface Patron_DAO y en la que desarrollamos los métodos   de este patrón para el manejo de cada clase en la base de datos y aparte la creación de los objetos de cada clase.
+
+Ejemplo de uno de los patrones:
+
+```
+public class DAO_Departamento implements Patron_DAO<Departamento> {
+    
+    private Connection getConnection() {
+        return AccesoBaseDatos.getInstance().getConn();
+    }
+   
+    @Override
+    public List<Departamento> consultar() {
+        List<Departamento> departamentos = new ArrayList<>();
+        try (Statement stmt = getConnection().createStatement(); ResultSet rs = stmt.executeQuery("SELECT id,id_jefe,codigo,nombre FROM departamento");) {
+            while (rs.next()) {
+                Departamento departamento = crearDepartamento(rs);
+                if (!departamentos.add(departamento)) {
+                    throw new Exception("error no se ha insertado el objeto en la colección");
+                }
+            }
+        } catch (SQLException e) {
+            // errores
+            System.out.println("SQLException: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return departamentos;
+    }
+    
+    @Override
+    public boolean save(Departamento departamento) {
+        String sql = null;
+        boolean resultado = true;
+        if (departamento.getIdDepartamento() > 0) {
+            sql = "UPDATE departamento SET id_jefe=?, codigo=?, nombre=? WHERE id=?";
+        } else {
+            String query = "INSERT INTO departamento (id_jefe, codigo, nombre) VALUES (?, ?, ?)";
+            try (PreparedStatement stmt = getConnection().prepareStatement(query)) {
+                if (departamento.getIdDepartamento() > 0) {
+                    stmt.setInt(4, departamento.getIdDepartamento());
+                }
+                stmt.setInt(1, departamento.getJefe().getId_profesor());
+                stmt.setString(2, departamento.getCodigo());
+                stmt.setString(3, departamento.getNombre());
+
+                int salida = stmt.executeUpdate();
+                if (salida != 1) {
+                    resultado = false;
+                    throw new Exception(" No se ha insertado/modificado un solo registro");
+                }
+            } catch (SQLException e) {
+                System.out.println("SQLException: " + e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return resultado;
+    }
+   
+    @Override
+    public Departamento porId(int id) {
+        Departamento departamento = null;
+        String sql = "SELECT id,id_jefe,codigo,nombre FROM departamento WHERE id=?";
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    departamento = crearDepartamento(rs);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+        }
+        return departamento;
+    }
+    
+    @Override
+    public boolean eliminar(int id) {
+        boolean resultado = true;
+        String sql = "DELETE FROM departamento WHERE id=?";
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            int salida = stmt.executeUpdate();
+            if (salida != 1) {
+                resultado = false;
+                throw new Exception(" No se ha borrado un solo registro");
+            }
+        } catch (SQLException e) {
+            // errores
+            System.out.println("SQLException: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return resultado;
+    }
+    
+    private Departamento crearDepartamento(ResultSet rs) throws SQLException {
+
+        return new Departamento(rs.getInt("id"), rs.getInt("id_jefe"), rs.getString("codigo"), rs.getString("nombre"));
+
+    }
+}
+```
+
+
+
+
