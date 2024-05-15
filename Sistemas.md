@@ -5,3 +5,14 @@
 
     ![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/119076009/4aceac5d-7132-48b3-b754-0a59aab1a4b1)
 
+
+    | Módulos  | Descripción |
+| ---------- | ---------- |
+|Programación | Desarrollo entorno servidor  |
+| Entornos de desarrollo| Desarrollo entorno cliente |
+|Programación | Desarrollo entorno servidor  |
+|Programación | Desarrollo entorno servidor  |
+|Programación | Desarrollo entorno servidor  |
+|Programación | Desarrollo entorno servidor  |
+
+
