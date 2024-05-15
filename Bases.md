@@ -21,7 +21,7 @@ documentación exhaustiva de cada evento, contribuyendo así a una evaluación y
 En este diagrama se representan las relaciones de todas aquellas entidades que son necesarias para el funcionamiento y organización de la aplicación de ACEX.
 ##### 1.3  Diagrama Relacional 
 
-![Uploading image.png…]()
+![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/119076009/bbc98e12-0c39-4571-ac7d-4c4dfc4dddc0)
 
 
 ##### 1.4  Importación SQL 
