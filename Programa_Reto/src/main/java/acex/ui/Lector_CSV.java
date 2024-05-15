@@ -33,9 +33,11 @@ public class Lector_CSV {
             reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] linea = line.split(",");
+                if (linea.length > 1) {
                 Profesor p = new Profesor(0, linea[2], linea[1], linea[0], linea[3], "password", Tipo_Perfil.PROFESOR, true, Integer.parseInt(linea[4]));
                 dao_profesor.save(p);
                 index++;
+                }
             }
         } catch (Exception e) {
             System.out.println("esto es un error pero no sabemos por que asi que ignoralo");
@@ -54,9 +56,11 @@ public class Lector_CSV {
             reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] linea = line.split(",");
+                if (linea.length > 1) {
                 Departamento d = new Departamento(Integer.parseInt(linea[0]), 0, linea[1], linea[2]);
                 dao_departamento.save(d);
                 index++;
+                }
             }
         } catch (Exception e) {
             System.out.println("esto es un error pero no sabemos por que asi que ignoralo");
@@ -74,9 +78,11 @@ public class Lector_CSV {
             reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] linea = line.split(",");
+                if (linea.length > 1) {
                Cursos curso = new Cursos(Integer.parseInt(linea[0]),linea[1],Tipo_Etapa.valueOf(linea[3].toUpperCase()), true,linea[2]);
                 dao_curso.save(curso);
                 index++;
+                }
             }
         } catch (Exception e) {
             System.out.println("esto es un error pero no sabemos por que asi que ignoralo");
@@ -93,9 +99,11 @@ public class Lector_CSV {
             reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] linea = line.split(",");
+                if (linea.length > 1) {
                Grupo grupo = new Grupo(Integer.parseInt(linea[0]),linea[1],true,"",Integer.parseInt(linea[2]));
                 dao_grupo.save(grupo);
                 index++;
+                }
             }
         } catch (Exception e) {
             System.out.println("esto es un error pero no sabemos por que asi que ignoralo");
