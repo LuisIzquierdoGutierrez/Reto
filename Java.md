@@ -123,279 +123,499 @@ Si los datos de email y contraseña no son correctos, muestra mensaje de error y
 
 ##### 3.3  JavaDoc  
 ##### 3.4  Explicación del código 
-Hemos creado un proyecto en NetBeans llamado ACEX2, en el hemos creado una serie de objetos basándonos en el diagrama de clases que hemos creado para la creación de la aplicación. En el hemos creado una serie de objetos(Tipo_transporte, ACEX_Aprobadas, Alojamiento, Curso_Participante, Cursos, Departamento, Grupo, Grupo_Participante, Profesor, Profesor_participante, Profesor_Responsable, Solicitudes_ACEX, Transporte) todos ellos con sus atributos y sus métodos get y set.
+Hemos creado un proyecto en NetBeans llamado ACEX2, en el hemos creado una serie de objetos basándonos en el diagrama de clases que hemos creado para la creación de la aplicación. En el hemos creado una serie de objetos(Obj_Transporte_Utilizado, Obj_Actividas_Aprobada, Obj_Alojamiento, Obj_Alojamiento_Utilizado, Obj_Curso_Participante, Obj_Curso, Obj_Departamento, Obj_Grupo, Obj_Grupo_Participante, Obj_Profesor, Obj_Profesor_Participante, Obj_Profesor_Responsable, Obj_Actividad_Solicitada, Obj_Transporte) todos ellos con sus atributos y sus métodos get y set.
 Ejemplo de una de las clases:
 
 ```
-public class Profesor {
-    private int id_profesor;
-    private String DNI;
-    private String nombreProfesor;
+public class Obj_Profesor {
+    private int id;
+    private Obj_Departamento departamento;
+    private String dni;
+    private String nombre;
     private String apellidos;
-    private String correo;
+    private String email;
     private String password;
-    private Tipo_Perfil tipo_perfil;
-    private boolean profesorActivo;
-    private Departamento idDepartamento;
-    
+    private Enum_Perfil perfil;
+    private boolean activo;
 
-    public Profesor(int id_profesor, String DNI, String nombreProfesor, String apellidos, String correo, String password, Tipo_Perfil tipo_perfil, boolean profesorActivo,int idDepartamento) {
-        this.id_profesor = id_profesor;
-        this.DNI = DNI;
-        this.nombreProfesor = nombreProfesor;
+    /**
+     * Constructor de la clase Obj_Profesor.
+     * 
+     * @param id               el ID del profesor
+     * @param idDepartamento   el ID del departamento al que pertenece el profesor
+     * @param dni              el DNI del profesor
+     * @param nombre           el nombre del profesor
+     * @param apellidos        los apellidos del profesor
+     * @param email            el email del profesor
+     * @param password         la contraseña del profesor
+     * @param perfil           el perfil del profesor
+     * @param activo           indica si el profesor está activo o no
+     */
+
+    public Obj_Profesor(int id, int idDepartamento, String dni, String nombre, String apellidos, String email, String password, Enum_Perfil perfil, boolean activo) {
+        this.id = id;
+        this.departamento = new DAO_Departamento().getById(idDepartamento);
+        this.dni = dni;
+        this.nombre = nombre;
         this.apellidos = apellidos;
-        this.correo = correo;
+        this.email = email;
         this.password = password;
-        this.tipo_perfil = tipo_perfil;
-        this.profesorActivo = profesorActivo;
-        this.idDepartamento = new DAO_Departamento().porId(idDepartamento);
-    }
-  
-    public Departamento getIdDepartamento() {
-        return idDepartamento;
-    }
-   
-    public void setIdDepartamento(Departamento idDepartamento) {
-        this.idDepartamento = idDepartamento;
+        this.perfil = perfil;
+        this.activo = activo;
     }
 
-    public int getId_profesor() {
-        return id_profesor;
+   /**
+     * Obtiene el ID del profesor.
+     * 
+     * @return el ID del profesor
+     */
+    public int getId() {
+        return id;
     }
 
-    public void setId_profesor(int id_profesor) {
-        this.id_profesor = id_profesor;
+    /**
+     * Establece el ID del profesor.
+     * 
+     * @param id el ID del profesor
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getDNI() {
-        return DNI;
-    } 
-   
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    /**
+     * Obtiene el departamento al que pertenece el profesor.
+     * 
+     * @return el departamento del profesor
+     */
+    public Obj_Departamento getDepartamento() {
+        return departamento;
     }
-    
-    public String getNombreProfesor() {
-        return nombreProfesor;
+
+    /**
+     * Establece el departamento al que pertenece el profesor.
+     * 
+     * @param departamento el departamento del profesor
+     */
+    public void setDepartamento(Obj_Departamento departamento) {
+        this.departamento = departamento;
     }
-    
-    public void setNombreProfesor(String nombreProfesor) {
-        this.nombreProfesor = nombreProfesor;
+
+    /**
+     * Obtiene el DNI del profesor.
+     * 
+     * @return el DNI del profesor
+     */
+    public String getDni() {
+        return dni;
     }
-   
+
+    /**
+     * Establece el DNI del profesor.
+     * 
+     * @param dni el DNI del profesor
+     */
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    /**
+     * Obtiene el nombre del profesor.
+     * 
+     * @return el nombre del profesor
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * Establece el nombre del profesor.
+     * 
+     * @param nombre el nombre del profesor
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * Obtiene los apellidos del profesor.
+     * 
+     * @return los apellidos del profesor
+     */
     public String getApellidos() {
         return apellidos;
     }
-   
+
+    /**
+     * Establece los apellidos del profesor.
+     * 
+     * @param apellidos los apellidos del profesor
+     */
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
-   
-    public String getCorreo() {
-        return correo;
+
+    /**
+     * Obtiene el email del profesor.
+     * 
+     * @return el email del profesor
+     */
+    public String getEmail() {
+        return email;
     }
-   
-    public void setCorreo(String correo) {
-        this.correo = correo;
+
+    /**
+     * Establece el email del profesor.
+     * 
+     * @param email el email del profesor
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
-   
+
+    /**
+     * Obtiene la contraseña del profesor.
+     * 
+     * @return la contraseña del profesor
+     */
     public String getPassword() {
         return password;
     }
-   
+
+    /**
+     * Establece la contraseña del profesor.
+     * 
+     * @param password la contraseña del profesor
+     */
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    public Tipo_Perfil getTipo_perfil() {
-        return tipo_perfil;
+
+    /**
+     * Obtiene el perfil del profesor.
+     * 
+     * @return el perfil del profesor
+     */
+    public Enum_Perfil getPerfil() {
+        return perfil;
     }
-   
-    public void setTipo_perfil(Tipo_Perfil tipo_perfil) {
-        this.tipo_perfil = tipo_perfil;
+
+    /**
+     * Establece el perfil del profesor.
+     * 
+     * @param perfil el perfil del profesor
+     */
+    public void setPerfil(Enum_Perfil perfil) {
+        this.perfil = perfil;
     }
-   
-    public boolean isProfesorActivo() {
-        return profesorActivo;
+
+    /**
+     * Verifica si el profesor está activo.
+     * 
+     * @return true si el profesor está activo, false de lo contrario
+     */
+    public boolean isActivo() {
+        return activo;
     }
-   
-    public void setProfesorActivo(boolean profesorActivo) {
-        this.profesorActivo = profesorActivo;
+
+    /**
+     * Establece si el profesor está activo o no.
+     * 
+     * @param activo true si el profesor está activo, false de lo contrario
+     */
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
-   
-    
-    
 }
 
+
 ```
-A parte de esto hemos creado una interface llamada Patron_DAO con un método que consultar una lista de objetos, un método que nos devuelve un true si guardamos un objeto, un método que obtiene un objeto del repositorio por su identificador y otro método boolean que nos devuelve un true, si elimina un objeto del repositorio por su identificador.
+A parte de esto hemos creado una interface llamada DAO_Interface con un método que consultar una lista de objetos, un método que nos devuelve un true si guardamos un objeto, un método que obtiene un objeto del repositorio por su identificador y otro método boolean que nos devuelve un true, si elimina un objeto del repositorio por su identificador.
 
 Ejemplo:
 
 ```
-public interface Patron_DAO<T> {
-     
-    public List<T> consultar();
-  
-    public boolean save(T t);
-    
-    public T porId( int id);
-   
-    public boolean eliminar( int id);
-    
+public interface DAO_Interface<T> {
+    /**
+     * Obtiene todos los objetos de la base de datos.
+     * 
+     * @return una lista de objetos de tipo T
+     */
+    public List<T> getAll();
+
+    /**
+     * Obtiene un objeto de la base de datos por su identificador.
+     * 
+     * @param id el identificador del objeto a obtener
+     * @return el objeto de tipo T con el identificador especificado
+     */
+    public T getById(int id);
+
+    /**
+     * Actualiza un objeto en la base de datos.
+     * 
+     * @param object el objeto a actualizar
+     * @return true si la actualización fue exitosa, false de lo contrario
+     */
+    public boolean update(T object);
+
+    /**
+     * Elimina un objeto de la base de datos por su identificador.
+     * 
+     * @param id el identificador del objeto a eliminar
+     * @return true si la eliminación fue exitosa, false de lo contrario
+     */
+    public boolean delete(int id);
 }
 ```
 
-Una clase AccesoBaseDatos que como el mismo nombre dice nos conecta con la base de datos creada.
+Una clase Access que como el mismo nombre dice nos conecta con la base de datos creada.
 
 Ejemplo:
 
 ```
-public class AccesoBaseDatos {
+public class Access {
     private Connection conn = null;
-    private static final String USER = "developer";
-    private static final String PASSWORD = "";
-    private static final String DATABASE_URL = "jdbc:mysql://10.0.16.35:3306/acex?useSSL=false&autoReconnect=true";
+    private static final String USER = "root";
+    private static final String PASSWORD = "root";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/acex?useSSL=false&autoReconnect=true";
+     /**
+     * Constructor privado para evitar la creación de instancias directamente.
+     * Se establece la conexión a la base de datos.
+     */
     
-
-    public AccesoBaseDatos() {
+    private Access() {
         try {
             conn = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
         } catch (SQLException ex) {
             handleSQLException(ex);
         }
     }
+     /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return la conexión a la base de datos
+     */
     
-    public Connection getConn() {
+    public Connection getConnection() {
         return conn;
     }
+     /**
+     * Cierra la conexión a la base de datos.
+     */
     
     public void closeConnection() {
         try {
             conn.close();
-            System.out.println("Conexión cerrada.");
+            System.out.println("Connection closed.");
         } catch (SQLException ex) {
             handleSQLException(ex);
         } catch (NullPointerException ex) {}
     }
-        
-    private void handleSQLException(SQLException ex) {
-        System.out.println("[ERROR] Código: " + ex.getErrorCode());
-        System.out.println("[ERROR] Mensaje: " + ex.getMessage());
-        System.out.println("[ERROR] Estado SQL: " + ex.getSQLState());
-    }
+     /**
+     * Obtiene la instancia única de la clase Access.
+     * 
+     * @return la instancia única de Access
+     */
     
-    public static AccesoBaseDatos getInstance() {
+    public static Access getInstance() {
         return InstanceHolder.INSTANCE;
     }
     
+    /**
+     * Clase interna que contiene la instancia única de Access.
+     */
+    
+    
     private static class InstanceHolder {
-        private static final AccesoBaseDatos INSTANCE = new AccesoBaseDatos();
+        private static final Access INSTANCE = new Access();
+    }
+    
+    /**
+     * Maneja las excepciones de SQL y muestra información detallada del error.
+     * 
+     * @param ex la excepción de SQL
+     */
+    
+    private void handleSQLException(SQLException ex) {
+        System.out.println("[ERROR] Code: " + ex.getErrorCode());
+        System.out.println("[ERROR] Message: " + ex.getMessage());
+        System.out.println("[ERROR] SQL State: " + ex.getSQLState());
     }
 }
 ```
 
-También se han realizado la creacion de una serie de clases… llamadas DAO_ACEXArpobadas, DAO_cursos, DAO_Cursos_Participantes….  las cuales implementan la interface Patron_DAO y en la que desarrollamos los métodos   de este patrón para el manejo de cada clase en la base de datos y aparte la creación de los objetos de cada clase.
+También se han realizado la creacion de una serie de clases… llamadas DAO_Actividad_Aprobadas, DAO_Actividad_Solicitada,DAO_Alojamineto....  las cuales implementan la interface Patron_DAO y en la que desarrollamos los métodos   de este patrón para el manejo de cada clase en la base de datos y aparte la creación de los objetos de cada clase.
 
 Ejemplo de uno de los patrones:
 
 ```
-public class DAO_Departamento implements Patron_DAO<Departamento> {
+public class DAO_Departamento implements DAO_Interface<Obj_Departamento> {
     
-    private Connection getConnection() {
-        return AccesoBaseDatos.getInstance().getConn();
-    }
-   
+    /**
+     * Obtiene todos los departamentos de la base de datos.
+     * 
+     * @return una lista de objetos Obj_Departamento que representan los departamentos en la base de datos.
+     * @throws SQLException si ocurre un error al ejecutar la consulta SQL.
+     */
+
     @Override
-    public List<Departamento> consultar() {
-        List<Departamento> departamentos = new ArrayList<>();
-        try (Statement stmt = getConnection().createStatement(); ResultSet rs = stmt.executeQuery("SELECT id,id_jefe,codigo,nombre FROM departamento");) {
-            while (rs.next()) {
-                Departamento departamento = crearDepartamento(rs);
+    public List<Obj_Departamento> getAll() {
+        String sql = "SELECT id, id_jefe, codigo, nombre FROM departamento";
+        List<Obj_Departamento> departamentos = new ArrayList<>();
+
+        try (Statement stmt = getConnection().createStatement(); ResultSet rset = stmt.executeQuery(sql)) {
+            while (rset.next()) {
+                Obj_Departamento departamento = newDepartamento(rset);
+                
                 if (!departamentos.add(departamento)) {
-                    throw new Exception("error no se ha insertado el objeto en la colección");
+                    throw new Exception("[ERROR] No se ha podido obtener el objecto.");
                 }
             }
-        } catch (SQLException e) {
-            // errores
-            System.out.println("SQLException: " + e.getMessage());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (SQLException ex) {
+            handleSQLException(ex);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
+
         return departamentos;
     }
     
-    @Override
-    public boolean save(Departamento departamento) {
-        String sql = null;
-        boolean resultado = true;
-        if (departamento.getIdDepartamento() > 0) {
-            sql = "UPDATE departamento SET id_jefe=?, codigo=?, nombre=? WHERE id=?";
-        } else {
-            String query = "INSERT INTO departamento (id_jefe, codigo, nombre) VALUES (?, ?, ?)";
-            try (PreparedStatement stmt = getConnection().prepareStatement(query)) {
-                if (departamento.getIdDepartamento() > 0) {
-                    stmt.setInt(4, departamento.getIdDepartamento());
-                }
-                stmt.setInt(1, departamento.getJefe().getId_profesor());
-                stmt.setString(2, departamento.getCodigo());
-                stmt.setString(3, departamento.getNombre());
+     /**
+     * Obtiene un departamento de la base de datos por su ID.
+     * 
+     * @param id el ID del departamento a buscar.
+     * @return un objeto Obj_Departamento que representa el departamento en la base de datos, o null si no se encuentra.
+     * @throws SQLException si ocurre un error al ejecutar la consulta SQL.
+     */
 
-                int salida = stmt.executeUpdate();
-                if (salida != 1) {
-                    resultado = false;
-                    throw new Exception(" No se ha insertado/modificado un solo registro");
-                }
-            } catch (SQLException e) {
-                System.out.println("SQLException: " + e.getMessage());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        return resultado;
-    }
-   
+    
     @Override
-    public Departamento porId(int id) {
-        Departamento departamento = null;
-        String sql = "SELECT id,id_jefe,codigo,nombre FROM departamento WHERE id=?";
+    public Obj_Departamento getById(int id) {
+        String sql = "SELECT id, id_jefe, codigo, nombre FROM departamento WHERE id=?";
+        Obj_Departamento departamento = null;
+        
         try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
             stmt.setInt(1, id);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    departamento = crearDepartamento(rs);
+            
+            try (ResultSet rset = stmt.executeQuery()) {
+                if (rset.next()) {
+                    departamento = newDepartamento(rset);
                 }
             }
-        } catch (SQLException e) {
-            System.out.println("SQLException: " + e.getMessage());
+        } catch (SQLException ex) {
+            handleSQLException(ex);
         }
+
         return departamento;
     }
     
+     /**
+     * Actualiza un departamento en la base de datos.
+     * 
+     * @param departamento el departamento a actualizar.
+     * @return true si se actualiza correctamente, false de lo contrario.
+     * @throws SQLException si ocurre un error al ejecutar la consulta SQL.
+     */
+
+    
     @Override
-    public boolean eliminar(int id) {
-        boolean resultado = true;
-        String sql = "DELETE FROM departamento WHERE id=?";
-        try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
-            stmt.setInt(1, id);
-            int salida = stmt.executeUpdate();
-            if (salida != 1) {
-                resultado = false;
-                throw new Exception(" No se ha borrado un solo registro");
-            }
-        } catch (SQLException e) {
-            // errores
-            System.out.println("SQLException: " + e.getMessage());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    public boolean update(Obj_Departamento departamento) {
+        String sql = null;
+        boolean result = false;
+        
+        if (departamento.getId() > 0) {
+            sql = "UPDATE departamento SET id_jefe=?, codigo=?, nombre=? WHERE id=?";
+        } else {
+           sql = "INSERT INTO departamento (id_jefe, codigo, nombre) VALUES (?, ?, ?)";
         }
-        return resultado;
+        
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+            if (departamento.getId() > 0) {
+                stmt.setInt(4, departamento.getId());
+            }
+            stmt.setInt(1, departamento.getJefe().getId());
+            stmt.setString(2, departamento.getCodigo());
+            stmt.setString(3, departamento.getNombre());
+            
+            if (stmt.executeUpdate() != 1) {
+                throw new Exception("[ERROR] No se ha podido actualizar el objecto.");
+            } else {
+                result = true;
+            }
+        } catch (SQLException ex) {
+            handleSQLException(ex);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return result;
     }
     
-    private Departamento crearDepartamento(ResultSet rs) throws SQLException {
+    /**
+     * Elimina un departamento de la base de datos por su ID.
+     * 
+     * @param id el ID del departamento a eliminar.
+     * @return true si se elimina correctamente, false de lo contrario.
+     * @throws SQLException si ocurre un error al ejecutar la consulta SQL.
+     */
+    
+    @Override
+    public boolean delete(int id) {
+        String sql = "DELETE FROM departamento WHERE id=?";
+        boolean result = false;
+        
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            
+            if (stmt.executeUpdate() != 1) {
+                throw new Exception("[ERROR] No se ha podido eliminar el objecto.");
+            } else {
+                result = true;
+            }
+        } catch (SQLException ex) {
+            handleSQLException(ex);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return result;
+    }
+    
+     /**
+     * Crea un nuevo objeto Obj_Departamento a partir de un ResultSet.
+     * 
+     * @param rset el ResultSet que contiene los datos del departamento.
+     * @return un objeto Obj_Departamento creado a partir de los datos del ResultSet.
+     * @throws SQLException si ocurre un error al acceder a los datos del ResultSet.
+     */
+    
 
-        return new Departamento(rs.getInt("id"), rs.getInt("id_jefe"), rs.getString("codigo"), rs.getString("nombre"));
-
+    private Obj_Departamento newDepartamento(final ResultSet rset) throws SQLException {
+        return new Obj_Departamento(rset.getInt("id"), rset.getInt("id_jefe"), rset.getString("codigo"), rset.getString("nombre"));
+    }
+    
+     /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return la conexión a la base de datos.
+     */
+    
+    
+    private Connection getConnection() {
+        return Access.getInstance().getConnection();
+    }
+    
+     /**
+     * Maneja una excepción de tipo SQLException.
+     * 
+     * @param ex la excepción SQLException a manejar.
+     */
+    
+    
+    private void handleSQLException(SQLException ex) {
+        System.out.println("[ERROR] Code: " + ex.getErrorCode());
+        System.out.println("[ERROR] Message: " + ex.getMessage());
+        System.out.println("[ERROR] SQL State: " + ex.getSQLState());
     }
 }
 ```
