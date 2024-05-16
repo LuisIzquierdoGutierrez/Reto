@@ -36,7 +36,7 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
 ``` 
     3.1  Diagrama de clases  
     3.2  Diagramas de caso de uso
-    3.3  Clases usadas en JavaDoc  
+    3.3  Javadoc
     3.4  Explicación del código
 ``` 
 #### 4. [Implementación y Despliegue:](Sistemas.md)  
