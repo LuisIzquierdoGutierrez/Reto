@@ -40,14 +40,12 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
     3.4  Explicación del código
 ``` 
 #### 4. [Implementación y Despliegue:](Sistemas.md)  
-    ```
+```
     4.1  Manual de Usuario
     4.2  Guia de despliegue
 
-    ```
- 
-##### 4.1 [Manual de usuario]()
-##### 4.2 [Guia de despliegue](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Sistemas/Gu%C3%ADa%20de%20Despliegue%20(1).pdf)
+```
+
 #### 5 [Contrato Equipo4](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/ContratoEquipo4.pdf)
 #### 6 [Cuaderno de trabajo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/Diario16DAM1_Equipo4.pdf)
 #### 7 [Evolucion del trabajo en equipo](https://www.canva.com/design/DAFzzurZga8/TXvq3FxYSsbExyYvvlDU-A/edit?utm_content=DAFzzurZga8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
