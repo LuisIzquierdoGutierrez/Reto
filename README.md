@@ -46,9 +46,10 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
   
 #### 5 [Resultados obtenidos y valoracion de lo realizado]
 #### 6 [Mejoras propuestas]
-#### 7 [Cuaderno de trabajo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/Diario16DAM1_Equipo4.pdf)
-#### 8 [Evolucion del trabajo en equipo](https://www.canva.com/design/DAFzzurZga8/TXvq3FxYSsbExyYvvlDU-A/edit?utm_content=DAFzzurZga8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-#### 9.[Bibliografía y webgrafía.](bibiografia.md)
+#### 7 [Contrato Equipo4](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/ContratoEquipo4.pdf)
+#### 8 [Cuaderno de trabajo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/Diario16DAM1_Equipo4.pdf)
+#### 9 [Evolucion del trabajo en equipo](https://www.canva.com/design/DAFzzurZga8/TXvq3FxYSsbExyYvvlDU-A/edit?utm_content=DAFzzurZga8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+#### 10.[Bibliografía y webgrafía.](bibiografia.md)
 
 
 
