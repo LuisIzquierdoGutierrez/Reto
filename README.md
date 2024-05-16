@@ -40,6 +40,11 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
     3.4  Explicación del código
 ``` 
 #### 4. [Implementación y Despliegue:](Sistemas.md)  
+    ```
+    4.1  Manual de Usuario
+    4.2  Guia de despliegue
+
+    ```
  
 ##### 4.1 [Manual de usuario]()
 ##### 4.2 [Guia de despliegue](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Sistemas/Gu%C3%ADa%20de%20Despliegue%20(1).pdf)
