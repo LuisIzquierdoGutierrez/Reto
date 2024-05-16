@@ -16,7 +16,7 @@ La inclusión de la posibilidad de añadir comentarios sobre la realización de 
 documentación exhaustiva de cada evento, contribuyendo así a una evaluación y mejora continua de las actividades ofrecidas por el centro.
 
 ##### 1.2  Imagen E/R  
-![Diagrama Entidad-Relacion](https://github.com/LuisIzquierdoGutierrez/Reto/assets/152623929/56b60a16-4003-44d3-8243-540ea2550623)
+![acex_entidad_relacion](https://github.com/LuisIzquierdoGutierrez/Reto/assets/152623771/7a12f539-1254-46f7-8466-754a35670112)
 
 En este diagrama se representan las relaciones de todas aquellas entidades que son necesarias para el funcionamiento y organización de la aplicación de ACEX.
 ##### 1.3  Diagrama Relacional 
