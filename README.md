@@ -46,7 +46,7 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
 #### 5.[Diario de trabajo](Diario.md)    
 #### 6 [Resultados obtenidos y valoracion de lo realizado]
 #### 7 [Mejoras propuestas]
-#### 8 [Cuaderno de trabajo]
+#### 8 [Cuaderno de trabajo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/Diario16DAM1_Equipo4.pdf)
 #### 8 [Evolucion del trabajo en equipo](https://www.canva.com/design/DAFzzurZga8/TXvq3FxYSsbExyYvvlDU-A/edit?utm_content=DAFzzurZga8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 #### 9.[Bibliografía y webgrafía.](bibiografia.md)
 
