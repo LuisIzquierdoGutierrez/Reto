@@ -123,6 +123,9 @@ Si los datos de email y contraseña no son correctos, muestra mensaje de error y
 
 
 ##### 3.3  JavaDoc  
+
+[Enlace a Javadoc](file:///C:/Users/adry1/Desktop/Application/target/site/apidocs/index.html)
+
 ##### 3.4  Explicación del código 
 Hemos creado un proyecto en NetBeans llamado ACEX2, en el hemos creado una serie de objetos basándonos en el diagrama de clases que hemos creado para la creación de la aplicación. En el hemos creado una serie de objetos(Obj_Transporte_Utilizado, Obj_Actividas_Aprobada, Obj_Alojamiento, Obj_Alojamiento_Utilizado, Obj_Curso_Participante, Obj_Curso, Obj_Departamento, Obj_Grupo, Obj_Grupo_Participante, Obj_Profesor, Obj_Profesor_Participante, Obj_Profesor_Responsable, Obj_Actividad_Solicitada, Obj_Transporte) todos ellos con sus atributos y sus métodos get y set.
 Ejemplo de una de las clases:
