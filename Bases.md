@@ -23,5 +23,22 @@ En este diagrama se representan las relaciones de todas aquellas entidades que s
 
 ![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/119076009/bbc98e12-0c39-4571-ac7d-4c4dfc4dddc0)
 
+actividad_solicitada: guarda todos los datos de una solicitud.
+actividad_aprobada: es una copia de actividad_solicitada que se genera una vez a sido aprobada.
+imagen: guarda urls de imagenes vinculandolas a una solicitud aprobada.
+departamento: Guarda los departamentos del centro.
+profesores: Guarda los datos de los profesores del centro.
+profesor_responsable: Relaciona profesores y actividades en las que son responsables
+profesor_participante: Relaciona profesores y actividades en las que participan.
+curso: guarda todos los datos de un curso
+curso_participante: Relaciona cursos y actividades en las que participan junto al numero de alumnos del curso que participa en dicha actividad.
+grupo: los datos de un grupo junto con el curso al que pertenece.
+grupo_participante: relaciona grupos y actividades en las que participan junto al numero de alumnos del grupo que participa en dicha actividad.
+transporte: guarda los tipos de transporte que se pueden utilizar.
+transporte_utilizado: guarda los transporte que se han utilizado y su importe, relacionandolos a la actividad en la que se han utilizado o se van a utilizar.
+alojamiento: guarda los tipos de alojamiento que se pueden utilizar.
+alojamiento_utilizado: guarda los alojamientos que se han utilizado y su importe, relacionandolos a la actividad en la que se han utilizado o se van a utilizar.
+
+
 
 ##### 1.4  Importación SQL 
