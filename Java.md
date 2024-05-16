@@ -1,7 +1,8 @@
 #### 3. Java:  
 ##### 3.1  Diagrama de clases  
 
-![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/119076009/de8cef99-a57d-47e2-9a73-7fef534c281e)
+![image](https://github.com/LuisIzquierdoGutierrez/Reto/assets/119076009/78e85832-6a55-440e-ab03-a9e8ef57738f)
+
 
 
 
