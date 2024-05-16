@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `acex`.`profesor` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 7
+AUTO_INCREMENT = 247
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS `acex`.`actividad_solicitada` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -367,6 +368,45 @@ CREATE TABLE IF NOT EXISTS `acex`.`transporte_utilizado` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+USE `acex`;
+
+DELIMITER $$
+USE `acex`$$
+CREATE
+DEFINER=``@``
+TRIGGER `acex`.`trigger_update`
+AFTER UPDATE ON `acex`.`actividad_solicitada`
+FOR EACH ROW
+BEGIN
+
+if(old.estado = 'SOLICITADA' and new.estado = 'APROBADA') then
+
+INSERT INTO acex.actividad_aprobada(id, id_solicitante, titulo, comentario_actividad, tipo, prevista, estado, comentario_estado, transporte, alojamiento, hora_inicio, hora_fin, fecha_inicio, fecha_fin)
+VALUES(new.id, new.id_solicitante,new.titulo,new.comentario_actividad, new.tipo, new.prevista, new.estado, new.comentario_estado, new.transporte, new.alojamiento, new.hora_inicio, new.hora_fin, new.fecha_inicio, new.fecha_fin);
+
+END IF;
+
+if(old.estado = 'APROBADA') then
+update acex.actividad_aprobada set 
+    acex.actividad_aprobada.titulo = new.titulo,
+    acex.actividad_aprobada.comentario_actividad = new.comentario_actividad,
+    acex.actividad_aprobada.tipo = new.tipo,
+    acex.actividad_aprobada.prevista = new.prevista,
+    acex.actividad_aprobada.estado = new.estado,
+    acex.actividad_aprobada.comentario_estado = new.comentario_estado,
+    acex.actividad_aprobada.transporte = new.transporte,
+    acex.actividad_aprobada.alojamiento = new.alojamiento,
+    acex.actividad_aprobada.hora_inicio = new.hora_inicio,
+    acex.actividad_aprobada.hora_fin = new.hora_fin,
+    acex.actividad_aprobada.fecha_inicio = new.fecha_inicio,
+    acex.actividad_aprobada.fecha_fin = new.fecha_fin
+    where acex.actividad_aprobada.id = new.id;
+END IF;
+
+END$$
+
+
+DELIMITER ;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
