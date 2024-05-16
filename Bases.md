@@ -28,10 +28,12 @@ actividad_aprobada: es una copia de actividad_solicitada que se genera una vez a
 imagen: guarda urls de imagenes vinculandolas a una solicitud aprobada.
 departamento: Guarda los departamentos del centro.
 profesores: Guarda los datos de los profesores del centro.
-profesor_responsable: Guarda relaciones entre profesores y actividades en las que son responsables
-
-
-
+profesor_responsable: Relaciona profesores y actividades en las que son responsables
+profesor_participante: Relaciona profesores y actividades en las que participan.
+curso: guarda todos los datos de un curso
+curso_participante: Relaciona cursos y actividades en las que participan junto al numero de alumnos del curso que participa en dicha actividad.
+grupo: los datos de un grupo junto con el curso al que pertenece.
+grupo_participante: relaciona grupos y actividades en las que participan junto al numero de alumnos del grupo que participa en dicha actividad.
 transporte: guarda los tipos de transporte que se pueden utilizar.
 transporte_utilizado: guarda los transporte que se han utilizado y su importe, relacionandolos a la actividad en la que se han utilizado o se van a utilizar.
 alojamiento: guarda los tipos de alojamiento que se pueden utilizar.
