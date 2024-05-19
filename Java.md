@@ -127,7 +127,11 @@ Si los datos de email y contraseña no son correctos, muestra mensaje de error y
 [Enlace a Javadoc](https://raw.githack.com/LuisIzquierdoGutierrez/Reto/c1eb8bdf7297f412aef75ab320d191d36e148559/Application/target/site/apidocs/index.html)
 
 ##### 3.4  Explicación del código 
-Hemos creado un proyecto en NetBeans llamado ACEX2, en el hemos creado una serie de objetos basándonos en el diagrama de clases que hemos creado para la creación de la aplicación. En el hemos creado una serie de objetos(Obj_Transporte_Utilizado, Obj_Actividas_Aprobada, Obj_Alojamiento, Obj_Alojamiento_Utilizado, Obj_Curso_Participante, Obj_Curso, Obj_Departamento, Obj_Grupo, Obj_Grupo_Participante, Obj_Profesor, Obj_Profesor_Participante, Obj_Profesor_Responsable, Obj_Actividad_Solicitada, Obj_Transporte) todos ellos con sus atributos y sus métodos get y set.
+Hemos creado un proyecto en NetBeans llamado ACEX2, en el cual hemos desarrollado una serie de objetos basados en el diagrama de clases diseñado para la aplicación. Para mantener una buena organización, los recursos del proyecto se han almacenado en cuatro paquetes diferentes: database, enum, objects y UI. Este último contiene el archivo JFrame.
+
+Además, para trabajar de manera más eficiente y evitar confusiones con los archivos durante el desarrollo del código, todos los nombres de los recursos siguen una convención específica. Los archivos se nombran con una abreviatura que indica su tipo: "DAO_" para archivos de base de datos, "Enum_" para enumerados y "Obj_" para objetos que corresponden a entidades.
+
+Los objetos (Obj_Transporte_Utilizado, Obj_Actividas_Aprobada, Obj_Alojamiento, Obj_Alojamiento_Utilizado, Obj_Curso_Participante, Obj_Curso, Obj_Departamento, Obj_Grupo, Obj_Grupo_Participante, Obj_Profesor, Obj_Profesor_Participante, Obj_Profesor_Responsable, Obj_Actividad_Solicitada, Obj_Transporte) contienen atributos y métodos get y set.
 Ejemplo de una de las clases:
 
 ```
@@ -333,9 +337,13 @@ public class Obj_Profesor {
 
 
 ```
-A parte de esto hemos creado una interface llamada DAO_Interface con un método que consultar una lista de objetos, un método que nos devuelve un true si guardamos un objeto, un método que obtiene un objeto del repositorio por su identificador y otro método boolean que nos devuelve un true, si elimina un objeto del repositorio por su identificador.
+Además de esto, hemos creado una interfaz llamada DAO_Interface con los siguientes métodos:
 
-Ejemplo:
+getAll: Obtiene todos los objetos de la base de datos y devuelve una lista de objetos.
+getById: Obtiene un objeto de la base de datos por su identificador.
+update: Actualiza un objeto en la base de datos y devuelve true si la actualización fue exitosa.
+delete: Elimina un objeto de la base de datos por su identificador y devuelve true si la eliminación fue exitosa.
+La interfaz se define de la siguiente manera:
 
 ```
 public interface DAO_Interface<T> {
@@ -448,7 +456,7 @@ public class Access {
 }
 ```
 
-También se han realizado la creacion de una serie de clases… llamadas DAO_Actividad_Aprobadas, DAO_Actividad_Solicitada,DAO_Alojamineto....  las cuales implementan la interface Patron_DAO y en la que desarrollamos los métodos   de este patrón para el manejo de cada clase en la base de datos y aparte la creación de los objetos de cada clase.
+Además, se ha llevado a cabo la creación de una serie de clases DAO, tales como DAO_Departamento, DAO_Actividad_Aprobada, DAO_Actividad_Solicitada, entre otras. Estas clases implementan la interfaz DAO_Interface y desarrollan los métodos definidos en esta interfaz para manejar cada clase en la base de datos, así como la creación de los objetos correspondientes.
 
 Ejemplo de uno de los patrones:
 
@@ -624,6 +632,87 @@ public class DAO_Departamento implements DAO_Interface<Obj_Departamento> {
 }
 ```
 
+Para el funcionamiento de los objetos anteriores se precisa de enumerados que faciliten la gestión y clasificación de diferentes aspectos del sistema. Hemos creado varios enumerados: Enum_Perfil, Enum_Tipo, Enum_Estado y Enum_Etapa, cada uno diseñado para mejorar la claridad y la robustez del código.
+
+Ejemplo de uno de los enumerados:
+
+```
+public enum Enum_Perfil {
+    PROFESOR, GRUPO_DIRECTIVO, ADMINISTRADOR, SUPERUSUARIO;
+}
+```
+
+Con todos los recursos mencionados anteriormente, se ha comenzado a desarrollar la Interfaz de Usuario en Java Swing utilizando el IDE de Apache NetBeans, no sin antes añadir algunas dependencias como: MySQL Connector Java, FlatLaf y MiGLayout Swing. Todas ellas utilizan la última versión según la web Maven Repository. Además, se ha añadido una dependencia local (archivo .jar) para poder insertar un calendario visual en la aplicación.
+
+Dependencias
+ - MySQL Connector Java: Permite la conexión y operación con bases de datos MySQL.
+ - FlatLaf: Proporciona un Look and Feel moderno y plano para las aplicaciones Swing.
+ - MiGLayout: Ofrece un sistema de diseño flexible y potente para organizar componentes en los paneles.
+
+Dependencia Local
+ - Calendario Visual (JCalendar.jar): Añadido como archivo .jar local para integrar un calendario visual, mejorando la experiencia del usuario en la selección de fechas.
+
+Estructura de la Interfaz
+Acerca del código del JFrame, al tratarse de una aplicación de un tamaño no muy grande, se han utilizado varios paneles, en concreto 11, entre los que se navega utilizando botones. En el código se puede observar la gran cantidad de eventos ActionListener que hay. De esta manera, se puede recoger cualquier acción por parte del usuario para la realización de una acción específica.
+
+Ejemplo de la parte de inicio de sesión:
+
+```
+public class JFrame extends javax.swing.JFrame {
+    // Omitido: Código para la inicialización de componentes y variables.
 
 
+    // Validar las credenciales del usuario.
+    private boolean isValidCredentials1(String email, String password) {
+        try {
+            DAO_Profesor daoProfesor = new DAO_Profesor();
+            List<Obj_Profesor> profesores = daoProfesor.getAll();
+    
+            for (Obj_Profesor profesor : profesores) {
+                if (profesor.getEmail().equalsIgnoreCase(email) && profesor.getPassword().equals(password) && profesor.isActivo()) {
+                    currentUser = profesor;
+                    return true;
+                }
+            }
+    
+            JOptionPane.showMessageDialog(this, "Las credenciales introducidas son incorrectas o el usuario está inactivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    
+        return false;
+    }
+    
+    
+    // Evento: Al mostrar panel -> 1
+    private void jPanel1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel1AncestorAdded
+        setLayout(null);
+        jPanel1.setBounds(218, 100, 300, 260);
+        jPanel1.putClientProperty(FlatClientProperties.STYLE, "arc: 12");
+    
+        jTextField1.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Email");
+        jPasswordField1.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Contraseña");
+        jPasswordField1.putClientProperty(FlatClientProperties.STYLE, "showRevealButton: true");
+    }//GEN-LAST:event_jPanel1AncestorAdded
+    
+    
+    // Evento: Al pulsar botón -> Login
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String email = jTextField1.getText();
+        String password = new String(jPasswordField1.getPassword());
+    
+        if (email.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+    
+        if (isValidCredentials1(email, password)) {
+            showPanel(jPanel2);
+        }
+        jPasswordField1.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+
+    // Omitido: Resto del código...
+```
