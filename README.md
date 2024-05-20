@@ -39,7 +39,7 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
     3.3  Javadoc
     3.4  Explicación del código
 ``` 
-#### 4. [Implementación y Despliegue:](Recursos/Documentación/Implementación y Despliegue.md)  
+#### 4. [Implementación y Despliegue:](Recursos/Documentación/Sistemas Informáticos/Implementación y Despliegue.md)  
 ```
     4.1  Manual de Usuario
     4.2  Guia de despliegue
