@@ -25,21 +25,24 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
     1.2  Imagen E/R          
     1.3  Diagrama Relacional      
     1.4  Importación SQL
-``` 
-#### 2. [Página web:](Recursos/Documentación/Página_WEB.md) 
+```
+
+#### 2. [Página WEB:](Recursos/Documentación/Página_WEB.md) 
 ``` 
     2.1  Estructura de la página web   
     2.2  Tipos de estilos  
     2.3  Contenidos de la web
-``` 
+```
+
 #### 3. [Java:](Recursos/Documentación/Java.md)  
 ``` 
     3.1  Diagrama de clases  
     3.2  Diagramas de caso de uso
     3.3  Javadoc
     3.4  Explicación del código
-``` 
-#### 4. [Implementación y Despliegue:](Recursos/Documentación/Sistemas Informáticos/Implementación y Despliegue.md)  
+```
+
+#### 4. [Implementación y Despliegue:](Recursos/Documentación/Implementación%20y%20Despliegue.md)
 ```
     4.1  Manual de Usuario
     4.2  Guia de despliegue
@@ -49,8 +52,3 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
 #### 6. [Cuaderno de Trabajo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/Diario16DAM1_Equipo4.pdf)
 #### 7. [Evolución del trabajo en equipo](https://www.canva.com/design/DAFzzurZga8/TXvq3FxYSsbExyYvvlDU-A/edit?utm_content=DAFzzurZga8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 #### 8. [Bibliografia](Recursos/Documentación/bibliografía.md)
-
-
-
-
-
