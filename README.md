@@ -19,7 +19,7 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
 
 
 ## ***Índice***
-#### 1. [Base de Datos:](Recursos/Documentación/Base_de_Datos.md)
+#### 1. [Base de Datos:](Recursos/Documentación/Base%20de%20Datos.md)
 ```
     1.1  Descripción
     1.2  Imagen E/R          
@@ -27,7 +27,7 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
     1.4  Importación SQL
 ```
 
-#### 2. [Página WEB:](Recursos/Documentación/Página_WEB.md) 
+#### 2. [Página WEB:](Recursos/Documentación/Página%20WEB.md) 
 ``` 
     2.1  Estructura de la página web   
     2.2  Tipos de estilos  
