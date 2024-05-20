@@ -43,7 +43,6 @@ Nuestro equipo ha desarrollado una aplicaci√≥n basada en ventanas en Java, dise√
 ```
     4.1  Manual de Usuario
     4.2  Guia de despliegue
-
 ```
 
 #### 5. [Contrato de Equipo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/ContratoEquipo4.pdf)
