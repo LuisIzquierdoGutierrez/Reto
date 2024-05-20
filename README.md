@@ -46,9 +46,9 @@ Nuestro equipo ha desarrollado una aplicación basada en ventanas en Java, dise�
 
 ```
 
-#### 5 [Contrato Equipo4](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/ContratoEquipo4.pdf)
-#### 6 [Cuaderno de trabajo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/Diario16DAM1_Equipo4.pdf)
-#### 7 [Evolucion del trabajo en equipo](https://www.canva.com/design/DAFzzurZga8/TXvq3FxYSsbExyYvvlDU-A/edit?utm_content=DAFzzurZga8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+#### 5. [Contrato de Equipo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/ContratoEquipo4.pdf)
+#### 6. [Cuaderno de Trabajo](https://github.com/LuisIzquierdoGutierrez/Reto/blob/master/Recursos/Diario16DAM1_Equipo4.pdf)
+#### 7. [Evolución del trabajo en equipo](https://www.canva.com/design/DAFzzurZga8/TXvq3FxYSsbExyYvvlDU-A/edit?utm_content=DAFzzurZga8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 #### 8. [Bibliografia](Recursos/Documentación/bibliografía.md)
 
 
