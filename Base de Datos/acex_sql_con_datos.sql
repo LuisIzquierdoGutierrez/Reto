@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `acex` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `acex`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: acex
@@ -91,6 +93,47 @@ LOCK TABLES `actividad_solicitada` WRITE;
 INSERT INTO `actividad_solicitada` VALUES (2,1,'Viaje a Madrid','Viaje a Madrid, fin de curso.','EXTRAESCOLAR',1,'SOLICITADA',NULL,1,1,'09:00:00','20:00:00','2024-06-01','2024-06-30');
 /*!40000 ALTER TABLE `actividad_solicitada` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `trigger_update` AFTER UPDATE ON `actividad_solicitada` FOR EACH ROW BEGIN
+
+if(old.estado = 'SOLICITADA' and new.estado = 'ACEPTADA') then
+
+INSERT INTO acex.actividad_aprobada(id, id_solicitante, titulo, comentario_actividad, tipo, prevista, estado, comentario_estado, transporte, alojamiento, hora_inicio, hora_fin, fecha_inicio, fecha_fin)
+VALUES(new.id, new.id_solicitante,new.titulo,new.comentario_actividad, new.tipo, new.prevista, new.estado, new.comentario_estado, new.transporte, new.alojamiento, new.hora_inicio, new.hora_fin, new.fecha_inicio, new.fecha_fin);
+
+END IF;
+
+if(old.estado = 'ACEPTADA') then
+update acex.actividad_aprobada set 
+    acex.actividad_aprobada.titulo = new.titulo,
+    acex.actividad_aprobada.comentario_actividad = new.comentario_actividad,
+    acex.actividad_aprobada.tipo = new.tipo,
+    acex.actividad_aprobada.prevista = new.prevista,
+    acex.actividad_aprobada.estado = new.estado,
+    acex.actividad_aprobada.comentario_estado = new.comentario_estado,
+    acex.actividad_aprobada.transporte = new.transporte,
+    acex.actividad_aprobada.alojamiento = new.alojamiento,
+    acex.actividad_aprobada.hora_inicio = new.hora_inicio,
+    acex.actividad_aprobada.hora_fin = new.hora_fin,
+    acex.actividad_aprobada.fecha_inicio = new.fecha_inicio,
+    acex.actividad_aprobada.fecha_fin = new.fecha_fin
+    where acex.actividad_aprobada.id = new.id;
+END IF;
+
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `alojamiento`
@@ -481,6 +524,14 @@ LOCK TABLES `transporte_utilizado` WRITE;
 INSERT INTO `transporte_utilizado` VALUES (1,5,2,40.00,'Torrelavega - Chamartín'),(2,5,2,35.00,'Chamartín-Torrelavega');
 /*!40000 ALTER TABLE `transporte_utilizado` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'acex'
+--
+
+--
+-- Dumping routines for database 'acex'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -491,4 +542,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-21 18:05:47
+-- Dump completed on 2024-05-21 18:48:21
