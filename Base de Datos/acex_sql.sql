@@ -351,35 +351,31 @@ USE `acex`;
 
 DELIMITER $$
 USE `acex`$$
-CREATE
-DEFINER=``@``
-TRIGGER `acex`.`trigger_update`
-AFTER UPDATE ON `acex`.`actividad_solicitada`
-FOR EACH ROW
-BEGIN
+CREATE DEFINER=`root`@`localhost` TRIGGER `trigger_update` AFTER UPDATE ON `actividad_solicitada` FOR EACH ROW BEGIN
 
-if(old.estado = 'SOLICITADA' and new.estado = 'ACEPTADA') then
+IF (old.estado = 'SOLICITADA' AND new.estado = 'ACEPTADA') THEN
+    INSERT INTO acex.actividad_aprobada(id, id_solicitante, titulo, comentario_actividad, tipo, prevista, estado, comentario_estado, transporte, alojamiento, hora_inicio, hora_fin, fecha_inicio, fecha_fin)
+    VALUES(new.id, new.id_solicitante,new.titulo,new.comentario_actividad, new.tipo, new.prevista, new.estado, new.comentario_estado, new.transporte, new.alojamiento, new.hora_inicio, new.hora_fin, new.fecha_inicio, new.fecha_fin);
 
-INSERT INTO acex.actividad_aprobada(id, id_solicitante, titulo, comentario_actividad, tipo, prevista, estado, comentario_estado, transporte, alojamiento, hora_inicio, hora_fin, fecha_inicio, fecha_fin)
-VALUES(new.id, new.id_solicitante,new.titulo,new.comentario_actividad, new.tipo, new.prevista, new.estado, new.comentario_estado, new.transporte, new.alojamiento, new.hora_inicio, new.hora_fin, new.fecha_inicio, new.fecha_fin);
+ELSEIF (old.estado = 'ACEPTADA' AND new.estado = 'SOLICITADA') THEN
+	DELETE FROM acex.actividad_aprobada WHERE id = old.id;
 
-END IF;
+ELSE
+    UPDATE acex.actividad_aprobada SET 
+        titulo = new.titulo,
+        comentario_actividad = new.comentario_actividad,
+        tipo = new.tipo,
+        prevista = new.prevista,
+        estado = new.estado,
+        comentario_estado = new.comentario_estado,
+        transporte = new.transporte,
+        alojamiento = new.alojamiento,
+        hora_inicio = new.hora_inicio,
+        hora_fin = new.hora_fin,
+        fecha_inicio = new.fecha_inicio,
+        fecha_fin = new.fecha_fin
+    WHERE id = new.id;
 
-if(old.estado = 'ACEPTADA') then
-update acex.actividad_aprobada set 
-    acex.actividad_aprobada.titulo = new.titulo,
-    acex.actividad_aprobada.comentario_actividad = new.comentario_actividad,
-    acex.actividad_aprobada.tipo = new.tipo,
-    acex.actividad_aprobada.prevista = new.prevista,
-    acex.actividad_aprobada.estado = new.estado,
-    acex.actividad_aprobada.comentario_estado = new.comentario_estado,
-    acex.actividad_aprobada.transporte = new.transporte,
-    acex.actividad_aprobada.alojamiento = new.alojamiento,
-    acex.actividad_aprobada.hora_inicio = new.hora_inicio,
-    acex.actividad_aprobada.hora_fin = new.hora_fin,
-    acex.actividad_aprobada.fecha_inicio = new.fecha_inicio,
-    acex.actividad_aprobada.fecha_fin = new.fecha_fin
-    where acex.actividad_aprobada.id = new.id;
 END IF;
 
 END$$
