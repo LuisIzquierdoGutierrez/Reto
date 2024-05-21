@@ -5,13 +5,11 @@ import app.enums.*;
 import app.objects.*;
 import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -22,8 +20,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
-
 public class JFrame extends javax.swing.JFrame {
+
     private int activityId;
     private Obj_Profesor currentUser;
     private Map<Integer, Integer> activitiesMap = new HashMap<>();
@@ -31,9 +29,9 @@ public class JFrame extends javax.swing.JFrame {
     public JFrame() {
         initComponents();
         initComponentsEx();
-        activityId = 0; currentUser = null;
+        activityId = 0;
+        currentUser = null;
     }
-
 
     public static void main(String args[]) {
         try {
@@ -46,8 +44,7 @@ public class JFrame extends javax.swing.JFrame {
             new JFrame().setVisible(true);
         });
     }
-    
-    
+
     private void initComponentsEx() {
         showPanel(jPanel1);
 
@@ -55,17 +52,23 @@ public class JFrame extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(750, 516));
         setPreferredSize(new java.awt.Dimension(750, 516));
     }
-    
-    
+
     private void showPanel(JPanel panelToShow) {
-        jPanel1.setVisible(false); jPanel2.setVisible(false); jPanel3.setVisible(false); jPanel4.setVisible(false);
-        jPanel5.setVisible(false); jPanel6.setVisible(false); jPanel7.setVisible(false); jPanel8.setVisible(false);
-        jPanel9.setVisible(false); jPanel10.setVisible(false); jPanel11.setVisible(false);
+        jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
+        jPanel3.setVisible(false);
+        jPanel4.setVisible(false);
+        jPanel5.setVisible(false);
+        jPanel6.setVisible(false);
+        jPanel7.setVisible(false);
+        jPanel8.setVisible(false);
+        jPanel9.setVisible(false);
+        jPanel10.setVisible(false);
+        jPanel11.setVisible(false);
 
         panelToShow.setVisible(true);
     }
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -254,9 +257,11 @@ public class JFrame extends javax.swing.JFrame {
         jLabel66 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ACEX v1.5");
         setMaximumSize(new java.awt.Dimension(750, 516));
         setMinimumSize(new java.awt.Dimension(750, 516));
         setPreferredSize(new java.awt.Dimension(750, 516));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(39, 39, 39));
         jPanel1.setPreferredSize(new java.awt.Dimension(300, 260));
@@ -676,10 +681,13 @@ public class JFrame extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Extraescolar", "Complementaria" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solicitada", "Aceptada", "Denegada", "Realizada" }));
+        jComboBox2.setToolTipText("Estado de la actividad");
 
         jLabel68.setText("Estado Act.:");
 
         jLabel69.setText("Comentario Estado:");
+
+        jTextField6.setToolTipText("Comentario del estado de la actividad");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -688,50 +696,52 @@ public class JFrame extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel13)
-                                                    .addComponent(jLabel14)
-                                                    .addComponent(jLabel15)
-                                                    .addComponent(jLabel16)
-                                                    .addComponent(jLabel67)
-                                                    .addComponent(jLabel68)
-                                                    .addComponent(jLabel69))
-                                                .addGap(23, 23, 23)
-                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                                        .addComponent(jCheckBox1)
-                                                        .addGap(0, 0, Short.MAX_VALUE))
-                                                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
-                                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)))
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jButton12)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(4, 4, 4)))))))
-                .addGap(46, 46, 46))
+                                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel67)
+                                    .addComponent(jLabel68)
+                                    .addComponent(jLabel69))
+                                .addGap(23, 23, 23)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jCheckBox1)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(jScrollPane2))
+                                .addGap(52, 52, 52))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton12)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(48, 48, 48))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -766,8 +776,8 @@ public class JFrame extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel16))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox1)
                 .addGap(18, 18, 18)
@@ -782,13 +792,13 @@ public class JFrame extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel69)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(14, 14, 14)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton12)
                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
+                .addGap(50, 50, 50))
         );
 
         jPanel5.setBackground(new java.awt.Color(39, 39, 39));
@@ -834,6 +844,11 @@ public class JFrame extends javax.swing.JFrame {
         jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("HH:mm"))));
         jFormattedTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jFormattedTextField2.setToolTipText("Hora de fin de la actividad");
+        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField2ActionPerformed(evt);
+            }
+        });
 
         jButton15.setText("< Anterior");
         jButton15.setToolTipText("Página anterior");
@@ -883,32 +898,35 @@ public class JFrame extends javax.swing.JFrame {
                     .addComponent(jLabel19)
                     .addComponent(jLabel24))
                 .addGap(60, 60, 60)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton16)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(42, 42, 42)
-                                        .addComponent(jLabel20))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
-                .addGap(46, 46, 46))
+                            .addComponent(jLabel18)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel5Layout.createSequentialGroup()
+                                            .addGap(20, 20, 20)
+                                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel5Layout.createSequentialGroup()
+                                            .addGap(47, 47, 47)
+                                            .addComponent(jLabel20)))
+                                    .addGap(18, 18, 18))))
+                        .addContainerGap(50, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton16)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -926,25 +944,23 @@ public class JFrame extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton16))))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton16)
+                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel24))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel24)))
+                        .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -991,7 +1007,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Float.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Double.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1096,7 +1112,7 @@ public class JFrame extends javax.swing.JFrame {
                                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addGap(46, 46, 46))
+                .addGap(48, 48, 48))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1179,7 +1195,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Float.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Double.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1756,11 +1772,11 @@ public class JFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Alumnos", "Comentario"
+                "Código", "Alumnos"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1961,11 +1977,11 @@ public class JFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Alumnos", "Comentario"
+                "Código", "Alumnos"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -2130,37 +2146,9 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 762, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -2174,7 +2162,7 @@ public class JFrame extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -2184,42 +2172,39 @@ public class JFrame extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -2233,7 +2218,7 @@ public class JFrame extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -2243,7 +2228,32 @@ public class JFrame extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -2251,13 +2261,15 @@ public class JFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    
-    
-    /*******************************/
-    /************ LOGIN ************/
-    /*******************************/
+    /**
+     * ****************************
+     */
+    /**
+     * ********** LOGIN ***********
+     */
+    /**
+     * ****************************
+     */
     // Validar las credenciales del usuario.
     private boolean isValidCredentials1(String email, String password) {
         try {
@@ -2272,15 +2284,14 @@ public class JFrame extends javax.swing.JFrame {
             }
 
             JOptionPane.showMessageDialog(this, "Las credenciales introducidas son incorrectas o el usuario está inactivo.", "Error", JOptionPane.ERROR_MESSAGE);
-            
+
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
         return false;
     }
-    
-    
+
     // Evento: Al mostrar panel -> 1
     private void jPanel1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel1AncestorAdded
         setLayout(null);
@@ -2292,7 +2303,6 @@ public class JFrame extends javax.swing.JFrame {
         jPasswordField1.putClientProperty(FlatClientProperties.STYLE, "showRevealButton: true");
     }//GEN-LAST:event_jPanel1AncestorAdded
 
-    
     // Evento: Al pulsar botón -> Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String email = jTextField1.getText();
@@ -2302,42 +2312,53 @@ public class JFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-    
+
         if (isValidCredentials1(email, password)) {
             showPanel(jPanel2);
         }
         jPasswordField1.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
-    
-    
-    
-    
-    /*******************************/
-    /*** ACTIVIDADES SOLICITADAS ***/
-    /*******************************/
+    /**
+     * ****************************
+     */
+    /**
+     * * ACTIVIDADES SOLICITADAS **
+     */
+    /**
+     * ****************************
+     */
     private List<Object> getActivities() {
         try {
-            List<Object> allActivities = new ArrayList<>();
-
-            DAO_Actividad_Solicitada daoSolicitada = new DAO_Actividad_Solicitada();
-            List<Obj_Actividad_Solicitada> actividadesSolicitadas = daoSolicitada.getAll();
-            allActivities.addAll(actividadesSolicitadas);
+            List<Object> approvedActivities = new ArrayList<>();
 
             DAO_Actividad_Aprobada daoAprobada = new DAO_Actividad_Aprobada();
             List<Obj_Actividad_Aprobada> actividadesAprobadas = daoAprobada.getAll();
-            allActivities.addAll(actividadesAprobadas);
 
-            return allActivities;
+            Set<Integer> activityIds = new HashSet<>();
+            for (Obj_Actividad_Aprobada actividad : actividadesAprobadas) {
+                activityIds.add(actividad.getId());
+                if (currentUser.getPerfil() != Enum_Perfil.PROFESOR || actividad.getSolicitante().getId() == currentUser.getId()) {
+                    approvedActivities.add(actividad);
+                }
+            }
+
+            DAO_Actividad_Solicitada daoSolicitada = new DAO_Actividad_Solicitada();
+            List<Obj_Actividad_Solicitada> actividadesSolicitadas = daoSolicitada.getAll();
+            for (Obj_Actividad_Solicitada actividad : actividadesSolicitadas) {
+                if (!activityIds.contains(actividad.getId()) && (currentUser.getPerfil() != Enum_Perfil.PROFESOR || actividad.getSolicitante().getId() == currentUser.getId())) {
+                    approvedActivities.add(actividad);
+                }
+            }
+
+            return approvedActivities;
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
             return new ArrayList<>();
         }
     }
 
-    
-    private void refreshTable1(List<?> actividades) {       
+    private void refreshTable1(List<?> actividades) {
         int rowIndex = 0;
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
@@ -2384,7 +2405,6 @@ public class JFrame extends javax.swing.JFrame {
         }
     }
 
-
     private boolean isDeletable(Object actividad) {
         if (actividad instanceof Obj_Actividad_Solicitada) {
             Obj_Actividad_Solicitada actividadSolicitada = (Obj_Actividad_Solicitada) actividad;
@@ -2395,7 +2415,6 @@ public class JFrame extends javax.swing.JFrame {
         return false;
     }
 
-    
     private void deleteActivity(int actividadId) {
         try {
             DAO_Actividad_Solicitada daoActividad = new DAO_Actividad_Solicitada();
@@ -2408,8 +2427,7 @@ public class JFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    
+
     // Evento: Al mostrar panel -> 2
     private void jPanel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel2AncestorAdded
         setLayout(null);
@@ -2423,6 +2441,8 @@ public class JFrame extends javax.swing.JFrame {
 
         if ((currentUser.getPerfil() == Enum_Perfil.PROFESOR) || (currentUser.getPerfil() == Enum_Perfil.GRUPO_DIRECTIVO)) {
             jButton5.setEnabled(false);
+        } else {
+            jButton5.setEnabled(true);
         }
 
         activityId = 0;
@@ -2431,7 +2451,6 @@ public class JFrame extends javax.swing.JFrame {
         refreshTable1(getActivities());
     }//GEN-LAST:event_jPanel2AncestorAdded
 
-    
     // Evento: Al clicar tabla -> 1
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int rowSelected = jTable1.getSelectedRow();
@@ -2461,63 +2480,66 @@ public class JFrame extends javax.swing.JFrame {
             }
         }
 
-        // Deshabilitar el botón de eliminar si la actividad seleccionada no es eliminable
         jButton8.setEnabled(actividadSeleccionada != null && isDeletable(actividadSeleccionada));
-
-
     }//GEN-LAST:event_jTable1MouseClicked
 
-    
     // Evento: Al pulsar botón -> Refresh
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         activityId = 0;
-        jButton7.setEnabled(false); jButton8.setEnabled(false);
+        jButton7.setEnabled(false);
+        jButton8.setEnabled(false);
         refreshTable1(getActivities());
+        JOptionPane.showMessageDialog(this, "La tabla se ha actualizado.", "Información", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Profile
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         showPanel(jPanel3);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Logout
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         currentUser = null;
         showPanel(jPanel1);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Nueva
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         activityId = 0;
         showPanel(jPanel4);
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Madificar
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         showPanel(jPanel4);
+        restorePanel4();
+        restorePanel5();
+        restoreTable2();
+        restoreTable3();
+        restoreTable4();
+        restoreTable5();
+        restoreTable6();
+        restoreTable7();
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Eliminar
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         deleteActivity(activityId);
         activityId = 0;
-        jButton7.setEnabled(false); jButton8.setEnabled(false);
+        jButton7.setEnabled(false);
+        jButton8.setEnabled(false);
         refreshTable1(getActivities());
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    
-
-    
-    
-    
-    /*******************************/
-    /***** CAMBIAR  CONTRASEÑA *****/
-    /*******************************/
+    /**
+     * ****************************
+     */
+    /**
+     * *** CAMBIAR CONTRASEÑA ****
+     */
+    /**
+     * ****************************
+     */
     // Valida las credenciales del usuario.
     private boolean isValidCredentials2(String password, String newPassword1, String newPassword2) {
         if (!newPassword1.equals(newPassword2)) {
@@ -2532,7 +2554,7 @@ public class JFrame extends javax.swing.JFrame {
 
         if (currentUser != null && currentUser.getPassword().equals(password)) {
             currentUser.setPassword(newPassword1);
-            
+
             try {
                 DAO_Profesor daoProfesor = new DAO_Profesor();
                 daoProfesor.update(currentUser);
@@ -2547,14 +2569,13 @@ public class JFrame extends javax.swing.JFrame {
             return false;
         }
     }
-    
-    
+
     // Evento: Al mostrar panel -> 3
     private void jPanel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel3AncestorAdded
         setLayout(null);
         jPanel3.setBounds(113, 85, 508, 256);
         jPanel3.putClientProperty(FlatClientProperties.STYLE, "arc: 12");
-        
+
         jTextField2.setEditable(false);
         jTextField2.setText(currentUser.getEmail());
         jPasswordField2.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Contraseña Actual");
@@ -2565,7 +2586,6 @@ public class JFrame extends javax.swing.JFrame {
         jPasswordField4.putClientProperty(FlatClientProperties.STYLE, "showRevealButton: true");
     }//GEN-LAST:event_jPanel3AncestorAdded
 
-    
     // Evento: Al pulsar botón -> Actualizar
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         String password = new String(jPasswordField2.getPassword());
@@ -2576,72 +2596,131 @@ public class JFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-    
+
         if (isValidCredentials2(password, newPassword1, newPassword2)) {
             showPanel(jPanel2);
         }
-        jPasswordField2.setText(""); jPasswordField3.setText(""); jPasswordField4.setText("");
+        jPasswordField2.setText("");
+        jPasswordField3.setText("");
+        jPasswordField4.setText("");
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Cancelar
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         showPanel(jPanel2);
-        jPasswordField2.setText(""); jPasswordField3.setText(""); jPasswordField4.setText("");
+        jPasswordField2.setText("");
+        jPasswordField3.setText("");
+        jPasswordField4.setText("");
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    
-    
-    
-    
-    
-    /*******************************/
-    /****** SUBIR ARCHIVO CSV ******/
-    /*******************************/
-    private final List<String> PROFESORES_COLUMNS = Arrays.asList("apellidos", "nombre", "dni", "mail", "departamento");
-    private final List<String> DEPARTAMENTOS_COLUMNS = Arrays.asList("id", "cod", "nombre", "jefe");
-    private final List<String> CURSOS_COLUMNS = Arrays.asList("idcurso", "codcurso", "descurso", "etapa", "activo");
-    private final List<String> GRUPOS_COLUMNS = Arrays.asList("idgrupo", "codgrupo", "idcurso", "alumnos", "activo");
-        
-    private boolean isValidCSVFile(File file) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String headerLine = br.readLine();
-            if (headerLine != null) {
-                List<String> headers = Arrays.asList(headerLine.toLowerCase().split(","));
-                if (headers.size() == PROFESORES_COLUMNS.size() && PROFESORES_COLUMNS.containsAll(headers)) {
-                    return true;
-                }
-                if (headers.size() == DEPARTAMENTOS_COLUMNS.size() && DEPARTAMENTOS_COLUMNS.containsAll(headers)) {
-                    return true;
-                }
-                if (headers.size() == CURSOS_COLUMNS.size() && CURSOS_COLUMNS.containsAll(headers)) {
-                    return true;
-                }
-                if (headers.size() == GRUPOS_COLUMNS.size() && GRUPOS_COLUMNS.containsAll(headers)) {
-                    return true;
+    /**
+     * ****************************
+     */
+    /**
+     * **** SUBIR ARCHIVO CSV *****
+     */
+    /**
+     * ****************************
+     */
+    private boolean isValidCSVFile(String path) throws IOException {
+        int index = 1;
+        String line;
+        DAO_Profesor daoProfesor = new DAO_Profesor();
+        DAO_Departamento daoDepartamento = new DAO_Departamento();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            reader.readLine();
+
+            if (!path.contains("profesores")) {
+                return false;
+            }
+
+            List<Obj_Profesor> existingProfessors = daoProfesor.getAll();
+            for (Obj_Profesor existingProf : existingProfessors) {
+                existingProf.setActivo(false);
+                daoProfesor.update(existingProf);
+            }
+
+            while ((line = reader.readLine()) != null) {
+                String[] linea = line.split(",");
+                if (linea.length > 1) {
+                    try {
+                        int departamentoId = Integer.parseInt(linea[4]);
+                        Obj_Departamento departamento = daoDepartamento.getById(departamentoId);
+
+                        if (departamento == null) {
+                            continue;
+                        }
+
+                        String profesorEmail = linea[3];
+
+                        boolean isActive = false;
+                        Obj_Profesor existingProf = null;
+
+                        for (Obj_Profesor existing : existingProfessors) {
+                            if (existing.getEmail().equals(profesorEmail)) {
+                                isActive = true;
+                                existingProf = existing;
+                                break;
+                            }
+                        }
+
+                        if (isActive) {
+                            existingProf.setActivo(true);
+                            daoProfesor.update(existingProf);
+                        } else {
+                            String password = randomPassword(8);
+                            Obj_Profesor profesor = new Obj_Profesor(
+                                    0,
+                                    departamentoId,
+                                    linea[2],
+                                    linea[1],
+                                    linea[0],
+                                    linea[3],
+                                    password,
+                                    Enum_Perfil.PROFESOR,
+                                    true
+                            );
+
+                            profesor.setDepartamento(departamento);
+                            daoProfesor.update(profesor);
+                        }
+                        index++;
+                    } catch (Exception e) {
+                        return false;
+                    }
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        return false;
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 
-    
+    private String randomPassword(int length) {
+        String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        SecureRandom random = new SecureRandom();
+        StringBuilder password = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+            int index = random.nextInt(CHARACTERS.length());
+            password.append(CHARACTERS.charAt(index));
+        }
+
+        return password.toString();
+    }
+
     // Evento: Al pulsar botón -> Cargar .CSV
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         JOptionPane.showMessageDialog(this, """
-            Por favor, aseg\u00farese de que el archivo CSV cumpla con las siguientes condiciones:
-            El archivo debe tener una estructura de columnas espec\u00edfica.
-            El nombre del archivo debe ser apropiado seg\u00fan el tipo de datos (profesores.csv, departamentos.csv, etc).
-
-            Estructura de columnas esperada:
-             - Archivo 'profesores.csv': apellidos, nombre, dni, mail, departamento
-             - Archivo 'departamentos.csv': id, cod, nombre, jefe
-             - Archivo 'cursos.csv': idcurso, codcurso, descurso, etapa, activo
-             - Archivo 'grupos.csv': idgrupo, codgrupo, idcurso, alumnos, activo""",
-            "Requisitos del archivo CSV", JOptionPane.INFORMATION_MESSAGE
+        Tenga en cuenta que los profesores actuales pasarán a estado inactivo.
+                                            
+        Por favor, asegúrese de que el archivo CSV cumpla con:
+         - Nombre: 'profesores.csv'.
+         - Columnas: apellidos, nombre, dni, email, departamento.
+         - Las columnas no necesitan coincidir exactamente.""",
+                "Cargar archivo CSV", JOptionPane.INFORMATION_MESSAGE
         );
 
         JFileChooser fileChooser = new JFileChooser();
@@ -2652,9 +2731,11 @@ public class JFrame extends javax.swing.JFrame {
 
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
+            String absolutePath = selectedFile.getAbsolutePath();
+
             try {
-                if (isValidCSVFile(selectedFile)) {
-                    System.out.println("Es válido.");
+                if (isValidCSVFile(absolutePath)) {
+                    JOptionPane.showMessageDialog(this, "El archivo se ha cargado satisfactoriamente a la base de datos.", "Información", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, "El archivo seleccionado no cumple con los requisitos.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -2664,194 +2745,47 @@ public class JFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    
-    
-    
-    
-    
-    /*******************************/
-    /******* NUEVA SOLICITUD *******/
-    /*******************************/
-    private void clearAllInfo() {
-        jTextField5.setText("");
-        jTextArea1.setText("");
-        jCheckBox1.setSelected(false);
-
-        datePicker1.clearSelectedDate();
-        jFormattedTextField1.setValue(null);
-        jFormattedTextField2.setValue(null);
-
-        ((DefaultTableModel) jTable2.getModel()).setRowCount(0);
-        ((DefaultTableModel) jTable3.getModel()).setRowCount(0);
-        ((DefaultTableModel) jTable4.getModel()).setRowCount(0);
-        ((DefaultTableModel) jTable5.getModel()).setRowCount(0);
-        ((DefaultTableModel) jTable6.getModel()).setRowCount(0);
-        ((DefaultTableModel) jTable7.getModel()).setRowCount(0);
-    }
-    
-    
-    private void saveAllInfo() {       
-    // Comprobar campos vacíos
-        if (jTextField5.getText().isEmpty() || jComboBox1.getSelectedItem().toString().isEmpty() || datePicker1.getSelectedDateAsString() == null || jFormattedTextField1.getText().isEmpty() || jFormattedTextField2.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Antes de finalizar, completa todos los campos obligarios.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        } else {
-            DAO_Actividad_Solicitada daoActividad = new DAO_Actividad_Solicitada();
-            Enum_Estado estado = null;
-            estado = Enum_Estado.valueOf(jComboBox2.getSelectedItem().toString().toUpperCase());
-
-            String comentarioEstado = "";
-            String comboString = jComboBox1.getSelectedItem().toString().toUpperCase();
-            Enum_Tipo tipoActividad = Enum_Tipo.valueOf(comboString);
-
-            boolean transporte = jTable2.getRowCount() > 0;
-            boolean alojamiento = jTable3.getRowCount() > 0;
-
-            LocalDate[] fechas = datePicker1.getSelectedDateRange();
-            LocalTime hora1 = obtenerHoraDesdeTextField(jFormattedTextField1);
-            LocalTime hora2 = obtenerHoraDesdeTextField(jFormattedTextField2);
-
-
-            Obj_Actividad_Solicitada actividad = new Obj_Actividad_Solicitada(
-                    activityId,
-                    currentUser.getId(),
-                    jTextField5.getText(),
-                    jTextArea1.getText(),
-                    tipoActividad,
-                    jCheckBox1.isSelected(),
-                    estado,
-                    comentarioEstado,
-                    transporte,
-                    alojamiento,
-                    hora1,
-                    hora2,
-                    fechas[0],
-                    fechas[1]);
-
-            daoActividad.update(actividad);
-            
-            if (activityId > 0) {
-                JOptionPane.showMessageDialog(this, "Actividad modificada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Actividad creada con exito.", "Información", JOptionPane.INFORMATION_MESSAGE);
-            }
-            showPanel(jPanel2);
-        }
-    }
-    
-
-    
-    private LocalTime obtenerHoraDesdeTextField(JFormattedTextField textField) {
-        String horaTexto = textField.getText();
-        try {
-            return LocalTime.parse(horaTexto, DateTimeFormatter.ofPattern("HH:mm"));
-        } catch (DateTimeParseException e) {
-            return null;
-        }
-    }
-    
-    
-    // Evento: Al mostrar panel -> 4
-    private void jPanel4AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel4AncestorAdded
-        setLayout(null);
-        jPanel4.setBounds(0, 0, 750, 516);
-        
-        jButton11.setEnabled(false);
-        jButton13.setEnabled(false);
-        jTextField3.setEditable(false);
-        jTextField4.setEditable(false);
-
-
-        jTextField3.setText(currentUser.getNombre() + " " + currentUser.getApellidos());
-        jTextField4.setText("[" + currentUser.getDepartamento().getCodigo() + "] " + currentUser.getDepartamento().getNombre());
-        
-        jTextField5.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Asígnale un nombre a la actividad");
-        
+    /**
+     * ****************************
+     */
+    /**
+     * ***** NUEVA SOLICITUD ******
+     */
+    /**
+     * ****************************
+     */
+    private void restorePanel4() {
         if (activityId > 0) {
+            DAO_Actividad_Solicitada daoActividad = new DAO_Actividad_Solicitada();
+            Obj_Actividad_Solicitada datos = daoActividad.getById(activityId);
             jLabel11.setText("Modificar Información General");
+            jTextField5.setText(datos.getNombre());
+            jTextArea1.setText(datos.getComentarioActividad());
+            jCheckBox1.setEnabled(datos.isPrevista());
+            jComboBox1.setSelectedItem(datos.getTipo());
+            jComboBox2.setSelectedItem(datos.getEstado());
+            jTextField6.setText(datos.getComentarioEstado());
         } else {
             jLabel11.setText("Información General");
         }
-        
-        if (currentUser.getPerfil() == Enum_Perfil.PROFESOR) {
-            jComboBox2.setEnabled(false);
-            jTextField6.setEditable(false);
-        }
-    }//GEN-LAST:event_jPanel4AncestorAdded
+    }
 
-
-    // Evento: Al pulsar botón -> Siguiente
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        showPanel(jPanel5);
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-
-    // Evento: Al pulsar botón -> Cancelar
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-
-        if (option == JOptionPane.YES_OPTION) {
-            showPanel(jPanel2);
-            clearAllInfo();
-        }
-    }//GEN-LAST:event_jButton14ActionPerformed
-    
-
-    
-    
-    
-    // Evento: Al mostrar panel -> 5
-    private void jPanel5AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel5AncestorAdded
-        setLayout(null);
-        jPanel5.setBounds(0, 0, 750, 516);
-        
-        jButton17.setEnabled(false);
-        jFormattedTextField1.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "08:30");
-        jFormattedTextField2.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "18:30");
-        
+    private void restorePanel5() {
         if (activityId > 0) {
+            DAO_Actividad_Solicitada daoActividad = new DAO_Actividad_Solicitada();
+            Obj_Actividad_Solicitada datos = daoActividad.getById(activityId);
             jLabel18.setText("Modificar Fecha y Hora");
+            datePicker1.setSelectedDateRange(datos.getFechaInicio(), datos.getFechaFin());
+            jFormattedTextField1.setText(datos.getHoraInicio().toString());
+            jFormattedTextField2.setText(datos.getHoraFin().toString());
         } else {
             jLabel18.setText("Fecha y Hora");
         }
-        
+    }
 
-    }//GEN-LAST:event_jPanel5AncestorAdded
-
-
-    // Evento: Al pulsar botón -> Anterior
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        showPanel(jPanel4);
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Siguiente
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        showPanel(jPanel6);
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-
-    // Evento: Al pulsar botón -> Cancelar
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-
-        if (option == JOptionPane.YES_OPTION) {
-            showPanel(jPanel2);
-            clearAllInfo();
-        }
-    }//GEN-LAST:event_jButton18ActionPerformed
-    
-    
-    
-    
-
-    // Evento: Al mostrar panel -> 6
-    private void jPanel6AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel6AncestorAdded
-        setLayout(null);
-        jPanel6.setBounds(0, 0, 750, 516);
-        jButton21.setEnabled(false);
-        
+    private void restoreTable2() {
         JComboBox<String> comboBox = new JComboBox<>();
-        
+
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < jTable2.getColumnCount(); i++) {
@@ -2868,139 +2802,54 @@ public class JFrame extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         jTable2.getColumnModel().getColumn(0).setCellEditor(new DefaultCellEditor(comboBox));
-        
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        model.setRowCount(0);
+
         if (activityId > 0) {
-            jLabel22.setText("Modificar Transporte");
+            DAO_Transporte_Utilizado daoTransporte = new DAO_Transporte_Utilizado();
+            List<Obj_Transporte_Utilizado> transportes = daoTransporte.getAll();
+            jLabel28.setText("Modificar Transporte");
+
+            for (Obj_Transporte_Utilizado transporte : transportes) {
+                if (transporte.getActividad().getId() == activityId) {
+                    model.addRow(new Object[]{transporte.getTransporte().getNombre(), transporte.getImporte(), transporte.getComentario()});
+                }
+            }
         } else {
-            jLabel22.setText("Transporte");
+            jLabel28.setText("Transporte");
         }
-    }//GEN-LAST:event_jPanel6AncestorAdded
+    }
 
-    
-    // Evento: Al pulsar botón -> Anterior
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        showPanel(jPanel5);
-    }//GEN-LAST:event_jButton19ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Siguiente
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        showPanel(jPanel7);
-    }//GEN-LAST:event_jButton20ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Cancelar
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-
-        if (option == JOptionPane.YES_OPTION) {
-            showPanel(jPanel2);
-            clearAllInfo();
-        }
-    }//GEN-LAST:event_jButton22ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Añadir fila
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        model.addRow(new Object[]{"...", 0.0, null});
-    }//GEN-LAST:event_jButton23ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Eliminar fila
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        int selectedRowIndex = jTable2.getSelectedRow();
-
-        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
-            model.removeRow(selectedRowIndex);
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_jButton24ActionPerformed
-
-    
-    
-    
-
-    // Evento: Al mostrar panel -> 7
-    private void jPanel7AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel7AncestorAdded
-        setLayout(null);
-        jPanel7.setBounds(0, 0, 750, 516);
-        jButton27.setEnabled(false);
-        
-        JComboBox<String> comboBox = new JComboBox<>();
-        
+    private void restoreTable3() {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < jTable3.getColumnCount(); i++) {
             jTable3.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
-        
+
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        model.setRowCount(0);
+
         if (activityId > 0) {
+            DAO_Alojamiento_Utilizado daoAlojamiento = new DAO_Alojamiento_Utilizado();
+            List<Obj_Alojamiento_Utilizado> alojamientos = daoAlojamiento.getAll();
             jLabel28.setText("Modificar Alojamiento");
+
+            for (Obj_Alojamiento_Utilizado alojamiento : alojamientos) {
+                if (alojamiento.getActividad().getId() == activityId) {
+                    model.addRow(new Object[]{alojamiento.getAlojamiento().getNombre(), alojamiento.getImporte(), alojamiento.getComentario()});
+                }
+            }
         } else {
             jLabel28.setText("Alojamiento");
         }
-    }//GEN-LAST:event_jPanel7AncestorAdded
+    }
 
-    
-    // Evento: Al pulsar botón -> Anterior
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        showPanel(jPanel6);
-    }//GEN-LAST:event_jButton25ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Siguiente
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        showPanel(jPanel8);
-    }//GEN-LAST:event_jButton26ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Cancelar
-    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-
-        if (option == JOptionPane.YES_OPTION) {
-            showPanel(jPanel2);
-            clearAllInfo();
-        }
-    }//GEN-LAST:event_jButton28ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Añadir fila
-    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-        model.addRow(new Object[]{"...", 0.0, null});
-    }//GEN-LAST:event_jButton29ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Eliminar fila
-    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-        int selectedRowIndex = jTable3.getSelectedRow();
-
-        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
-            model.removeRow(selectedRowIndex);
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_jButton30ActionPerformed
-
-    
-    
-
-    
-    // Evento: Al mostrar panel -> 8
-    private void jPanel8AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel8AncestorAdded
-        setLayout(null);
-        jPanel8.setBounds(0, 0, 750, 516);
-        jButton33.setEnabled(false);
-        
+    private void restoreTable4() {
         JComboBox<String> comboBox = new JComboBox<>();
-        
+
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < jTable4.getColumnCount(); i++) {
@@ -3017,71 +2866,29 @@ public class JFrame extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         jTable4.getColumnModel().getColumn(0).setCellEditor(new DefaultCellEditor(comboBox));
-        
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+        model.setRowCount(0);
+
         if (activityId > 0) {
+            DAO_Profesor_Participante daoProfesor = new DAO_Profesor_Participante();
+            List<Obj_Profesor_Participante> profesores = daoProfesor.getAll();
             jLabel34.setText("Modificar Profesores Participantes");
+
+            for (Obj_Profesor_Participante profesor : profesores) {
+                if (profesor.getActividad().getId() == activityId) {
+                    model.addRow(new Object[]{profesor.getProfesor().getNombre() + " " + profesor.getProfesor().getApellidos()});
+                }
+            }
         } else {
             jLabel34.setText("Profesores Participantes");
         }
-    }//GEN-LAST:event_jPanel8AncestorAdded
+    }
 
-
-    // Evento: Al pulsar botón -> Anterior
-    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-        showPanel(jPanel7);
-    }//GEN-LAST:event_jButton31ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Siguiente
-    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
-        showPanel(jPanel9);
-    }//GEN-LAST:event_jButton32ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Cancelar
-    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-
-        if (option == JOptionPane.YES_OPTION) {
-            showPanel(jPanel2);
-            clearAllInfo();
-        }
-    }//GEN-LAST:event_jButton34ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Añadir fila
-    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
-        model.addRow(new Object[]{"..."});
-    }//GEN-LAST:event_jButton35ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Eliminar fila
-    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
-        int selectedRowIndex = jTable4.getSelectedRow();
-
-        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
-            model.removeRow(selectedRowIndex);
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_jButton36ActionPerformed
-
-    
-    
-    
-
-    // Evento: Al mostrar panel -> 9
-    private void jPanel9AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel9AncestorAdded
-        setLayout(null);
-        jPanel9.setBounds(0, 0, 750, 516);
-        jButton39.setEnabled(false);
-        
+    private void restoreTable5() {
         JComboBox<String> comboBox = new JComboBox<>();
-        
+
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < jTable5.getColumnCount(); i++) {
@@ -3098,71 +2905,29 @@ public class JFrame extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         jTable5.getColumnModel().getColumn(0).setCellEditor(new DefaultCellEditor(comboBox));
-        
+        DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
+        model.setRowCount(0);
+
         if (activityId > 0) {
+            DAO_Profesor_Responsable daoProfesor = new DAO_Profesor_Responsable();
+            List<Obj_Profesor_Responsable> profesores = daoProfesor.getAll();
             jLabel41.setText("Modificar Profesores Responsables");
+
+            for (Obj_Profesor_Responsable profesor : profesores) {
+                if (profesor.getActividad().getId() == activityId) {
+                    model.addRow(new Object[]{profesor.getProfesor().getNombre() + " " + profesor.getProfesor().getApellidos()});
+                }
+            }
         } else {
             jLabel41.setText("Profesores Responsables");
         }
-    }//GEN-LAST:event_jPanel9AncestorAdded
+    }
 
-
-    // Evento: Al pulsar botón -> Anterior
-    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
-        showPanel(jPanel8);
-    }//GEN-LAST:event_jButton37ActionPerformed
-
-
-    // Evento: Al pulsar botón -> Siguiente
-    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
-        showPanel(jPanel10);
-    }//GEN-LAST:event_jButton38ActionPerformed
-
-
-    // Evento: Al pulsar botón -> Cancelar
-    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
-        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-
-        if (option == JOptionPane.YES_OPTION) {
-            showPanel(jPanel2);
-            clearAllInfo();
-        }
-    }//GEN-LAST:event_jButton40ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Añadir fila
-    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
-        model.addRow(new Object[]{"..."});
-    }//GEN-LAST:event_jButton41ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Eliminar fila
-    private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
-        int selectedRowIndex = jTable5.getSelectedRow();
-
-        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
-            model.removeRow(selectedRowIndex);
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_jButton42ActionPerformed
-
-    
-    
-    
-
-    // Evento: Al mostrar panel -> 10
-    private void jPanel10AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel10AncestorAdded
-        setLayout(null);
-        jPanel10.setBounds(0, 0, 750, 516);
-        jButton45.setEnabled(false);
-        
+    private void restoreTable6() {
         JComboBox<String> comboBox = new JComboBox<>();
-        
+
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < jTable6.getColumnCount(); i++) {
@@ -3179,71 +2944,37 @@ public class JFrame extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         jTable6.getColumnModel().getColumn(0).setCellEditor(new DefaultCellEditor(comboBox));
-        
+
         if (activityId > 0) {
             jLabel49.setText("Modificar Cursos Participantes");
         } else {
             jLabel49.setText("Cursos Participantes");
         }
-    }//GEN-LAST:event_jPanel10AncestorAdded
 
-    
-    // Evento: Al pulsar botón -> Anterior
-    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
-        showPanel(jPanel9);
-    }//GEN-LAST:event_jButton43ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Siguiente
-    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
-        showPanel(jPanel11);
-    }//GEN-LAST:event_jButton44ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Cancelar
-    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
-        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-
-        if (option == JOptionPane.YES_OPTION) {
-            showPanel(jPanel2);
-            clearAllInfo();
-        }
-    }//GEN-LAST:event_jButton46ActionPerformed
-
-    
-    // Evento: Al pulsar botón -> Añadir fila
-    private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
+        jTable6.getColumnModel().getColumn(0).setCellEditor(new DefaultCellEditor(comboBox));
         DefaultTableModel model = (DefaultTableModel) jTable6.getModel();
-        model.addRow(new Object[]{"...", "0.0", null});
-    }//GEN-LAST:event_jButton47ActionPerformed
+        model.setRowCount(0);
 
-    
-    // Evento: Al pulsar botón -> Eliminar fila
-    private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable6.getModel();
-        int selectedRowIndex = jTable6.getSelectedRow();
+        if (activityId > 0) {
+            DAO_Curso_Participante daoCurso = new DAO_Curso_Participante();
+            List<Obj_Curso_Participante> cursos = daoCurso.getAll();
+            jLabel49.setText("Modificar Cursos Participantes");
 
-        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
-            model.removeRow(selectedRowIndex);
+            for (Obj_Curso_Participante curso : cursos) {
+                if (curso.getActividad().getId() == activityId) {
+                    model.addRow(new Object[]{curso.getCurso().getCodigo(), curso.getNumAlumnos()});
+                }
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+            jLabel49.setText("Cursos Participantes");
         }
-    }//GEN-LAST:event_jButton48ActionPerformed
+    }
 
-    
-    
-    
-    
-    // Evento: Al mostrar panel -> 11
-    private void jPanel11AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel11AncestorAdded
-        setLayout(null);
-        jPanel11.setBounds(0, 0, 750, 516);
-        jButton50.setEnabled(false);
-        
+    private void restoreTable7() {
         JComboBox<String> comboBox = new JComboBox<>();
-        
+
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < jTable7.getColumnCount(); i++) {
@@ -3260,29 +2991,604 @@ public class JFrame extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "No se ha podido establecer conexión con el servidor.\nPor favor, inténtelo de nuevo más tarde.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         jTable7.getColumnModel().getColumn(0).setCellEditor(new DefaultCellEditor(comboBox));
-        
+        DefaultTableModel model = (DefaultTableModel) jTable7.getModel();
+        model.setRowCount(0);
+
         if (activityId > 0) {
+            DAO_Grupo_Participante daoGrupo = new DAO_Grupo_Participante();
+            List<Obj_Grupo_Participante> grupos = daoGrupo.getAll();
             jLabel58.setText("Modificar Grupos Participantes");
+
+            for (Obj_Grupo_Participante grupo : grupos) {
+                if (grupo.getActividad().getId() == activityId) {
+                    model.addRow(new Object[]{grupo.getGrupo().getCodigo(), grupo.getNumAlumnos()});
+                }
+            }
         } else {
             jLabel58.setText("Grupos Participantes");
         }
+    }
+
+    private void clearAllInfo() {
+        jTextField5.setText("");
+        jTextArea1.setText("");
+        jCheckBox1.setSelected(false);
+
+        datePicker1.clearSelectedDate();
+        jFormattedTextField1.setValue(null);
+        jFormattedTextField2.setValue(null);
+
+        ((DefaultTableModel) jTable2.getModel()).setRowCount(0);
+        ((DefaultTableModel) jTable3.getModel()).setRowCount(0);
+        ((DefaultTableModel) jTable4.getModel()).setRowCount(0);
+        ((DefaultTableModel) jTable5.getModel()).setRowCount(0);
+        ((DefaultTableModel) jTable6.getModel()).setRowCount(0);
+        ((DefaultTableModel) jTable7.getModel()).setRowCount(0);
+    }
+
+    private void saveAllInfo() {
+        // Comprobar campos vacíos
+        if (jTextField5.getText().isEmpty() || jComboBox1.getSelectedItem().toString().isEmpty() || datePicker1.getSelectedDateAsString() == null || jFormattedTextField1.getText().isEmpty() || jFormattedTextField2.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Antes de finalizar, completa todos los campos obligarios.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+            {
+                Enum_Estado estado = null;
+                estado = Enum_Estado.valueOf(jComboBox2.getSelectedItem().toString().toUpperCase());
+
+                String comentarioEstado = "";
+                String comboString = jComboBox1.getSelectedItem().toString().toUpperCase();
+                Enum_Tipo tipoActividad = Enum_Tipo.valueOf(comboString);
+
+                boolean transporte = jTable2.getRowCount() > 0;
+                boolean alojamiento = jTable3.getRowCount() > 0;
+
+                LocalDate[] fechas = datePicker1.getSelectedDateRange();
+                LocalTime hora1 = obtenerHoraDesdeTextField(jFormattedTextField1);
+                LocalTime hora2 = obtenerHoraDesdeTextField(jFormattedTextField2);
+
+                int idSolicitante = 0;
+                if (activityId > 0) {
+                    DAO_Actividad_Solicitada daoActividad = new DAO_Actividad_Solicitada();
+                    Obj_Actividad_Solicitada actividad = daoActividad.getById(activityId);
+                    idSolicitante = actividad.getSolicitante().getId();
+                } else {
+                    idSolicitante = currentUser.getId();
+                }
+                DAO_Actividad_Solicitada daoActividad = new DAO_Actividad_Solicitada();
+                Obj_Actividad_Solicitada actividadObj = new Obj_Actividad_Solicitada(activityId, idSolicitante, jTextField5.getText(), jTextArea1.getText(), tipoActividad, jCheckBox1.isSelected(), estado, comentarioEstado, transporte, alojamiento, hora1, hora2, fechas[0], fechas[1]);
+                daoActividad.update(actividadObj);
+            }
+
+            {
+                DAO_Transporte_Utilizado daoTransporteUtilizado = new DAO_Transporte_Utilizado();
+                List<Obj_Transporte_Utilizado> objTransportesUtilizados = daoTransporteUtilizado.getAll();
+                for (Obj_Transporte_Utilizado objTransporteUtilizado : objTransportesUtilizados) {
+                    if (objTransporteUtilizado.getActividad().getId() == activityId) {
+                        daoTransporteUtilizado.delete(objTransporteUtilizado.getId());
+                    }
+                }
+
+                String tipo = null;
+                int idTransporte = 0;
+                double importe = 0;
+                String comentario = null;
+                DAO_Transporte daoTransporte = new DAO_Transporte();
+                DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    tipo = (String) model.getValueAt(i, 0);
+                    importe = (double) model.getValueAt(i, 1);
+                    comentario = (String) model.getValueAt(i, 2);
+
+                    List<Obj_Transporte> objTransportes = daoTransporte.getAll();
+                    for (Obj_Transporte objTransporte : objTransportes) {
+                        if (objTransporte.getNombre().equals(tipo)) {
+                            idTransporte = objTransporte.getId();
+                        }
+                    }
+
+                    Obj_Transporte_Utilizado objTransporteUtilizado = new Obj_Transporte_Utilizado(0, idTransporte, activityId, importe, comentario);
+                    daoTransporteUtilizado.update(objTransporteUtilizado);
+                }
+            }
+
+            {
+                DAO_Alojamiento_Utilizado daoAlojamientoUtilizado = new DAO_Alojamiento_Utilizado();
+                List<Obj_Alojamiento_Utilizado> objAlojamientosUtilizados = daoAlojamientoUtilizado.getAll();
+                for (Obj_Alojamiento_Utilizado objAlojamientoUtilizado : objAlojamientosUtilizados) {
+                    if (objAlojamientoUtilizado.getActividad().getId() == activityId && objAlojamientoUtilizado.getAlojamiento() != null) {
+                        daoAlojamientoUtilizado.delete(objAlojamientoUtilizado.getId());
+                    }
+                }
+
+                String nombre = null;
+                int idAlojamiento = 0;
+                double importe = 0;
+                String comentario = null;
+                boolean encontrado = false;
+                DAO_Alojamiento daoAlojamiento = new DAO_Alojamiento();
+                DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    nombre = (String) model.getValueAt(i, 0);
+                    importe = (double) model.getValueAt(i, 1);
+                    comentario = (String) model.getValueAt(i, 2);
+
+                    List<Obj_Alojamiento> objAlojamientos = daoAlojamiento.getAll();
+                    for (Obj_Alojamiento objAlojamiento : objAlojamientos) {
+                        if (objAlojamiento.getNombre().equals(nombre)) {
+                            idAlojamiento = objAlojamiento.getId();
+                            encontrado = true;
+                        }
+                    }
+
+                    if (!encontrado) {
+                        Obj_Alojamiento nuevoAlojamiento = new Obj_Alojamiento(0, nombre);
+                        daoAlojamiento.update(nuevoAlojamiento);
+
+                        objAlojamientos = daoAlojamiento.getAll();
+                        for (Obj_Alojamiento objAlojamiento : objAlojamientos) {
+                            if (objAlojamiento.getNombre().equals(nombre)) {
+                                idAlojamiento = objAlojamiento.getId();
+                                encontrado = true;
+                            }
+                        }
+                    }
+
+                    Obj_Alojamiento_Utilizado objAlojamientoUtilizado = new Obj_Alojamiento_Utilizado(0, idAlojamiento, activityId, importe, comentario);
+                    daoAlojamientoUtilizado.update(objAlojamientoUtilizado);
+                }
+            }
+
+            {
+                DAO_Profesor_Participante daoProfesorParticipante = new DAO_Profesor_Participante();
+                List<Obj_Profesor_Participante> objProfesoresParticipantes = daoProfesorParticipante.getAll();
+                for (Obj_Profesor_Participante objProfesoreParticipante : objProfesoresParticipantes) {
+                    if (objProfesoreParticipante.getActividad().getId() == activityId && objProfesoreParticipante.getProfesor() != null) {
+                        daoProfesorParticipante.delete(objProfesoreParticipante.getId());
+                    }
+                }
+
+                String nombreApellidos = null;
+                int idProfesor = 0;
+                DAO_Profesor daoProfesor = new DAO_Profesor();
+                DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    nombreApellidos = (String) model.getValueAt(i, 0);
+
+                    List<Obj_Profesor> objProfesores = daoProfesor.getAll();
+                    for (Obj_Profesor objProfesor : objProfesores) {
+                        if ((objProfesor.getNombre() + " " + objProfesor.getApellidos()).equals(nombreApellidos)) {
+                            idProfesor = objProfesor.getId();
+                        }
+                    }
+
+                    Obj_Profesor_Participante objProfesorParticipante = new Obj_Profesor_Participante(0, idProfesor, activityId);
+                    daoProfesorParticipante.update(objProfesorParticipante);
+                }
+            }
+
+            {
+                DAO_Profesor_Responsable daoProfesorResponsable = new DAO_Profesor_Responsable();
+                List<Obj_Profesor_Responsable> objProfesoresResponsables = daoProfesorResponsable.getAll();
+                for (Obj_Profesor_Responsable objProfesorResponsable : objProfesoresResponsables) {
+                    if (objProfesorResponsable.getActividad().getId() == activityId && objProfesorResponsable.getProfesor() != null) {
+                        daoProfesorResponsable.delete(objProfesorResponsable.getId());
+                    }
+                }
+
+                String nombreApellidos = null;
+                int idProfesor = 0;
+                DAO_Profesor daoProfesor = new DAO_Profesor();
+                DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    nombreApellidos = (String) model.getValueAt(i, 0);
+
+                    List<Obj_Profesor> objProfesores = daoProfesor.getAll();
+                    for (Obj_Profesor objProfesor : objProfesores) {
+                        if ((objProfesor.getNombre() + " " + objProfesor.getApellidos()).equals(nombreApellidos)) {
+                            idProfesor = objProfesor.getId();
+                        }
+                    }
+
+                    Obj_Profesor_Responsable objProfesorResponsable = new Obj_Profesor_Responsable(0, idProfesor, activityId);
+                    daoProfesorResponsable.update(objProfesorResponsable);
+                }
+            }
+
+            {
+                DAO_Curso_Participante daoCursoParticipante = new DAO_Curso_Participante();
+                List<Obj_Curso_Participante> objCursosParticipantes = daoCursoParticipante.getAll();
+                for (Obj_Curso_Participante objCursoParticipante : objCursosParticipantes) {
+                    if (objCursoParticipante.getActividad().getId() == activityId && objCursoParticipante.getCurso() != null) {
+                        daoCursoParticipante.delete(objCursoParticipante.getId());
+                    }
+                }
+
+                String codigo = null;
+                int numAlumnos = 0;
+                int idCurso = 0;
+                DAO_Curso daoCurso = new DAO_Curso();
+                DefaultTableModel model = (DefaultTableModel) jTable6.getModel();
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    codigo = (String) model.getValueAt(i, 0);
+                    numAlumnos = (int) model.getValueAt(i, 1);
+
+                    List<Obj_Curso> objCursos = daoCurso.getAll();
+                    for (Obj_Curso objCurso : objCursos) {
+                        if (objCurso.getCodigo().equals(codigo)) {
+                            idCurso = objCurso.getId();
+                        }
+                    }
+
+                    Obj_Curso_Participante objCursoResponsable = new Obj_Curso_Participante(0, idCurso, activityId, numAlumnos);
+                    daoCursoParticipante.update(objCursoResponsable);
+                }
+            }
+
+            {
+                DAO_Grupo_Participante daoGrupoParticipante = new DAO_Grupo_Participante();
+                List<Obj_Grupo_Participante> objGruposParticipantes = daoGrupoParticipante.getAll();
+                for (Obj_Grupo_Participante objGrupoParticipante : objGruposParticipantes) {
+                    if (objGrupoParticipante.getActividad().getId() == activityId && objGrupoParticipante.getGrupo() != null) {
+                        daoGrupoParticipante.delete(objGrupoParticipante.getId());
+                    }
+                }
+
+                String codigo = null;
+                int numAlumnos = 0;
+                int idGrupo = 0;
+                DAO_Grupo daoGrupo = new DAO_Grupo();
+                DefaultTableModel model = (DefaultTableModel) jTable7.getModel();
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    codigo = (String) model.getValueAt(i, 0);
+                    numAlumnos = (int) model.getValueAt(i, 1);
+
+                    List<Obj_Grupo> objGrupos = daoGrupo.getAll();
+                    for (Obj_Grupo objGrupo : objGrupos) {
+                        if (objGrupo.getCodigo().equals(codigo)) {
+                            idGrupo = objGrupo.getId();
+                        }
+                    }
+
+                    Obj_Grupo_Participante objGrupoResponsable = new Obj_Grupo_Participante(0, idGrupo, activityId, numAlumnos);
+                    daoGrupoParticipante.update(objGrupoResponsable);
+                }
+            }
+
+            if (activityId > 0) {
+                JOptionPane.showMessageDialog(this, "Actividad modificada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Actividad creada con exito.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+            showPanel(jPanel2);
+        }
+    }
+
+    private LocalTime obtenerHoraDesdeTextField(JFormattedTextField textField) {
+        String horaTexto = textField.getText();
+        try {
+            return LocalTime.parse(horaTexto, DateTimeFormatter.ofPattern("HH:mm"));
+        } catch (DateTimeParseException e) {
+            return null;
+        }
+    }
+
+    // Evento: Al mostrar panel -> 4
+    private void jPanel4AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel4AncestorAdded
+        setLayout(null);
+        jPanel4.setBounds(0, 0, 750, 516);
+
+        jButton11.setEnabled(false);
+        jButton13.setEnabled(false);
+        jTextField3.setEditable(false);
+        jTextField4.setEditable(false);
+
+        DAO_Actividad_Solicitada daoActividad = new DAO_Actividad_Solicitada();
+        Obj_Actividad_Solicitada actividad = daoActividad.getById(activityId);
+
+        jTextField3.setText(actividad.getSolicitante().getNombre() + " " + actividad.getSolicitante().getApellidos());
+        jTextField4.setText("[" + actividad.getSolicitante().getDepartamento().getCodigo() + "] " + actividad.getSolicitante().getDepartamento().getNombre());
+
+        jTextField5.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Asígnale un nombre a la actividad");
+
+        if (currentUser.getPerfil() == Enum_Perfil.PROFESOR) {
+            jComboBox2.setEnabled(false);
+            jTextField6.setEditable(false);
+        } else {
+            jComboBox2.setEnabled(true);
+            jTextField6.setEditable(true);
+        }
+    }//GEN-LAST:event_jPanel4AncestorAdded
+
+    // Evento: Al pulsar botón -> Siguiente
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        showPanel(jPanel5);
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    // Evento: Al pulsar botón -> Cancelar
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+        if (option == JOptionPane.YES_OPTION) {
+            showPanel(jPanel2);
+            clearAllInfo();
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    // Evento: Al mostrar panel -> 5
+    private void jPanel5AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel5AncestorAdded
+        setLayout(null);
+        jPanel5.setBounds(0, 0, 750, 516);
+
+        jButton17.setEnabled(false);
+        jFormattedTextField1.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "08:30");
+        jFormattedTextField2.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "18:30");
+    }//GEN-LAST:event_jPanel5AncestorAdded
+
+    // Evento: Al pulsar botón -> Anterior
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        showPanel(jPanel4);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    // Evento: Al pulsar botón -> Siguiente
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        showPanel(jPanel6);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    // Evento: Al pulsar botón -> Cancelar
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+        if (option == JOptionPane.YES_OPTION) {
+            showPanel(jPanel2);
+            clearAllInfo();
+        }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    // Evento: Al mostrar panel -> 6
+    private void jPanel6AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel6AncestorAdded
+        setLayout(null);
+        jPanel6.setBounds(0, 0, 750, 516);
+        jButton21.setEnabled(false);
+
+    }//GEN-LAST:event_jPanel6AncestorAdded
+
+    // Evento: Al pulsar botón -> Anterior
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        showPanel(jPanel5);
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    // Evento: Al pulsar botón -> Siguiente
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        showPanel(jPanel7);
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    // Evento: Al pulsar botón -> Cancelar
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+        if (option == JOptionPane.YES_OPTION) {
+            showPanel(jPanel2);
+            clearAllInfo();
+        }
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    // Evento: Al pulsar botón -> Añadir fila
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        model.addRow(new Object[]{"...", 0.0, null});
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    // Evento: Al pulsar botón -> Eliminar fila
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        int selectedRowIndex = jTable2.getSelectedRow();
+
+        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
+            model.removeRow(selectedRowIndex);
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    // Evento: Al mostrar panel -> 7
+    private void jPanel7AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel7AncestorAdded
+        setLayout(null);
+        jPanel7.setBounds(0, 0, 750, 516);
+        jButton27.setEnabled(false);
+    }//GEN-LAST:event_jPanel7AncestorAdded
+
+    // Evento: Al pulsar botón -> Anterior
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        showPanel(jPanel6);
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    // Evento: Al pulsar botón -> Siguiente
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        showPanel(jPanel8);
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    // Evento: Al pulsar botón -> Cancelar
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+        if (option == JOptionPane.YES_OPTION) {
+            showPanel(jPanel2);
+            clearAllInfo();
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    // Evento: Al pulsar botón -> Añadir fila
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        model.addRow(new Object[]{"...", 0.0, null});
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    // Evento: Al pulsar botón -> Eliminar fila
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        int selectedRowIndex = jTable3.getSelectedRow();
+
+        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
+            model.removeRow(selectedRowIndex);
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton30ActionPerformed
+
+    // Evento: Al mostrar panel -> 8
+    private void jPanel8AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel8AncestorAdded
+        setLayout(null);
+        jPanel8.setBounds(0, 0, 750, 516);
+        jButton33.setEnabled(false);
+    }//GEN-LAST:event_jPanel8AncestorAdded
+
+    // Evento: Al pulsar botón -> Anterior
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        showPanel(jPanel7);
+    }//GEN-LAST:event_jButton31ActionPerformed
+
+    // Evento: Al pulsar botón -> Siguiente
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        showPanel(jPanel9);
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    // Evento: Al pulsar botón -> Cancelar
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+        if (option == JOptionPane.YES_OPTION) {
+            showPanel(jPanel2);
+            clearAllInfo();
+        }
+    }//GEN-LAST:event_jButton34ActionPerformed
+
+    // Evento: Al pulsar botón -> Añadir fila
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+        model.addRow(new Object[]{"..."});
+    }//GEN-LAST:event_jButton35ActionPerformed
+
+    // Evento: Al pulsar botón -> Eliminar fila
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+        int selectedRowIndex = jTable4.getSelectedRow();
+
+        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
+            model.removeRow(selectedRowIndex);
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton36ActionPerformed
+
+    // Evento: Al mostrar panel -> 9
+    private void jPanel9AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel9AncestorAdded
+        setLayout(null);
+        jPanel9.setBounds(0, 0, 750, 516);
+        jButton39.setEnabled(false);
+    }//GEN-LAST:event_jPanel9AncestorAdded
+
+    // Evento: Al pulsar botón -> Anterior
+    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
+        showPanel(jPanel8);
+    }//GEN-LAST:event_jButton37ActionPerformed
+
+    // Evento: Al pulsar botón -> Siguiente
+    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
+        showPanel(jPanel10);
+    }//GEN-LAST:event_jButton38ActionPerformed
+
+    // Evento: Al pulsar botón -> Cancelar
+    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+        if (option == JOptionPane.YES_OPTION) {
+            showPanel(jPanel2);
+            clearAllInfo();
+        }
+    }//GEN-LAST:event_jButton40ActionPerformed
+
+    // Evento: Al pulsar botón -> Añadir fila
+    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
+        model.addRow(new Object[]{"..."});
+    }//GEN-LAST:event_jButton41ActionPerformed
+
+    // Evento: Al pulsar botón -> Eliminar fila
+    private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
+        int selectedRowIndex = jTable5.getSelectedRow();
+
+        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
+            model.removeRow(selectedRowIndex);
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton42ActionPerformed
+
+    // Evento: Al mostrar panel -> 10
+    private void jPanel10AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel10AncestorAdded
+        setLayout(null);
+        jPanel10.setBounds(0, 0, 750, 516);
+        jButton45.setEnabled(false);
+    }//GEN-LAST:event_jPanel10AncestorAdded
+
+    // Evento: Al pulsar botón -> Anterior
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
+        showPanel(jPanel9);
+    }//GEN-LAST:event_jButton43ActionPerformed
+
+    // Evento: Al pulsar botón -> Siguiente
+    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
+        showPanel(jPanel11);
+    }//GEN-LAST:event_jButton44ActionPerformed
+
+    // Evento: Al pulsar botón -> Cancelar
+    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+        if (option == JOptionPane.YES_OPTION) {
+            showPanel(jPanel2);
+            clearAllInfo();
+        }
+    }//GEN-LAST:event_jButton46ActionPerformed
+
+    // Evento: Al pulsar botón -> Añadir fila
+    private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable6.getModel();
+        model.addRow(new Object[]{"...", "0"});
+    }//GEN-LAST:event_jButton47ActionPerformed
+
+    // Evento: Al pulsar botón -> Eliminar fila
+    private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable6.getModel();
+        int selectedRowIndex = jTable6.getSelectedRow();
+
+        if (selectedRowIndex != -1 && selectedRowIndex < model.getRowCount()) {
+            model.removeRow(selectedRowIndex);
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton48ActionPerformed
+
+    // Evento: Al mostrar panel -> 11
+    private void jPanel11AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel11AncestorAdded
+        setLayout(null);
+        jPanel11.setBounds(0, 0, 750, 516);
+        jButton50.setEnabled(false);
     }//GEN-LAST:event_jPanel11AncestorAdded
 
-    
     // Evento: Al pulsar botón -> Anterior
     private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
         showPanel(jPanel10);
     }//GEN-LAST:event_jButton49ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Finalizar
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
         saveAllInfo();
     }//GEN-LAST:event_jButton51ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Cancelar
     private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
         int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro seguro de que quieres cancelar la creación de la solicitud?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
@@ -3293,14 +3599,12 @@ public class JFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton52ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Añadir fila
     private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable7.getModel();
-        model.addRow(new Object[]{"...", "0.0", null});
+        model.addRow(new Object[]{"...", "0"});
     }//GEN-LAST:event_jButton53ActionPerformed
 
-    
     // Evento: Al pulsar botón -> Eliminar fila
     private void jButton54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton54ActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable7.getModel();
@@ -3313,29 +3617,10 @@ public class JFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton54ActionPerformed
 
+    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
 
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private raven.datetime.component.date.DatePicker datePicker1;

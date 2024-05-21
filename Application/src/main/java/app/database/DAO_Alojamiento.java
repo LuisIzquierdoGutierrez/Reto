@@ -1,5 +1,5 @@
 package app.database;
-
+/* @author Miguel */
 import app.objects.Obj_Alojamiento;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Esta clase implementa la interfaz DAO_Interface y proporciona métodos para acceder a la tabla "alojamiento" en la base de datos.
+ */
 public class DAO_Alojamiento implements DAO_Interface<Obj_Alojamiento> {
+    
+    /**
+     * Obtiene todos los alojamientos de la base de datos.
+     * 
+     * @return una lista de objetos de tipo Obj_Alojamiento que representan los alojamientos en la base de datos.
+     */
 
     @Override
     public List<Obj_Alojamiento> getAll() {
@@ -33,6 +41,13 @@ public class DAO_Alojamiento implements DAO_Interface<Obj_Alojamiento> {
 
         return alojamientos;
     }
+    
+     /**
+     * Obtiene un alojamiento de la base de datos por su ID.
+     * 
+     * @param id el ID del alojamiento a buscar.
+     * @return un objeto de tipo Obj_Alojamiento que representa el alojamiento con el ID especificado, o null si no se encuentra.
+     */
 
     
     @Override
@@ -54,6 +69,14 @@ public class DAO_Alojamiento implements DAO_Interface<Obj_Alojamiento> {
 
         return alojamiento;
     }
+    /**
+     * Actualiza un alojamiento en la base de datos.
+     * Si el alojamiento tiene un ID mayor a 0, se realiza una actualización.
+     * Si el alojamiento tiene un ID igual a 0, se realiza una inserción.
+     * 
+     * @param alojamiento el objeto de tipo Obj_Alojamiento que representa el alojamiento a actualizar o insertar.
+     * @return true si la actualización o inserción fue exitosa, false de lo contrario.
+     */
 
     
     @Override
@@ -86,6 +109,12 @@ public class DAO_Alojamiento implements DAO_Interface<Obj_Alojamiento> {
         
         return result;
     }
+      /**
+     * Elimina un alojamiento de la base de datos por su ID.
+     * 
+     * @param id el ID del alojamiento a eliminar.
+     * @return true si la eliminación fue exitosa, false de lo contrario.
+     */
 
     
     @Override
@@ -110,17 +139,33 @@ public class DAO_Alojamiento implements DAO_Interface<Obj_Alojamiento> {
         return result;
     }
     
+      /**
+     * Crea un nuevo objeto de tipo Obj_Alojamiento a partir de un ResultSet.
+     * 
+     * @param rset el ResultSet que contiene los datos del alojamiento.
+     * @return un objeto de tipo Obj_Alojamiento creado a partir de los datos del ResultSet.
+     * @throws SQLException si ocurre un error al acceder a los datos del ResultSet.
+     */
     
     private Obj_Alojamiento newAlojamiento(final ResultSet rset) throws SQLException {
         return new Obj_Alojamiento(rset.getInt("id"), rset.getString("nombre"));
     }
     
-    
+   /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return la conexión a la base de datos.
+     */
     private Connection getConnection() {
         return Access.getInstance().getConnection();
     }
     
     
+    /**
+     * Maneja una excepción de tipo SQLException, mostrando información detallada sobre el error.
+     * 
+     * @param ex la excepción de tipo SQLException a manejar.
+     */
     private void handleSQLException(SQLException ex) {
         System.out.println("[ERROR] Code: " + ex.getErrorCode());
         System.out.println("[ERROR] Message: " + ex.getMessage());

@@ -1,5 +1,5 @@
 package app.database;
-
+/* @author Adrian */
 import app.enums.Enum_Estado;
 import app.enums.Enum_Tipo;
 import app.objects.Obj_Actividad_Aprobada;
@@ -14,9 +14,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+    /**
+    * Esta clase implementa la interfaz DAO_Interface y proporciona métodos para acceder a la tabla "actividad_aprobada" en la base de datos.
+    */
 public class DAO_Actividad_Aprobada implements DAO_Interface<Obj_Actividad_Aprobada> {
 
-    @Override
+    /**
+     * Obtiene todas las actividades aprobadas de la base de datos.
+     * 
+     * @return una lista de objetos Obj_Actividad_Aprobada que representan las actividades aprobadas.
+     */
     public List<Obj_Actividad_Aprobada> getAll() {
         String sql = "SELECT id, id_solicitante, titulo, comentario_actividad, tipo, prevista, estado, comentario_estado, transporte, alojamiento, hora_inicio, hora_fin, fecha_inicio, fecha_fin FROM actividad_aprobada";
         List<Obj_Actividad_Aprobada> actividades = new ArrayList<>();
@@ -37,7 +44,12 @@ public class DAO_Actividad_Aprobada implements DAO_Interface<Obj_Actividad_Aprob
 
         return actividades;
     }
-
+    /**
+     * Obtiene una actividad aprobada de la base de datos por su ID.
+     * 
+     * @param id el ID de la actividad aprobada.
+     * @return un objeto Obj_Actividad_Aprobada que representa la actividad aprobada, o null si no se encuentra.
+     */
     
     @Override
     public Obj_Actividad_Aprobada getById(int id) {
@@ -58,6 +70,12 @@ public class DAO_Actividad_Aprobada implements DAO_Interface<Obj_Actividad_Aprob
 
         return actividad;
     }
+     /**
+     * Actualiza una actividad aprobada en la base de datos.
+     * 
+     * @param actividad el objeto Obj_Actividad_Aprobada que representa la actividad aprobada a actualizar.
+     * @return true si la actualización fue exitosa, false de lo contrario.
+     */
 
     
     @Override
@@ -102,6 +120,12 @@ public class DAO_Actividad_Aprobada implements DAO_Interface<Obj_Actividad_Aprob
         
         return result;
     }
+     /**
+     * Elimina una actividad aprobada de la base de datos por su ID.
+     * 
+     * @param id el ID de la actividad aprobada a eliminar.
+     * @return true si la eliminación fue exitosa, false de lo contrario.
+     */
 
     
     @Override
@@ -125,18 +149,33 @@ public class DAO_Actividad_Aprobada implements DAO_Interface<Obj_Actividad_Aprob
         
         return result;
     }
+     /**
+     * Crea un nuevo objeto Obj_Actividad_Aprobada a partir de un ResultSet.
+     * 
+     * @param rset el ResultSet que contiene los datos de la actividad aprobada.
+     * @return un objeto Obj_Actividad_Aprobada creado a partir de los datos del ResultSet.
+     * @throws SQLException si ocurre un error al acceder a los datos del ResultSet.
+     */
 
 
     private Obj_Actividad_Aprobada newActividad(final ResultSet rset) throws SQLException {
         return new Obj_Actividad_Aprobada(rset.getInt("id"), rset.getInt("id_solicitante"), rset.getString("titulo"), rset.getString("comentario_actividad"), Enum_Tipo.valueOf(rset.getString("tipo")), rset.getBoolean("prevista"), Enum_Estado.valueOf(rset.getString("estado")), rset.getString("comentario_estado"), rset.getBoolean("transporte"), rset.getBoolean("alojamiento"), rset.getTime("hora_inicio").toLocalTime(), rset.getTime("hora_fin").toLocalTime(), rset.getDate("fecha_inicio").toLocalDate(), rset.getDate("fecha_fin").toLocalDate());
     }
-
-    
+    /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return la conexión a la base de datos.
+     */
     private Connection getConnection() {
         return Access.getInstance().getConnection();
     }
     
     
+    /**
+     * Maneja una excepción de tipo SQLException, imprimiendo información detallada sobre la excepción.
+     * 
+     * @param ex la excepción SQLException a manejar.
+     */
     private void handleSQLException(SQLException ex) {
         System.out.println("[ERROR] Code: " + ex.getErrorCode());
         System.out.println("[ERROR] Message: " + ex.getMessage());

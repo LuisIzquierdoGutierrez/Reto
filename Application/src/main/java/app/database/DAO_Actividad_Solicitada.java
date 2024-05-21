@@ -1,5 +1,5 @@
 package app.database;
-
+/* @author Luis */
 import app.enums.Enum_Estado;
 import app.enums.Enum_Tipo;
 import app.objects.Obj_Actividad_Solicitada;
@@ -12,9 +12,18 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
-
+ /**
+  * Esta clase implementa la interfaz DAO_Interface y proporciona métodos para acceder a la tabla "actividad_solicitada" en la base de datos.
+  */
 
 public class DAO_Actividad_Solicitada implements DAO_Interface<Obj_Actividad_Solicitada> {
+     
+    
+    /**
+     * Obtiene todas las actividades solicitadas de la base de datos.
+     * 
+     * @return una lista de objetos Obj_Actividad_Solicitada que representan las actividades solicitadas.
+     */
 
     @Override
     public List<Obj_Actividad_Solicitada> getAll() {
@@ -37,6 +46,13 @@ public class DAO_Actividad_Solicitada implements DAO_Interface<Obj_Actividad_Sol
 
         return actividades;
     }
+    
+      /**
+     * Obtiene una actividad solicitada por su ID de la base de datos.
+     * 
+     * @param id el ID de la actividad solicitada.
+     * @return un objeto Obj_Actividad_Solicitada que representa la actividad solicitada, o null si no se encuentra.
+     */
 
     
     @Override
@@ -58,6 +74,12 @@ public class DAO_Actividad_Solicitada implements DAO_Interface<Obj_Actividad_Sol
 
         return actividad;
     }
+     /**
+     * Actualiza una actividad solicitada en la base de datos.
+     * 
+     * @param actividad el objeto Obj_Actividad_Solicitada que representa la actividad solicitada a actualizar.
+     * @return true si la actualización fue exitosa, false de lo contrario.
+     */
 
     
     @Override
@@ -102,6 +124,12 @@ public class DAO_Actividad_Solicitada implements DAO_Interface<Obj_Actividad_Sol
         
         return result;
     }
+      /**
+     * Elimina una actividad solicitada de la base de datos por su ID.
+     * 
+     * @param id el ID de la actividad solicitada a eliminar.
+     * @return true si la eliminación fue exitosa, false de lo contrario.
+     */
 
     
     @Override
@@ -125,18 +153,32 @@ public class DAO_Actividad_Solicitada implements DAO_Interface<Obj_Actividad_Sol
         
         return result;
     }
+     /**
+     * Crea un nuevo objeto Obj_Actividad_Solicitada a partir de un ResultSet.
+     * 
+     * @param rset el ResultSet que contiene los datos de la actividad solicitada.
+     * @return un objeto Obj_Actividad_Solicitada creado a partir de los datos del ResultSet.
+     * @throws SQLException si ocurre un error al acceder a los datos del ResultSet.
+     */
 
     
     private Obj_Actividad_Solicitada newActividad(final ResultSet rset) throws SQLException {
         return new Obj_Actividad_Solicitada(rset.getInt("id"), rset.getInt("id_solicitante"), rset.getString("titulo"), rset.getString("comentario_actividad"), Enum_Tipo.valueOf(rset.getString("tipo")), rset.getBoolean("prevista"), Enum_Estado.valueOf(rset.getString("estado")), rset.getString("comentario_estado"), rset.getBoolean("transporte"), rset.getBoolean("alojamiento"), rset.getTime("hora_inicio").toLocalTime(), rset.getTime("hora_fin").toLocalTime(), rset.getDate("fecha_inicio").toLocalDate(), rset.getDate("fecha_fin").toLocalDate());
     }
-
-    
+        /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return la conexión a la base de datos.
+     */
     private Connection getConnection() {
         return Access.getInstance().getConnection();
     }
-    
-    
+
+    /**
+     * Maneja las excepciones de SQL y muestra información detallada sobre el error.
+     * 
+     * @param ex la excepción de SQL.
+     */
     private void handleSQLException(SQLException ex) {
         System.out.println("[ERROR] Code: " + ex.getErrorCode());
         System.out.println("[ERROR] Message: " + ex.getMessage());

@@ -1,6 +1,18 @@
 package app.enums;
+/* @author Adrian */
 
-
+/**
+ * Enumeración que representa los tipos de actividades.
+ */
 public enum Enum_Tipo {
-    EXTRAESCOLAR, COMPLEMENTARIA;
+    /**
+     * Actividad extraescolar.
+     */
+    EXTRAESCOLAR,
+
+    /**
+     * Actividad complementaria.
+     */
+    COMPLEMENTARIA;
 }
+

@@ -1,5 +1,5 @@
 package app.database;
-
+/* @author Adrian */
 import app.objects.Obj_Departamento;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,17 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Esta clase implementa la interfaz DAO_Interface y proporciona métodos para acceder a la tabla "departamento" en la base de datos.
+ */
 
 public class DAO_Departamento implements DAO_Interface<Obj_Departamento> {
+    
+      /**
+     * Obtiene todos los departamentos de la base de datos.
+     * 
+     * @return una lista de objetos Obj_Departamento que representan los departamentos en la base de datos.
+     */
 
     @Override
     public List<Obj_Departamento> getAll() {
@@ -33,6 +42,13 @@ public class DAO_Departamento implements DAO_Interface<Obj_Departamento> {
 
         return departamentos;
     }
+    
+     /**
+     * Obtiene un departamento de la base de datos por su ID.
+     * 
+     * @param id el ID del departamento a buscar.
+     * @return un objeto Obj_Departamento que representa el departamento con el ID especificado, o null si no se encuentra.
+     */
 
     
     @Override
@@ -54,6 +70,15 @@ public class DAO_Departamento implements DAO_Interface<Obj_Departamento> {
 
         return departamento;
     }
+    
+      /**
+     * Actualiza un departamento en la base de datos.
+     * Si el departamento tiene un ID mayor a 0, se realiza una actualización.
+     * Si el departamento tiene un ID igual a 0, se realiza una inserción.
+     * 
+     * @param departamento el objeto Obj_Departamento que representa el departamento a actualizar o insertar.
+     * @return true si la actualización o inserción fue exitosa, false de lo contrario.
+     */
 
     
     @Override
@@ -88,6 +113,13 @@ public class DAO_Departamento implements DAO_Interface<Obj_Departamento> {
         
         return result;
     }
+    
+        /**
+     * Elimina un departamento de la base de datos por su ID.
+     * 
+     * @param id el ID del departamento a eliminar.
+     * @return true si la eliminación fue exitosa, false de lo contrario.
+     */
 
     
     @Override
@@ -112,17 +144,35 @@ public class DAO_Departamento implements DAO_Interface<Obj_Departamento> {
         return result;
     }
     
+       /**
+     * Crea un nuevo objeto Obj_Departamento a partir de los datos del ResultSet.
+     * 
+     * @param rset el ResultSet que contiene los datos del departamento.
+     * @return un objeto Obj_Departamento creado a partir de los datos del ResultSet.
+     * @throws SQLException si ocurre un error al acceder a los datos del ResultSet.
+     */
+    
 
     private Obj_Departamento newDepartamento(final ResultSet rset) throws SQLException {
         return new Obj_Departamento(rset.getInt("id"), rset.getInt("id_jefe"), rset.getString("codigo"), rset.getString("nombre"));
     }
     
     
+   /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return la conexión a la base de datos.
+     */
     private Connection getConnection() {
         return Access.getInstance().getConnection();
     }
     
     
+    /**
+     * Maneja una excepción de SQL, imprimiendo información sobre la excepción.
+     * 
+     * @param ex la excepción de SQL a manejar.
+     */
     private void handleSQLException(SQLException ex) {
         System.out.println("[ERROR] Code: " + ex.getErrorCode());
         System.out.println("[ERROR] Message: " + ex.getMessage());
